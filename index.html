@@ -1,0 +1,1425 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Eduardo Fernandes · Technical Artist</title>
+<meta name="description" content="Eduardo Fernandes — Technical Artist and 3D Artist. HLSL shaders for URP, Unity and Maya tools, and game-ready art for mobile and web games live on Poki.">
+<meta property="og:title" content="Eduardo Fernandes · Technical Artist">
+<meta property="og:description" content="Shaders, tools and game-ready art. Kreativitas Studio, Sorocaba, Brazil.">
+<meta property="og:image" content="https://duzerafer.github.io/assets/work/art-postprocess-comparison.jpg">
+<script>document.documentElement.className+=" js";var t=null;try{t=localStorage.getItem("ef-theme")}catch(e){}document.documentElement.setAttribute("data-theme",t==="light"?"light":"dark")</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bone:#f1efeb;
+  --white:#ffffff;
+  --ink:#0d0d0c;
+  --ink-2:#3a3834;
+  --muted:#76726b;
+  --line:#dcd8d1;
+  --forest:#3f5a48;
+  --pad:clamp(20px,5vw,72px);
+  --maxw:1440px;
+  --display:"Inter Tight","Helvetica Neue",Arial,sans-serif;
+  --sans:"Inter","Helvetica Neue",Arial,sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,"SFMono-Regular",Menlo,Consolas,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bone:#131311;
+    --white:#1c1b19;
+    --ink:#f1efeb;
+    --ink-2:#c8c4bc;
+    --muted:#8e8981;
+    --line:#2f2d2a;
+    --forest:#86a28f;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bone:#131311;
+  --white:#1c1b19;
+  --ink:#f1efeb;
+  --ink-2:#c8c4bc;
+  --muted:#8e8981;
+  --line:#2f2d2a;
+  --forest:#86a28f;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--bone);scroll-behavior:smooth;scroll-padding-top:120px}
+body{margin:0;background:var(--bone);color:var(--ink);font:400 16px/1.6 var(--sans);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;transition:background-color .25s,color .25s}
+img{max-width:100%;display:block}
+a{color:inherit}
+h1,h2,h3{font-family:var(--display);font-weight:800;letter-spacing:-.04em;line-height:.95;margin:0;text-wrap:balance}
+p{margin:0}
+:focus-visible{outline:2px solid var(--ink);outline-offset:3px}
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--pad)}
+.label{font:600 11px/1.2 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.mono{font-family:var(--mono);font-size:12.5px;letter-spacing:0;color:var(--muted);font-variant-numeric:tabular-nums}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:var(--ink);color:var(--white);text-decoration:none;font:600 12px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;padding:17px 26px;border-radius:2px;border:1px solid var(--ink);transition:background .2s,color .2s}
+.btn:hover{background:var(--white);color:var(--ink)}
+.link{font-weight:500;text-decoration:underline;text-underline-offset:4px;text-decoration-thickness:1px}
+.link:hover{text-decoration-thickness:2px}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--forest);display:inline-block;flex:none}
+
+header.top{position:sticky;top:0;z-index:10;background:var(--bone);border-bottom:1px solid var(--line);transition:background-color .25s}
+.bar{display:flex;align-items:center;justify-content:space-between;height:60px;gap:24px}
+.left{display:flex;align-items:center;gap:20px;min-width:0}
+.toggles{display:flex;gap:8px;align-items:center;flex:none}
+.switch{appearance:none;background:none;border:1px solid var(--line);border-radius:2px;padding:8px 10px;display:inline-flex;gap:8px;align-items:center;cursor:pointer;font:600 10.5px/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted);transition:border-color .2s}
+.switch:hover{border-color:var(--ink)}
+.switch .opt{transition:color .2s}
+.switch .opt.on{color:var(--ink)}
+.switch .sep{width:1px;height:10px;background:var(--line)}
+.switch .glyph{width:10px;height:10px;border-radius:50%;border:1px solid var(--ink);background:linear-gradient(90deg,var(--ink) 50%,transparent 50%);flex:none}
+.brand{font:700 15px/1 var(--display);letter-spacing:-.01em;text-decoration:none;padding-left:20px;border-left:1px solid var(--line);white-space:nowrap}
+.brand span{color:var(--muted);font-weight:500;font-family:var(--sans);margin-left:10px;font-size:13px}
+.bar .avail{font-size:12.5px;color:var(--muted);white-space:nowrap}
+.navrow{border-top:1px solid var(--line)}
+nav.menu{position:relative;display:flex;gap:32px;overflow-x:auto;scrollbar-width:none;margin:0 calc(var(--pad)*-1);padding:0 var(--pad)}
+nav.menu::-webkit-scrollbar{display:none}
+nav.menu a{flex:none;padding:17px 0 14px;border-bottom:2px solid transparent;text-decoration:none;font:500 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);white-space:nowrap;transition:color .2s,border-color .2s}
+nav.menu a:hover{color:var(--ink)}
+nav.menu a[aria-current="page"]{color:var(--ink);border-bottom-color:var(--ink)}
+nav.menu .end{margin-left:auto}
+
+.view:focus{outline:none}
+.js .view:not(.on){display:none}
+.view.on{animation:viewIn .4s ease both}
+@keyframes viewIn{from{opacity:0}to{opacity:1}}
+.view > section.block:first-child{padding-top:clamp(56px,8vw,112px)}
+
+.hero{padding:clamp(56px,9vw,120px) 0 0}
+.hero-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;align-items:end}
+.hero .eyebrow{grid-column:1/-1;display:flex;gap:18px;flex-wrap:wrap;margin-bottom:28px}
+.hero h1{grid-column:1/10;font-size:clamp(44px,9.2vw,148px)}
+.hero-side{grid-column:10/13;display:grid;gap:22px;padding-bottom:10px}
+.hero-side p{color:var(--ink-2);font-size:15.5px;max-width:34ch}
+.cta{display:flex;gap:22px;align-items:center;flex-wrap:wrap}
+.avail{display:flex;gap:10px;align-items:center;font-size:13px;color:var(--ink-2)}
+
+.feature{display:block;margin-top:clamp(48px,6vw,84px);border-top:1px solid var(--line);text-decoration:none}
+.feature .frame img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.feature:hover .frame img{transform:scale(1.015)}
+.feature:hover .link{text-decoration-thickness:2px}
+
+.stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--ink);margin-top:clamp(56px,7vw,96px)}
+.stat{padding:24px 24px 28px 0;display:flex;flex-direction:column;gap:16px}
+.stats .stat:nth-child(n+2){padding-left:24px;border-left:1px solid var(--line)}
+.stat .num{font:800 clamp(48px,6vw,96px)/.85 var(--display);letter-spacing:-.05em;font-variant-numeric:tabular-nums;white-space:nowrap}
+
+.index{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 24px}
+.tile{text-decoration:none;display:flex;flex-direction:column;gap:14px;min-width:0}
+.tile-top{display:flex;justify-content:space-between;align-items:center;border-top:1px solid var(--ink);padding-top:12px}
+.tile .arrow{transition:transform .2s}
+.tile:hover .arrow{transform:translateX(4px)}
+.tile h3{font-size:clamp(26px,2.4vw,34px)}
+.tile:hover h3{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:6px}
+.tile p{color:var(--ink-2);font-size:14.5px}
+
+.img{position:relative;background:var(--white);aspect-ratio:1;overflow:hidden}
+.img > img,.img > video{width:100%;height:100%;object-fit:cover;transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.img > video{display:block}
+.card:hover .img > img,.card:hover .img > video,.tile:hover .img > img{transform:scale(1.025)}
+.img.type{display:flex;flex-direction:column;justify-content:space-between;gap:16px;padding:clamp(16px,1.8vw,26px);border:1px solid var(--line)}
+.img.type > img{position:absolute;inset:0;z-index:1}
+.type .big{font:800 clamp(44px,7vw,112px)/.8 var(--display);letter-spacing:-.06em;white-space:nowrap}
+.type .big small{font-size:.24em;letter-spacing:-.01em;font-weight:700;margin-left:.15em}
+.type .word{font:800 clamp(28px,3vw,46px)/.95 var(--display);letter-spacing:-.04em;text-wrap:balance}
+.type code{font:400 12.5px/1.75 var(--mono);color:var(--ink-2);white-space:pre;overflow:hidden}
+.tile .type code{font-size:11.5px}
+
+.viewer{border-top:1px solid var(--line)}
+.viewer-head{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:18px 0;flex-wrap:wrap}
+.frame{position:relative;background:var(--white);aspect-ratio:16/9;overflow:hidden}
+.frame img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:opacity .45s ease}
+.frame img.off{opacity:0}
+.tabs{display:grid;grid-template-columns:repeat(5,1fr);border-bottom:1px solid var(--line)}
+.tab{appearance:none;background:none;border:0;border-right:1px solid var(--line);padding:18px 16px 20px;text-align:left;cursor:pointer;color:var(--muted);font:500 12px/1.2 var(--sans);letter-spacing:.12em;text-transform:uppercase;position:relative}
+.tab:last-child{border-right:0}
+.tab::before{content:"";position:absolute;left:0;right:0;top:-1px;height:2px;background:transparent}
+.tab[aria-selected="true"]{color:var(--ink)}
+.tab[aria-selected="true"]::before{background:var(--ink)}
+.tab:hover{color:var(--ink)}
+.viewer-note{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:22px 0 0}
+.viewer-note p{grid-column:1/8;font-size:17px;color:var(--ink-2);min-height:3.2em}
+.viewer-note .mono{grid-column:9/13;line-height:1.7}
+.viewer + .perf{margin-top:clamp(56px,7vw,96px)}
+
+section.block{padding:clamp(88px,11vw,160px) 0 0}
+.sec-head{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-bottom:clamp(40px,5vw,64px);align-items:end}
+.sec-head .label{grid-column:1/4;padding-bottom:8px}
+.sec-head h2{grid-column:4/13;font-size:clamp(36px,5.2vw,76px)}
+.sec-head p{grid-column:4/11;color:var(--ink-2);font-size:17px;max-width:62ch;margin-top:20px}
+.sub{display:flex;justify-content:space-between;align-items:baseline;gap:16px;margin-bottom:16px;flex-wrap:wrap}
+.gap-l{margin-top:clamp(80px,10vw,144px)}
+
+.games{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.game{background:var(--white);border:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);text-decoration:none}
+.game img{width:100%;aspect-ratio:1;object-fit:cover}
+.game-body{padding:clamp(20px,2.4vw,32px);display:flex;flex-direction:column;gap:14px;border-left:1px solid var(--line)}
+.game-body .live{display:flex;gap:8px;align-items:center}
+.game h3{font-size:clamp(28px,2.8vw,40px)}
+.game p{color:var(--ink-2);font-size:14.5px}
+.game dl{margin:auto 0 0;display:grid;grid-template-columns:auto 1fr;gap:6px 16px;border-top:1px solid var(--line);padding-top:16px}
+.game dt{font:600 10.5px/1.6 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.game dd{margin:0;font-family:var(--mono);font-size:12.5px;font-variant-numeric:tabular-nums}
+.game .go{font-weight:500;font-size:14px;text-decoration:underline;text-underline-offset:4px}
+.game:hover .go{text-decoration-thickness:2px}
+.more{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:40px;padding-top:24px;border-top:1px solid var(--line)}
+.more .label{grid-column:1/4}
+.more p{grid-column:4/11;color:var(--ink-2);max-width:62ch}
+.more > div{grid-column:4/11;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.more.teaser{margin-top:clamp(64px,8vw,112px)}
+
+.case{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:40px 0;border-top:1px solid var(--line)}
+.case:first-of-type{border-top:0;padding-top:0}
+.case figure{margin:0;grid-column:1/8;background:var(--white)}
+.case figure img{width:100%;height:auto}
+.case .txt{grid-column:9/13;display:flex;flex-direction:column;gap:18px}
+.case h3{font-size:clamp(26px,2.6vw,36px)}
+.case p{color:var(--ink-2);font-size:15.5px}
+.spec{margin:0;display:grid;gap:0;border-top:1px solid var(--line)}
+.spec div{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:10px 0;border-bottom:1px solid var(--line)}
+.spec dt{font:600 10.5px/1.7 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.spec dd{margin:0;font-size:14px}
+.case.reel figure{grid-column:2/6;aspect-ratio:9/16;overflow:hidden}
+.case.reel video{display:block;width:100%;height:100%;object-fit:cover}
+.case.reel .txt{grid-column:7/12;justify-content:center}
+.perf{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:48px 0;border-top:1px solid var(--line);align-items:end}
+.perf .big{grid-column:1/8;font:800 clamp(88px,15vw,232px)/.8 var(--display);letter-spacing:-.06em;font-variant-numeric:tabular-nums}
+.perf .big small{font-size:.22em;letter-spacing:-.01em;font-weight:700;margin-left:.2em;vertical-align:top;display:inline-block;margin-top:.5em}
+.perf .txt{grid-column:9/13;display:flex;flex-direction:column;gap:14px;padding-bottom:12px}
+.perf h3{font-size:28px}
+.perf p{color:var(--ink-2);font-size:15.5px}
+
+.toolkit{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink);margin-top:24px}
+.tool{padding:24px 24px 28px 0;border-bottom:1px solid var(--line);display:flex;flex-direction:column;gap:10px}
+.toolkit .tool:nth-child(3n+2),.toolkit .tool:nth-child(3n+3){padding-left:24px;border-left:1px solid var(--line)}
+.toolkit.c2{grid-template-columns:1fr 1fr}
+.toolkit.c2 .tool:nth-child(n){padding-left:0;border-left:0}
+.toolkit.c2 .tool:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+.tool h4{margin:0;font:600 17px/1.3 var(--sans);letter-spacing:-.01em}
+.tool p{color:var(--ink-2);font-size:14.5px}
+.tool a{margin-top:auto;font-size:14px}
+
+.pkg{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:56px 0;border-top:1px solid var(--line)}
+.pkg-txt{grid-column:1/5;display:flex;flex-direction:column;gap:18px;min-width:0}
+.pkg-media{grid-column:6/13;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-content:start;min-width:0}
+.pkg.flip .pkg-txt{grid-column:9/13;grid-row:1}
+.pkg.flip .pkg-media{grid-column:1/8;grid-row:1}
+.pkg h3{font-size:clamp(26px,2.6vw,36px)}
+.pkg p{color:var(--ink-2);font-size:15.5px}
+.pkg-txt .btn{align-self:flex-start}
+.code{margin:0;background:var(--white);border:1px solid var(--line);border-radius:2px;padding:14px 16px;overflow-x:auto;font:400 12px/1.75 var(--mono);color:var(--ink-2);white-space:pre}
+.slot{margin:0;position:relative;background:var(--white);border:1px solid var(--line);aspect-ratio:4/3;overflow:hidden}
+.slot.wide{grid-column:1/-1;aspect-ratio:16/9}
+.slot::before{content:"";position:absolute;left:50%;top:50%;width:28px;height:28px;transform:translate(-50%,-50%);background:linear-gradient(var(--muted),var(--muted)) center/1px 100% no-repeat,linear-gradient(var(--muted),var(--muted)) center/100% 1px no-repeat;opacity:.5}
+.slot::after{content:attr(data-file);position:absolute;left:12px;right:12px;bottom:10px;font:400 11px/1.3 var(--mono);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
+.slot video{position:absolute;inset:0;display:block;width:100%;height:100%;object-fit:cover;z-index:1}
+.pkg-media.shots{grid-template-columns:repeat(4,1fr)}
+.pkg-media.shots .slot{aspect-ratio:9/16}
+.pkg-media.loop .slot.tall{grid-row:span 2;aspect-ratio:4/5}
+.pkg-media.loop .slot.strip{aspect-ratio:72/43}
+.pkg-media.loop .slot.strip.wide{grid-column:1/-1;aspect-ratio:72/32}
+.mine{display:flex;flex-direction:column;gap:12px;border-top:1px solid var(--line);padding-top:16px}
+.did{margin:0;padding:0;list-style:none;display:flex;flex-wrap:wrap;gap:6px}
+.did li{font:600 10.5px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);padding:8px 10px;border-radius:2px}
+.did li.key{background:var(--ink);color:var(--white);border-color:var(--ink)}
+.go-row{display:flex;gap:24px;align-items:center;flex-wrap:wrap}
+.kit-also{margin-top:48px}
+
+.filters{display:flex;gap:28px;flex-wrap:wrap;margin-bottom:28px;border-bottom:1px solid var(--line)}
+.filter{appearance:none;background:none;border:0;padding:0 0 14px;cursor:pointer;font:500 12px/1 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--muted);border-bottom:2px solid transparent;margin-bottom:-1px}
+.filter[aria-pressed="true"]{color:var(--ink);border-color:var(--ink)}
+.filter:hover{color:var(--ink)}
+.filter sup{font-family:var(--mono);letter-spacing:0;margin-left:3px;font-size:10px}
+.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:48px 24px}
+.card{text-decoration:none;display:flex;flex-direction:column;gap:14px;min-width:0}
+.card .meta{display:flex;justify-content:space-between;gap:16px;align-items:baseline}
+.card h3{font:600 17px/1.3 var(--sans);letter-spacing:-.01em}
+.card .mono{display:block;margin-top:2px}
+.card .tag{display:block;margin-bottom:8px}
+[data-v="3d"] .card .tag{display:none}
+.work-foot{margin-top:48px;display:flex;justify-content:flex-end}
+
+.xp{border-top:1px solid var(--ink)}
+.xp-row{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;padding:32px 0;border-bottom:1px solid var(--line)}
+.xp-row .when{grid-column:1/4;font-family:var(--mono);font-size:13px;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:6px}
+.xp-row .role{grid-column:4/8}
+.xp-row .role h3{font-size:clamp(24px,2.4vw,32px)}
+.xp-row .role .label{margin-top:10px;display:block}
+.xp-row ul{grid-column:8/13;margin:0;padding:0;list-style:none;display:grid;gap:10px}
+.xp-row li{font-size:14.5px;color:var(--ink-2);padding-left:18px;position:relative}
+.xp-row li::before{content:"";position:absolute;left:0;top:.72em;width:8px;height:1px;background:var(--ink)}
+.xp-row li b{font-weight:600;color:var(--ink)}
+
+.mentor{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;background:var(--white);border:1px solid var(--line);padding:clamp(28px,4vw,56px)}
+.mentor .lead{grid-column:1/6;display:flex;flex-direction:column;gap:18px}
+.mentor .lead h3{font-size:clamp(32px,3.6vw,52px)}
+.mentor .lead p{color:var(--ink-2)}
+.areas{grid-column:7/13;display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--line)}
+.area{padding:18px 18px 22px 0;border-bottom:1px solid var(--line)}
+.area:nth-child(even){padding-left:18px;border-left:1px solid var(--line)}
+.area h4{margin:0 0 6px;font:600 15px/1.3 var(--sans)}
+.area p{font-size:14px;color:var(--ink-2)}
+
+.skills{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;border-top:1px solid var(--ink);padding-top:24px}
+.skills ul{list-style:none;margin:14px 0 0;padding:0;display:grid;gap:6px;font-size:15px}
+
+.contact h2{font-size:clamp(44px,7.6vw,120px);max-width:14ch;margin-top:20px}
+.contact-row{display:grid;grid-template-columns:repeat(12,1fr);gap:24px;margin-top:48px;align-items:start}
+.contact-row .mail{grid-column:1/7;display:flex;flex-direction:column;gap:18px;align-items:flex-start}
+.contact-row .mail a.addr{font:600 clamp(18px,2vw,24px)/1.3 var(--sans);letter-spacing:-.01em;word-break:break-all}
+.socials{grid-column:8/13;list-style:none;margin:0;padding:0;border-top:1px solid var(--line)}
+.socials li{border-bottom:1px solid var(--line)}
+.socials a{display:flex;justify-content:space-between;padding:14px 0;text-decoration:none;font-weight:500}
+.socials a span{color:var(--muted);font-family:var(--mono);font-size:12.5px}
+.socials a:hover{text-decoration:underline;text-underline-offset:4px}
+
+footer.site{margin-top:clamp(100px,12vw,180px);border-top:1px solid var(--line);padding-bottom:40px}
+.next{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:clamp(40px,5vw,64px) 0;border-bottom:1px solid var(--line);text-decoration:none}
+.next-name{font:800 clamp(36px,5.2vw,76px)/.95 var(--display);letter-spacing:-.04em;text-align:right}
+.next:hover .next-name{text-decoration:underline;text-decoration-thickness:2px;text-underline-offset:8px}
+.colophon{display:flex;justify-content:space-between;gap:16px;margin-top:40px;flex-wrap:wrap}
+
+@media (max-width:1080px){
+  .hero h1{grid-column:1/-1}
+  .hero-side{grid-column:1/-1;grid-template-columns:1fr 1fr;align-items:start}
+  .hero-side p{max-width:48ch}
+  .games{grid-template-columns:1fr}
+  .case figure,.case .txt,.perf .big,.perf .txt,.case.reel figure,.case.reel .txt{grid-column:1/-1}
+  .case.reel figure{max-width:380px;width:100%}
+  .pkg-txt,.pkg-media,.pkg.flip .pkg-txt,.pkg.flip .pkg-media{grid-column:1/-1;grid-row:auto}
+  .mentor .lead,.areas{grid-column:1/-1}
+  .skills{grid-template-columns:1fr 1fr}
+  .toolkit{grid-template-columns:1fr 1fr}
+  .toolkit .tool:nth-child(n){padding-left:0;border-left:0}
+  .toolkit .tool:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+  .index{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .stats .stat:nth-child(n){padding-left:0;border-left:0}
+  .stats .stat:nth-child(even){padding-left:24px;border-left:1px solid var(--line)}
+  .stats .stat:nth-child(n+3){border-top:1px solid var(--line)}
+}
+@media (max-width:860px){
+  .bar .avail{display:none}
+}
+@media (max-width:760px){
+  .hero-side{grid-template-columns:1fr}
+  .sec-head .label,.sec-head h2,.sec-head p,.more .label,.more p,.more > div,.viewer-note p,.viewer-note .mono{grid-column:1/-1}
+  .tabs{grid-template-columns:repeat(3,1fr)}
+  .tab:nth-child(3){border-right:0}
+  .tab:nth-child(n+4){border-top:1px solid var(--line)}
+  .game{grid-template-columns:1fr}
+  .pkg-media.shots{grid-template-columns:repeat(2,1fr)}
+  .pkg-media.loop{grid-template-columns:1fr}
+  .pkg-media.loop .slot.tall{grid-row:auto;aspect-ratio:4/5}
+  .pkg-media.loop .slot.strip.wide{aspect-ratio:72/43}
+  .game-body{border-left:0;border-top:1px solid var(--line)}
+  .grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:32px 16px}
+  .xp-row .when,.xp-row .role,.xp-row ul{grid-column:1/-1}
+  .areas{grid-template-columns:1fr}
+  .area:nth-child(even){padding-left:0;border-left:0}
+  .toolkit,.toolkit.c2{grid-template-columns:1fr}
+  .toolkit .tool:nth-child(n),.toolkit.c2 .tool:nth-child(n){padding-left:0;border-left:0}
+  .contact-row .mail,.socials{grid-column:1/-1}
+  nav.menu{gap:26px}
+  .type code{font-size:10px}
+  .stat .num{font-size:clamp(34px,10vw,56px)}
+}
+@media (max-width:560px){
+  .index{grid-template-columns:minmax(0,1fr)}
+  .brand span{display:none}
+}
+@media (max-width:420px){
+  .switch .theme-word{display:none}
+  .left{gap:14px}
+  .brand{padding-left:14px}
+}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *{transition:none!important;animation:none!important}
+}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <div class="left">
+      <div class="toggles">
+        <button class="switch" id="langSwitch" type="button" role="switch" aria-checked="false" aria-label="Português">
+          <span class="opt on" data-v="en">EN</span><span class="sep" aria-hidden="true"></span><span class="opt" data-v="pt">PT</span>
+        </button>
+        <button class="switch" id="themeSwitch" type="button" role="switch" aria-checked="false" aria-label="Dark theme">
+          <span class="glyph" aria-hidden="true"></span>
+          <span class="opt theme-word" data-v="light" data-i18n="t.light">Light</span><span class="sep theme-word" aria-hidden="true"></span><span class="opt theme-word" data-v="dark" data-i18n="t.dark">Dark</span>
+        </button>
+      </div>
+      <a class="brand" href="#summary">Eduardo Fernandes<span data-i18n="brand.role">Technical Artist</span></a>
+    </div>
+    <div class="avail"><span class="dot" aria-hidden="true"></span><span data-i18n="bar.avail">Open to work</span></div>
+  </div>
+  <div class="navrow">
+    <div class="wrap">
+      <nav class="menu" id="menu" aria-label="Sections">
+        <a href="#summary" data-i18n="nav.sum">Summary</a>
+        <a href="#all" data-i18n="nav.all">All</a>
+        <a href="#games" data-i18n="nav.games">Projects</a>
+        <a href="#shaders" data-i18n="nav.fx">VFX &amp; Shaders</a>
+        <a href="#tools" data-i18n="nav.tools">Tools</a>
+        <a href="#3d">3D</a>
+        <a href="#about" data-i18n="nav.about">About</a>
+        <a class="end" href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="view" data-v="summary" tabindex="-1">
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-grid">
+          <div class="eyebrow">
+            <span class="label" data-i18n="hero.role">Technical Artist · 3D Artist</span>
+            <span class="label">Kreativitas Studio</span>
+            <span class="label" data-i18n="hero.loc">Sorocaba, Brazil</span>
+          </div>
+          <h1 data-i18n="hero.h1">Shaders, tools and game&#8209;ready&nbsp;art.</h1>
+          <div class="hero-side">
+            <p data-i18n="hero.p">I write HLSL for Unity URP, build tools in C#, Python and MEL, and ship 3D assets for mobile and web games — two of them live on Poki right now.</p>
+            <div class="cta">
+              <a class="btn" href="#all" data-i18n="hero.cta">See the work</a>
+              <a class="link resume" href="assets/Eduardo-Fernandes-Resume.pdf" target="_blank" rel="noopener" data-i18n="hero.cv">Résumé (PDF) →</a>
+            </div>
+            <div class="avail"><span class="dot" aria-hidden="true"></span><span data-i18n="hero.avail">Open to full-time, contract and freelance</span></div>
+          </div>
+        </div>
+
+        <a class="feature" href="#shaders">
+          <div class="viewer-head">
+            <span class="label">Renderer Features — Unity URP</span>
+            <span class="mono link" data-i18n="feat.go">See VFX &amp; Shaders →</span>
+          </div>
+          <div class="frame"><img src="assets/work/art-postprocess-comparison.jpg" alt="Post-process feature comparison in Unity URP"></div>
+        </a>
+
+        <div class="stats">
+          <div class="stat"><span class="num">~200%</span><span class="label" data-i18n="st.fps">FPS gain on low-end Android</span></div>
+          <div class="stat"><span class="num">2</span><span class="label" data-i18n="st.games">Games live on Poki</span></div>
+          <div class="stat"><span class="num">35k+</span><span class="label" data-i18n="st.votes">Player votes on Poki</span></div>
+          <div class="stat"><span class="num" data-i18n="st.yrs">4 yrs</span><span class="label" data-i18n="st.yrs.l">Shipping game art</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="sum.label">Index</span>
+          <h2 data-i18n="sum.h2">Browse by discipline.</h2>
+        </div>
+        <div class="index">
+          <a class="tile" href="#games">
+            <div class="tile-top"><span class="mono">01</span><span class="arrow" aria-hidden="true">→</span></div>
+            <div class="img"><img src="assets/work/snake-vs-human-logo.jpg" alt="Snake vs Human key art" loading="lazy"></div>
+            <h3 data-i18n="nav.games">Projects</h3>
+            <p data-i18n="sum.games">Two games live on Poki with 35,000+ player votes, plus educational games with Yellow Panda.</p>
+          </a>
+          <a class="tile" href="#shaders">
+            <div class="tile-top"><span class="mono">02</span><span class="arrow" aria-hidden="true">→</span></div>
+            <div class="img"><img src="assets/work/art-sidewalk-materials.jpg" alt="Procedural Brazilian sidewalk materials" loading="lazy"></div>
+            <h3 data-i18n="nav.fx">VFX &amp; Shaders</h3>
+            <p data-i18n="sum.fx">URP renderer features, procedural materials and a ~200% FPS optimization pass.</p>
+          </a>
+          <a class="tile" href="#tools">
+            <div class="tile-top"><span class="mono">03</span><span class="arrow" aria-hidden="true">→</span></div>
+            <div class="img type"><span class="mono">Unity · C#</span><code>Particles.PlayParticle(
+    "HIT_SPARK");
+material.SetColorByID(
+    "PRIMARY", palette);
+await showAnimation.PlayAsync();</code></div>
+            <h3 data-i18n="nav.tools">Tools</h3>
+            <p data-i18n="sum.tools">A free Asset Store extension and three Unity packages every studio game runs on.</p>
+          </a>
+          <a class="tile" href="#3d">
+            <div class="tile-top"><span class="mono">04</span><span class="arrow" aria-hidden="true">→</span></div>
+            <div class="img"><img src="assets/work/art-cyberpunk-creature.jpg" alt="Cyberpunk creature" loading="lazy"></div>
+            <h3>3D</h3>
+            <p data-i18n="sum.3d">Characters, props and game-ready assets, from sculpt to engine.</p>
+          </a>
+        </div>
+
+        <div class="more teaser">
+          <span class="label" data-i18n="nav.about">About</span>
+          <div>
+            <p data-i18n="ab.p">I'm a Technical Artist and 3D Artist from Sorocaba, Brazil. I studied Digital Games at UNISO, started freelancing in 2022 and made hyper-casual assets at Electric Monkeys before joining Kreativitas Studio in 2023, where I write the shaders and build the Unity tools the studio's games run on.</p>
+            <a class="link" href="#about" data-i18n="sum.more">Experience, mentorship &amp; skills →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="all" tabindex="-1">
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="all.label">All work</span>
+          <h2 data-i18n="all.h2">Everything, in one place.</h2>
+          <p data-i18n="all.p">Games, shaders, tools and 3D art. Pick a category above to narrow it down.</p>
+        </div>
+
+        <div class="grid" id="gridAll">
+          <a class="card" data-cat="game" href="#games">
+            <div class="img"><img src="assets/work/popnplay-meadow.jpg" alt="Pop&amp;Play gameplay: animal characters jumping across grassy platforms" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.game">Game</span><h3>Pop&amp;Play</h3><span class="mono" data-i18n="c.pp.m">Yellow Panda · Educational platformer</span></div><span class="mono">2026</span></div>
+          </a>
+          <a class="card" data-cat="tool" href="#tools">
+            <div class="img"><img src="assets/work/gizmos-primitives.jpg" alt="Gizmos Drawer primitive gizmos in the Unity Scene view" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.tool">Tool</span><h3>Gizmos Drawer</h3><span class="mono" data-i18n="c.gz.m">Unity Asset Store · Free</span></div><span class="mono">2026</span></div>
+          </a>
+          <a class="card" data-cat="game" href="#games">
+            <div class="img"><video src="assets/work/libras-game.mp4" data-auto muted loop playsinline preload="metadata" aria-label="Libras em Ação gameplay clip"></video></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.game">Game</span><h3>Libras em Ação</h3><span class="mono">XReall × Yellow Panda</span></div><span class="mono">2026</span></div>
+          </a>
+
+          <a class="card" data-cat="game" href="https://poki.com/en/g/snake-vs-human" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/snake-vs-human-logo.jpg" alt="Snake vs Human key art" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.game">Game</span><h3>Snake vs Human</h3><span class="mono">Kreativitas × Clap Clap · Poki</span></div></div>
+          </a>
+          <a class="card" data-cat="fx" href="#shaders">
+            <div class="img"><img src="assets/work/art-postprocess-comparison.jpg" alt="Post-process feature comparison in Unity URP" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="nav.fx">VFX &amp; Shaders</span><h3>URP Renderer Features</h3><span class="mono" data-i18n="c.rf.m">SSAO · Bloom · Outline · Fog</span></div><span class="mono">2025</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="char" href="https://www.artstation.com/artwork/8BRwym" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-cyberpunk-creature.jpg" alt="Cyberpunk creature" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.cyber">Cyberpunk Creature</h3><span class="mono">ZBrush · Maya retopo · Marmoset</span></div><span class="mono">2025</span></div>
+          </a>
+
+          <a class="card" data-cat="game" href="https://poki.com/en/g/harvest-loop" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/harvest-loop-logo.jpg" alt="Harvest Loop key art" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.game">Game</span><h3>Harvest Loop</h3><span class="mono">Kreativitas · Poki</span></div></div>
+          </a>
+          <a class="card" data-cat="tool" href="#tools">
+            <div class="img type"><span class="mono">Unity · C#</span><code>Particles.PlayParticle("HIT_SPARK",
+    position: hitPoint);
+instance.Follow(target);</code><img src="assets/work/toolkit-particles-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.tool">Tool</span><h3 data-i18n="kp.h3">Pooled VFX by ID</h3><span class="mono">ArtToolkit · Particles</span></div></div>
+          </a>
+          <a class="card" data-cat="fx" href="https://www.artstation.com/artwork/QKZn64" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-sidewalk-materials.jpg" alt="Three procedural Brazilian sidewalk materials" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="nav.fx">VFX &amp; Shaders</span><h3 data-i18n="sw.h3">Brazilian Sidewalks</h3><span class="mono">Substance 3D Designer</span></div><span class="mono">2025</span></div>
+          </a>
+
+          <a class="card" data-cat="3d" data-c="game" href="https://www.artstation.com/artwork/WBQJ8v" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-masked-horror.jpg" alt="Masked Horror creature" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>Masked Horror</h3><span class="mono">16,042 tris · Hired 2 Die: Moonlight Motel</span></div><span class="mono">2023</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="char" href="https://www.artstation.com/artwork/eRJA0G" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-ink-protector.jpg" alt="Ink Protector character" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>Ink Protector</h3><span class="mono" data-i18n="c.ink.m">NPR painterly render · Arnold</span></div><span class="mono">2024</span></div>
+          </a>
+          <a class="card" data-cat="fx" href="#shaders">
+            <div class="img type"><span class="mono" data-i18n="c.perf.m">Kreativitas · low-end Android</span><span class="big">~200<small>% FPS</small></span></div>
+            <div class="meta"><div><span class="label tag" data-i18n="nav.fx">VFX &amp; Shaders</span><h3 data-i18n="perf.h3">Mobile optimization pass</h3><span class="mono">HLSL · Unity · Maya · C#</span></div></div>
+          </a>
+
+          <a class="card" data-cat="tool" href="#tools">
+            <div class="img type"><span class="mono">Unity · C#</span><code>material.SetColorByID("PRIMARY",
+    palette);
+ColorsSO skin =
+    Colors.GetRandomColorsSO(catalog);</code><img src="assets/work/toolkit-colors-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.tool">Tool</span><h3 data-i18n="kc.h3">Palettes &amp; gradient atlases</h3><span class="mono">ArtToolkit · Colors</span></div></div>
+          </a>
+          <a class="card" data-cat="fx" href="https://www.artstation.com/artwork/ZlXEV1" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-survival-helicopter.jpg" alt="Survival game helicopter with color-customisation shader" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="nav.fx">VFX &amp; Shaders</span><h3 data-i18n="heli.h3">Colour-customisable vehicles</h3><span class="mono" data-i18n="c.heli.m">Recolour shader · Freelance</span></div><span class="mono">2025</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="game" href="https://www.artstation.com/artwork/Ezgdm0" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-survival-gun.jpg" alt="Survival game gun" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.gun">Survival Assets — Gun</h3><span class="mono" data-i18n="c.gun.m">Game-ready · rigged · Unreal</span></div><span class="mono">2025</span></div>
+          </a>
+
+          <a class="card" data-cat="3d" data-c="char" href="https://www.artstation.com/artwork/dK59qw" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-bard-lizard.jpg" alt="Bard companion lizard character" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.bard">Bard Companion</h3><span class="mono" data-i18n="c.bard.m">Sculpt → model → rig · Maya</span></div><span class="mono">2024</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="char" href="https://www.artstation.com/artwork/gRKDPK" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-rey-skywalker.jpg" alt="Rey Skywalker stylised character" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>Rey Skywalker</h3><span class="mono">Maya · ZBrush · Substance</span></div><span class="mono">2025</span></div>
+          </a>
+          <a class="card" data-cat="fx" href="#shaders">
+            <div class="img type"><span class="mono">Unity · URP · HLSL</span><span class="word">Multipass</span></div>
+            <div class="meta"><div><span class="label tag" data-i18n="nav.fx">VFX &amp; Shaders</span><h3 data-i18n="tk3.h">Multipass renderer feature</h3><span class="mono" data-i18n="c.mp.m">LightMode · Stencil outlines</span></div></div>
+          </a>
+
+          <a class="card" data-cat="3d" data-c="game" href="https://www.artstation.com/artwork/OvBKVe" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-survival-props.jpg" alt="Survival game props" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.props">Survival Assets — Props</h3><span class="mono" data-i18n="c.props.m">Concept → engine, solo</span></div><span class="mono">2025</span></div>
+          </a>
+          <a class="card" data-cat="tool" href="#tools">
+            <div class="img type"><span class="mono">Unity · UniTask</span><code>seq.Append(DuduTweenService.Move(
+    transform, Vector3.up,
+    duration: 1f));
+await showAnimation.PlayAsync();</code><img src="assets/work/dudutween-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.tool">Tool</span><h3>DuduTween</h3><span class="mono" data-i18n="c.dt.m">Tween layer + visual editor</span></div></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="char" href="https://www.artstation.com/artwork/QXEAQE" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-cordyceps-ant.jpg" alt="Ant infected with cordyceps" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.ant">Camponotus with Cordyceps</h3><span class="mono" data-i18n="c.ant.m">UDIM · 4 tiles · rigged</span></div><span class="mono">2023</span></div>
+          </a>
+
+          <a class="card" data-cat="tool" href="#tools">
+            <div class="img type"><span class="mono" data-i18n="c.ma.l">Scans for</span><code data-i18n="c.ma.code">triangle budgets
+unused tangents
+vertex colours
+extra UVs
+32-bit indices
+build size</code></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.tool">Tool</span><h3>Model Auditor</h3><span class="mono" data-i18n="c.ma.m">Unity editor window</span></div></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="prop" href="https://www.artstation.com/artwork/lDGqb5" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-little-market.jpg" alt="Little Market diorama" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.market">Little Market</h3><span class="mono" data-i18n="c.market.m">4K textures · Cycles</span></div><span class="mono">2023</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="char" href="https://www.artstation.com/artwork/Ke6ezX" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-succulent-sorcerer.jpg" alt="Succulent Sorcerer character" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>Succulent Sorcerer</h3><span class="mono">Blender · ZBrush · Marmoset</span></div><span class="mono">2023</span></div>
+          </a>
+
+          <a class="card" data-cat="3d" data-c="prop" href="https://www.artstation.com/artwork/g0JAQZ" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-sot-telescope.jpg" alt="Sea of Thieves telescope and treasure map" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>Sea of Thieves Props</h3><span class="mono" data-i18n="c.sot.m">Stylised · Marmoset</span></div><span class="mono">2023</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="prop" href="https://www.artstation.com/artwork/obJaVw" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-radio-prop.jpg" alt="Realistic radio prop" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.radio">Radio</h3><span class="mono" data-i18n="c.radio.m">Realistic PBR · Cycles</span></div><span class="mono">2023</span></div>
+          </a>
+          <a class="card" data-cat="tool" href="https://github.com/DuzeraFer/Illustrator-Color-Wheel" target="_blank" rel="noopener">
+            <div class="img type"><span class="mono">Illustrator · JavaScript</span><span class="word" data-i18n="c.cw.w">Hue ring + HSB triangle</span><img src="assets/work/color-wheel-1.jpg" alt="" loading="lazy" onerror="this.remove()"></div>
+            <div class="meta"><div><span class="label tag" data-i18n="tag.tool">Tool</span><h3>Illustrator Color Wheel</h3><span class="mono" data-i18n="c.cw.m">Open-source CEP panel</span></div></div>
+          </a>
+
+          <a class="card" data-cat="3d" data-c="prop" href="https://www.artstation.com/artwork/qeeE9D" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-scifi-bar.jpg" alt="Isometric sci-fi bar" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3 data-i18n="c.bar">Isometric Sci-Fi Bar</h3><span class="mono">Diorama · Blender · Maya</span></div><span class="mono">2023</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="prop" href="https://www.artstation.com/artwork/WXx9Jy" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-trashy-bros-can.jpg" alt="Trashy Bros can character prop" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>Can — Trashy Bros</h3><span class="mono">ZBrush · Maya</span></div><span class="mono">2025</span></div>
+          </a>
+          <a class="card" data-cat="3d" data-c="prop" href="https://www.artstation.com/artwork/6NbZKr" target="_blank" rel="noopener">
+            <div class="img"><img src="assets/work/art-at-st.jpg" alt="Star Wars AT-ST" loading="lazy"></div>
+            <div class="meta"><div><span class="label tag">3D</span><h3>AT-ST</h3><span class="mono" data-i18n="c.atst.m">Rebuilt · UVs, bakes, rig</span></div><span class="mono">2023</span></div>
+          </a>
+        </div>
+
+        <div class="work-foot"><a class="link" href="https://www.artstation.com/duzeraaa" target="_blank" rel="noopener" data-i18n="work.all">All 29 projects on ArtStation →</a></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="games" tabindex="-1">
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="nav.games">Projects</span>
+          <h2 data-i18n="ship.h2">Games I've shipped art for.</h2>
+          <p data-i18n="ship.p">Browser games for Poki with Kreativitas Studio, and educational games as a freelancer for Yellow Panda. Environment and 3D art, props, UI, shaders and VFX that look right and run smoothly on low-end phones.</p>
+        </div>
+
+        <div class="sub"><span class="label" data-i18n="ship.poki">Live on Poki · Kreativitas Studio</span><span class="mono" data-i18n="ship.poki.m">11M+ players · 35k+ votes</span></div>
+
+        <article class="pkg">
+          <div class="pkg-txt">
+            <span class="live label"><span class="dot" aria-hidden="true"></span><span data-i18n="game.live">Live on Poki</span></span>
+            <h3>Harvest Loop</h3>
+            <p data-i18n="game.hl.p">A farming-machine simulation: harvest crops, sell them, upgrade your machine and roll into bigger fields.</p>
+            <dl class="spec">
+              <div><dt data-i18n="game.studio">Studio</dt><dd>Kreativitas</dd></div>
+              <div><dt data-i18n="game.genre">Genre</dt><dd data-i18n="game.hl.genre">Simulation · Idle</dd></div>
+              <div><dt data-i18n="game.rating">Rating</dt><dd data-i18n="game.hl.rating">4.3 / 5 · 4,300 votes</dd></div>
+              <div><dt data-i18n="game.players">Players</dt><dd data-i18n="game.hl.players">1M+ in the first week</dd></div>
+            </dl>
+            <div class="mine">
+              <span class="label" data-i18n="mine.label">What I did</span>
+              <ul class="did">
+                <li data-i18n="did.env">Environment art</li>
+                <li data-i18n="did.props">Props</li>
+                <li data-i18n="did.vfx">VFX</li>
+                <li data-i18n="did.ui">UI</li>
+                <li data-i18n="did.skins">Skins</li>
+                <li data-i18n="did.opt">Optimization</li>
+              </ul>
+            </div>
+            <div class="go-row">
+              <a class="link" href="https://poki.com/en/g/harvest-loop" target="_blank" rel="noopener" data-i18n="game.play">Play on Poki →</a>
+            </div>
+          </div>
+          <div class="pkg-media loop">
+            <figure class="slot tall"><video src="assets/work/harvestloop-gameplay.mp4" data-auto muted loop playsinline preload="metadata" aria-label="Harvest Loop gameplay clip"></video></figure>
+            <figure class="slot strip"><img src="assets/work/harvestloop-crops.jpg" alt="Harvest Loop fields tiled with carrot and cabbage crops beside a tree line" loading="lazy"></figure>
+            <figure class="slot strip"><img src="assets/work/harvestloop-harvester.jpg" alt="The harvesting machine cutting rows through a field in Harvest Loop" loading="lazy"></figure>
+            <figure class="slot strip wide"><img src="assets/work/harvestloop-chicken.jpg" alt="A rim-lit chicken pickup in front of corn rows and a wooden fence" loading="lazy"></figure>
+          </div>
+        </article>
+
+        <article class="pkg flip">
+          <div class="pkg-txt">
+            <span class="live label"><span class="dot" aria-hidden="true"></span><span data-i18n="game.live">Live on Poki</span></span>
+            <h3>Snake vs Human</h3>
+            <p data-i18n="game.svh.p">An arcade shooter against ever-bigger serpents: collect resources, upgrade your firepower and hold the line.</p>
+            <dl class="spec">
+              <div><dt data-i18n="game.studio">Studio</dt><dd>Kreativitas × Clap Clap</dd></div>
+              <div><dt data-i18n="game.genre">Genre</dt><dd data-i18n="game.svh.genre">Shooter · Arcade</dd></div>
+              <div><dt data-i18n="game.rating">Rating</dt><dd data-i18n="game.svh.rating">4.5 / 5 · 31,502 votes</dd></div>
+              <div><dt data-i18n="game.players">Players</dt><dd data-i18n="game.svh.players">10M+ on Poki</dd></div>
+              <div><dt data-i18n="game.also">Also on</dt><dd data-i18n="game.svh.also">Google Play · App Store</dd></div>
+            </dl>
+            <div class="mine">
+              <span class="label" data-i18n="mine.label">What I did</span>
+              <ul class="did">
+                <li class="key" data-i18n="did.proto">On it since the first prototype</li>
+                <li data-i18n="did.env">Environment art</li>
+                <li data-i18n="did.props">Props</li>
+                <li data-i18n="did.vfx">VFX</li>
+                <li data-i18n="did.ui">UI</li>
+                <li data-i18n="did.skins">Skins</li>
+                <li data-i18n="did.opt">Optimization</li>
+              </ul>
+            </div>
+            <div class="go-row">
+              <a class="link" href="https://poki.com/en/g/snake-vs-human" target="_blank" rel="noopener" data-i18n="game.play">Play on Poki →</a>
+              <a class="link" href="https://play.google.com/store/apps/details?id=com.KreativitasStudio.SnakevsHuman" target="_blank" rel="noopener" data-i18n="game.gplay">Get it on Google Play →</a>
+              <a class="link" href="https://apps.apple.com/us/app/snake-vs-human/id6569263310" target="_blank" rel="noopener" data-i18n="game.appstore">Get it on the App Store →</a>
+            </div>
+          </div>
+          <div class="pkg-media shots">
+            <figure class="slot"><img src="assets/work/snake-play-meadow.jpg" alt="Top-down meadow level in Snake vs Human with the snake coiled around the arena" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/snake-play-skills.jpg" alt="Snake vs Human skill selection panel with critical, frontal shot and attack speed cards" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/snake-play-died.jpg" alt="Defeat screen with the purple snake looming over the player at night" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/snake-play-desert.jpg" alt="Desert level with a large red serpent head filling the lower half of the arena" loading="lazy"></figure>
+          </div>
+        </article>
+
+        <div class="sub gap-l"><span class="label" data-i18n="ship.yp">Educational games · Freelance for Yellow Panda</span><span class="mono">2026</span></div>
+
+        <article class="pkg">
+          <div class="pkg-txt">
+            <span class="label" data-i18n="pp.label">Multiplayer educational platformer</span>
+            <h3>Pop&amp;Play</h3>
+            <p data-i18n="pp.p">Teachers turn their lessons into levels: they add their own content to the game and design stages together with their class, so studying becomes something students play, together.</p>
+            <dl class="spec">
+              <div><dt data-i18n="game.studio">Studio</dt><dd>Yellow Panda</dd></div>
+              <div><dt data-i18n="game.role">Role</dt><dd data-i18n="yp.role">Environment art · Props · UI · VFX</dd></div>
+            </dl>
+            <a class="link" href="https://www.instagram.com/p/DZFzvBJCqJv/" target="_blank" rel="noopener" data-i18n="pp.link">The art of Pop&amp;Play on Instagram →</a>
+          </div>
+          <div class="pkg-media">
+            <figure class="slot wide"><img src="assets/work/popnplay-night.jpg" alt="Pop&amp;Play night-forest level with floating purple platforms and star pickups" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/popnplay-meadow.jpg" alt="Animal characters jumping across grassy platforms in daylight" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/popnplay-jungle.jpg" alt="Rainy jungle level with mossy platforms, thorns and star pickups" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/popnplay-hazards.jpg" alt="Character gliding past bomb hazards in a misty jungle" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/popnplay-night-2.jpg" alt="Tiger character crossing wooden platforms in the night forest" loading="lazy"></figure>
+          </div>
+        </article>
+
+        <article class="case reel">
+          <figure><video src="assets/work/libras-game.mp4" data-auto muted loop playsinline preload="metadata" aria-label="Libras em Ação gameplay clip"></video></figure>
+          <div class="txt">
+            <span class="label" data-i18n="lb.label">Sign-language learning game</span>
+            <h3>Libras em Ação</h3>
+            <p data-i18n="lb.p">A game for learning Brazilian Sign Language (Libras) in a fun, interactive way. An XReall initiative funded by Fapesc, Santa Catarina's research and innovation foundation, with technical production by Yellow Panda.</p>
+            <dl class="spec">
+              <div><dt data-i18n="lb.client">Client</dt><dd>XReall · Fapesc</dd></div>
+              <div><dt data-i18n="game.studio">Studio</dt><dd>Yellow Panda</dd></div>
+              <div><dt data-i18n="game.role">Role</dt><dd data-i18n="yp.role">Environment art · Props · UI · VFX</dd></div>
+            </dl>
+            <a class="link" href="https://www.instagram.com/p/DV1PHTSEen1/" target="_blank" rel="noopener" data-i18n="lb.link">Watch the reel on Instagram →</a>
+          </div>
+        </article>
+
+        <div class="more">
+          <span class="label" data-i18n="more.label">And many more</span>
+          <p data-i18n="more.p">Beyond these, I've shipped assets, shaders and VFX on many hyper-casual and hybrid-casual mobile titles at Kreativitas Studio and Electric Monkeys, plus freelance work such as the creature for <em>Hired 2 Die: Moonlight Motel</em>.</p>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="shaders" tabindex="-1">
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="nav.fx">VFX &amp; Shaders</span>
+          <h2 data-i18n="ta.h2">Looks built to be tweaked, and made to run.</h2>
+          <p data-i18n="ta.p">Shaders, materials and tools I build so the art team moves faster and the game stays in budget.</p>
+        </div>
+
+        <div class="viewer" aria-label="URP render features viewer">
+          <div class="viewer-head">
+            <span class="label">Renderer Features — Unity URP</span>
+            <a class="mono link" href="https://www.artstation.com/artwork/V2086P" target="_blank" rel="noopener" data-i18n="viewer.link">Watch the showcase on ArtStation →</a>
+          </div>
+          <div class="frame">
+            <img id="frameA" src="assets/work/art-postprocess-comparison.jpg" alt="Post-process feature comparison in Unity URP" loading="lazy">
+            <img id="frameB" class="off" src="" alt="" aria-hidden="true">
+          </div>
+          <div class="tabs" role="tablist" aria-label="Render feature">
+            <button class="tab" role="tab" aria-selected="true" data-i="0" data-i18n="tab.cmp">Comparison</button>
+            <button class="tab" role="tab" aria-selected="false" data-i="1">SSAO</button>
+            <button class="tab" role="tab" aria-selected="false" data-i="2">Bloom</button>
+            <button class="tab" role="tab" aria-selected="false" data-i="3">Outline</button>
+            <button class="tab" role="tab" aria-selected="false" data-i="4" data-i18n="tab.fog">Gradient fog</button>
+          </div>
+          <div class="viewer-note">
+            <p id="note">Every effect is a renderer feature with a fullscreen shader, tuned per Volume Profile — so artists change the look without touching code.</p>
+            <span class="mono" id="noteMeta">Fullscreen passes · Volume Profiles · HLSL</span>
+          </div>
+        </div>
+
+        <div class="perf">
+          <div class="big" aria-label="~200% FPS">~200<small>% FPS</small></div>
+          <div class="txt">
+            <span class="label">Performance · Kreativitas Studio</span>
+            <h3 data-i18n="perf.h3">Mobile optimization pass</h3>
+            <p data-i18n="perf.p">As lead artist on a performance push for Android, I reworked shaders, meshes and runtime art setup, reaching roughly a 200% frame-rate gain on low-end devices.</p>
+            <span class="mono">HLSL · Unity · Maya · C#</span>
+          </div>
+        </div>
+
+        <article class="case">
+          <figure><img src="assets/work/art-sidewalk-materials.jpg" alt="Three procedural Brazilian sidewalk materials" loading="lazy" width="4096" height="2048"></figure>
+          <div class="txt">
+            <span class="label" data-i18n="sw.label">Procedural materials · 2025</span>
+            <h3 data-i18n="sw.h3">Brazilian Sidewalks</h3>
+            <p data-i18n="sw.p">Three fully procedural Substance Designer graphs of famous Brazilian sidewalk patterns: São Paulo's “Bernardes”, a Sorocaba classic and Copacabana's wave.</p>
+            <dl class="spec">
+              <div><dt data-i18n="spec.tool">Tool</dt><dd>Substance 3D Designer</dd></div>
+              <div><dt data-i18n="spec.output">Output</dt><dd class="mono" data-i18n="sw.out">4096 × 2048 · full PBR map set</dd></div>
+            </dl>
+            <a class="link" href="https://www.artstation.com/artwork/QKZn64" target="_blank" rel="noopener" data-i18n="sw.link">View breakdown →</a>
+          </div>
+        </article>
+
+        <article class="case">
+          <figure><img src="assets/work/art-survival-helicopter.jpg" alt="Survival game helicopter with color-customisation shader" loading="lazy" width="1920" height="1080"></figure>
+          <div class="txt">
+            <span class="label" data-i18n="heli.label">Freelance · Survival game · 2025</span>
+            <h3 data-i18n="heli.h3">Colour-customisable vehicles</h3>
+            <p data-i18n="heli.p">As solo 3D artist on a survival game in development, I took the assets from concept to texturing and into the engine. I also wrote a shader that lets designers recolour the helicopter in engine instead of re-authoring textures.</p>
+            <dl class="spec">
+              <div><dt data-i18n="spec.pipe">Pipeline</dt><dd>Maya · ZBrush · Substance · Unreal</dd></div>
+              <div><dt data-i18n="spec.delivery">Delivery</dt><dd data-i18n="heli.del">Game-ready, rigged for animation</dd></div>
+            </dl>
+            <a class="link" href="https://www.artstation.com/artwork/ZlXEV1" target="_blank" rel="noopener" data-i18n="heli.link">View project →</a>
+          </div>
+        </article>
+
+        <div class="kit-also">
+          <span class="label" data-i18n="fx.more">More shader work</span>
+          <div class="toolkit c2">
+            <div class="tool">
+              <span class="label">Unity · HLSL</span>
+              <h4 data-i18n="tk1.h">Studio shader library</h4>
+              <p data-i18n="tk1.p">Wrote every shader for Kreativitas projects and documented how artists should use them.</p>
+            </div>
+            <div class="tool">
+              <span class="label">Unity · URP</span>
+              <h4 data-i18n="tk3.h">Multipass renderer feature</h4>
+              <p data-i18n="tk3.p">Adds LightMode-tagged multipass shaders to URP, with stencil values driving different outlines.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="tools" tabindex="-1">
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="nav.tools">Tools</span>
+          <h2 data-i18n="tools.h2">Tools that make the whole team faster.</h2>
+          <p data-i18n="tools.p">A free editor extension I publish on the Unity Asset Store, and the Unity packages every Kreativitas game is built on.</p>
+        </div>
+
+        <article class="pkg">
+          <div class="pkg-txt">
+            <span class="label" data-i18n="gz.label">Unity Asset Store · Free · 2026</span>
+            <h3>Gizmos Drawer</h3>
+            <p data-i18n="gz.p">Editor gizmos, zero code. Drop a Gizmo component on any GameObject and tune it in the Inspector instead of writing OnDrawGizmos for every raycast, patrol route or vision cone. Any value can follow a live float on another component, so an AI's vision cone always matches its real detection radius.</p>
+            <dl class="spec">
+              <div><dt data-i18n="spec.incl">Includes</dt><dd data-i18n="gz.incl">27 gizmos · primitives, vectors, movement, locators, colliders, grids, rigging</dd></div>
+              <div><dt data-i18n="spec.compat">Works with</dt><dd data-i18n="gz.compat">Unity 6 · Built-in, URP and HDRP · editor-only</dd></div>
+            </dl>
+            <a class="btn" href="https://assetstore.unity.com/packages/tools/utilities/gizmos-drawer-371358" target="_blank" rel="noopener" data-i18n="gz.cta">Get it on the Asset Store</a>
+          </div>
+          <div class="pkg-media">
+            <figure class="slot wide"><img src="assets/work/gizmos-primitives.jpg" alt="Primitive gizmos: cubes, planes, spheres, capsules, arcs, stars and arrows" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/gizmos-vectors.jpg" alt="Vector gizmos: waypoint path with distance labels, angle arc and direction arrow" loading="lazy"></figure>
+            <figure class="slot"><img src="assets/work/gizmos-rigging.jpg" alt="Rigging gizmos: bone chain with joint spheres and a rotation-limit arc" loading="lazy"></figure>
+            <figure class="slot wide"><img src="assets/work/gizmos-nocode.jpg" alt="Before and after: a component with no OnDrawGizmos code needed" loading="lazy"></figure>
+          </div>
+        </article>
+
+        <div class="sec-head gap-l">
+          <span class="label" data-i18n="kit.label">Studio toolkit · Kreativitas</span>
+          <h2 data-i18n="kit.h2">The tools every game at the studio is built on.</h2>
+          <p data-i18n="kit.p">Unity packages I built and maintain at Kreativitas Studio. Each game pulls them in as Git submodules, so every project shares one art pipeline. The repositories are private.</p>
+        </div>
+
+        <article class="pkg">
+          <div class="pkg-txt">
+            <span class="label">Kreativitas.ArtToolkit · Colors</span>
+            <h3 data-i18n="kc.h3">Palettes &amp; gradient atlases</h3>
+            <p data-i18n="kc.p">Palettes live in ScriptableObjects where every named colour maps to a shader property, so any material or particle can be recoloured by ID. Catalogs group palettes into themes and skins. Gradient assets bake a Unity Gradient into a texture, and the Gradient Atlas packs many ramps into one power-of-two texture that re-bakes live while you edit.</p>
+            <dl class="spec">
+              <div><dt>Bake</dt><dd data-i18n="kc.bake">Texture sub-assets · 8–1024 px · horizontal or vertical</dd></div>
+              <div><dt data-i18n="spec.comp">Compression</dt><dd data-i18n="kc.comp">Picked per build target at bake time: ETC2, ASTC or DXT, crunch optional</dd></div>
+            </dl>
+            <pre class="code"><code>material.SetColorByID("PRIMARY", palette);
+ColorsSO skin = Colors.GetRandomColorsSO(catalog);</code></pre>
+          </div>
+          <div class="pkg-media">
+            <figure class="slot wide" data-file="assets/work/toolkit-colors-1.jpg"><img src="assets/work/toolkit-colors-1.jpg" alt="Colors palettes and gradient atlas in Unity" loading="lazy" onerror="this.remove()"></figure>
+            <figure class="slot" data-file="assets/work/toolkit-colors-2.jpg"><img src="assets/work/toolkit-colors-2.jpg" alt="ColorsSO inspector" loading="lazy" onerror="this.remove()"></figure>
+            <figure class="slot" data-file="assets/work/toolkit-colors-3.jpg"><img src="assets/work/toolkit-colors-3.jpg" alt="Gradient atlas texture" loading="lazy" onerror="this.remove()"></figure>
+          </div>
+        </article>
+
+        <article class="pkg flip">
+          <div class="pkg-txt">
+            <span class="label">Kreativitas.ArtToolkit · Particles</span>
+            <h3 data-i18n="kp.h3">Pooled VFX by ID</h3>
+            <p data-i18n="kp.p">Every effect in the studio's games spawns through one pooled API: particles, trails, Feel MMF Players and floating text. The catalog fills itself from folders whenever files are added or moved, pools warm up in async batches so startup never spikes, and a particle can follow a moving target without being parented to it — returning itself to the pool when the target is destroyed.</p>
+            <dl class="spec">
+              <div><dt data-i18n="spec.types">Types</dt><dd>Particle · Trail · MMF Player · Floating Text · Other</dd></div>
+              <div><dt>Extras</dt><dd data-i18n="kp.extras">Palette recolouring · UI-canvas particles · no-code Spawner component</dd></div>
+            </dl>
+            <pre class="code"><code>Particles.PlayParticle("HIT_SPARK", position: hitPoint);
+instance.Follow(target);</code></pre>
+          </div>
+          <div class="pkg-media">
+            <figure class="slot wide" data-file="assets/work/toolkit-particles-1.jpg"><img src="assets/work/toolkit-particles-1.jpg" alt="Particle effects spawned through the pooled Particles API" loading="lazy" onerror="this.remove()"></figure>
+            <figure class="slot" data-file="assets/work/toolkit-particles-2.jpg"><img src="assets/work/toolkit-particles-2.jpg" alt="ParticlesCatalogSO inspector" loading="lazy" onerror="this.remove()"></figure>
+            <figure class="slot" data-file="assets/work/toolkit-particles-3.jpg"><img src="assets/work/toolkit-particles-3.jpg" alt="ParticlesSO configuration" loading="lazy" onerror="this.remove()"></figure>
+          </div>
+        </article>
+
+        <article class="pkg">
+          <div class="pkg-txt">
+            <span class="label">Kreativitas.DuduTween</span>
+            <h3 data-i18n="kd.h3">A tween layer with a visual editor</h3>
+            <p data-i18n="kd.p">A tween converter: game code only ever calls DuduTweenService, and a provider translates those calls to the backend library — PrimeTween today — so the library underneath can change without touching gameplay. Its visual editor, the Dudu Tween Player, builds sequences from reorderable Inspector steps — transforms, RectTransforms, shader properties, CanvasGroup and Image alpha, intervals and callbacks — and previews them in edit mode, restoring every value afterwards.</p>
+            <dl class="spec">
+              <div><dt>Backend</dt><dd data-i18n="kd.back">PrimeTween, swappable through IDuduTweenProvider</dd></div>
+              <div><dt data-i18n="spec.auth">Authoring</dt><dd data-i18n="kd.auth">Append · Join · Insert · 27 eases · UniTask await</dd></div>
+            </dl>
+            <pre class="code"><code>seq.Append(DuduTweenService.Move(transform, Vector3.up, duration: 1f));
+await showAnimation.PlayAsync();</code></pre>
+          </div>
+          <div class="pkg-media">
+            <figure class="slot wide" data-file="assets/work/dudutween-1.jpg"><img src="assets/work/dudutween-1.jpg" alt="Dudu Tween Player visual editor" loading="lazy" onerror="this.remove()"></figure>
+            <figure class="slot" data-file="assets/work/dudutween-2.jpg"><img src="assets/work/dudutween-2.jpg" alt="DuduTween step list in the Inspector" loading="lazy" onerror="this.remove()"></figure>
+            <figure class="slot" data-file="assets/work/dudutween-3.jpg"><img src="assets/work/dudutween-3.jpg" alt="Tween sequence playing in game" loading="lazy" onerror="this.remove()"></figure>
+          </div>
+        </article>
+
+        <div class="kit-also">
+          <span class="label" data-i18n="ka.label">Also in the toolkit</span>
+          <div class="toolkit">
+            <div class="tool">
+              <span class="label">Unity · DuduTween</span>
+              <h4 data-i18n="ka1.h">UI animations</h4>
+              <p data-i18n="ka1.p">Button click, deny shake, toggle and pulse loops built on DuduTween and tuned from one config.</p>
+            </div>
+            <div class="tool">
+              <span class="label">Unity · Editor</span>
+              <h4>Model Auditor</h4>
+              <p data-i18n="ka2.p">An editor window that scans model folders for triangle budgets, wasted vertex data — unused tangents, colours, extra UVs, 32-bit indices — and measured build size.</p>
+            </div>
+            <div class="tool">
+              <span class="label">Unity · TextMeshPro</span>
+              <h4>Feedbacks</h4>
+              <p data-i18n="ka3.p">Pooled floating text and camera-facing billboards that can update every N frames.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="kit-also">
+          <span class="label" data-i18n="tools.more">More tools</span>
+          <div class="toolkit c2">
+            <div class="tool">
+              <span class="label">Unity · C#</span>
+              <h4 data-i18n="tk2.h">Animation-clip VFX tools</h4>
+              <p data-i18n="tk2.p">Custom editor tools to add VFX and swap textures straight from animation clips.</p>
+            </div>
+            <div class="tool">
+              <span class="label">Maya · Python / MEL</span>
+              <h4 data-i18n="tk4.h">Modelling accelerators</h4>
+              <p data-i18n="tk4.p">Personal Maya scripts that remove repetitive steps from my modelling workflow.</p>
+            </div>
+            <div class="tool">
+              <span class="label">Illustrator · JavaScript</span>
+              <h4>Illustrator Color Wheel</h4>
+              <p data-i18n="tk5.p">An open-source CEP panel with a Photoshop-style hue ring and HSB triangle, live fill and stroke, and CMYK-aware conversion.</p>
+              <a class="link" href="https://github.com/DuzeraFer/Illustrator-Color-Wheel" target="_blank" rel="noopener">GitHub →</a>
+            </div>
+            <div class="tool">
+              <span class="label" data-i18n="tk6.l">Documentation</span>
+              <h4 data-i18n="tk6.h">Pipelines other people can follow</h4>
+              <p data-i18n="tk6.p">Asset-creation and Unity-import guides at Kreativitas, and a UI-building guide that let a freelance client make his own UIs.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="3d" tabindex="-1">
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="work.label">3D Work</span>
+          <h2 data-i18n="work.h2">Characters, props and game assets.</h2>
+        </div>
+
+        <div class="filters" role="group" aria-label="Filter 3D work">
+          <button class="filter" aria-pressed="true" data-f="all"><span data-i18n="f.all">All</span><sup>15</sup></button>
+          <button class="filter" aria-pressed="false" data-f="game"><span data-i18n="f.game">Game assets</span><sup>3</sup></button>
+          <button class="filter" aria-pressed="false" data-f="char"><span data-i18n="f.char">Characters</span><sup>6</sup></button>
+          <button class="filter" aria-pressed="false" data-f="prop"><span data-i18n="f.prop">Props &amp; scenes</span><sup>6</sup></button>
+        </div>
+
+        <div class="grid" id="grid3d"></div>
+
+        <div class="work-foot"><a class="link" href="https://www.artstation.com/duzeraaa" target="_blank" rel="noopener" data-i18n="work.all">All 29 projects on ArtStation →</a></div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="about" tabindex="-1">
+    <section class="block">
+      <div class="wrap">
+        <div class="sec-head">
+          <span class="label" data-i18n="nav.about">About</span>
+          <h2 data-i18n="xp.h2">Four years shipping art that runs.</h2>
+          <p data-i18n="ab.p">I'm a Technical Artist and 3D Artist from Sorocaba, Brazil. I studied Digital Games at UNISO, started freelancing in 2022 and made hyper-casual assets at Electric Monkeys before joining Kreativitas Studio in 2023, where I write the shaders and build the Unity tools the studio's games run on.</p>
+        </div>
+
+        <div class="sub">
+          <span class="label" data-i18n="xp.label">Experience</span>
+          <a class="mono link resume" href="assets/Eduardo-Fernandes-Resume.pdf" target="_blank" rel="noopener" data-i18n="hero.cv">Résumé (PDF) →</a>
+        </div>
+        <div class="xp">
+          <div class="xp-row">
+            <div class="when" data-i18n="xp1.when">Aug 2023 — Present</div>
+            <div class="role"><h3>Kreativitas Studio</h3><span class="label" data-i18n="xp.3dta">3D Artist / Technical Artist</span></div>
+            <ul>
+              <li data-i18n="xp1.a">Wrote <b>every shader</b> for the studio's projects and documented how to use them.</li>
+              <li data-i18n="xp1.b">Led a mobile performance pass that gained <b>~200% FPS</b> on low-end Android.</li>
+              <li data-i18n="xp1.f">Built and maintain the studio's <b>ArtToolkit</b> and <b>DuduTween</b> Unity packages, shared across its games as Git submodules.</li>
+              <li data-i18n="xp1.c">Built Unity C# tools that drive VFX and texture swaps from animation clips.</li>
+              <li data-i18n="xp1.d">Made props, characters and VFX for casual games on mobile and Poki.</li>
+              <li data-i18n="xp1.e">Maintained the studio's asset-creation and Unity-import documentation.</li>
+            </ul>
+          </div>
+          <div class="xp-row">
+            <div class="when" data-i18n="xpy.when">2025 — Present</div>
+            <div class="role"><h3>Yellow Panda</h3><span class="label" data-i18n="xpy.role">Freelance Artist</span></div>
+            <ul>
+              <li data-i18n="xpy.a">Environment art, props, UI and VFX for educational games, including <b>Pop&amp;Play</b> and <b>Libras em Ação</b>.</li>
+              <li data-i18n="xpy.b">Pop&amp;Play is a multiplayer platformer where teachers build their lessons into levels; Libras em Ação teaches Brazilian Sign Language.</li>
+            </ul>
+          </div>
+          <div class="xp-row">
+            <div class="when" data-i18n="xp2.when">Mentorship</div>
+            <div class="role"><h3>Uplink</h3><span class="label">Mentor</span></div>
+            <ul>
+              <li data-i18n="xp2.a">Mentored on technical art, shaders and VFX.</li>
+              <li data-i18n="xp2.b">Taught the 3D pipeline from sculpt to engine, plus Unity development.</li>
+              <li data-i18n="xp2.c">Reviewed portfolios and gave career guidance.</li>
+            </ul>
+          </div>
+          <div class="xp-row">
+            <div class="when" data-i18n="xp3.when">Oct 2022 — Present</div>
+            <div class="role"><h3>Freelance</h3><span class="label" data-i18n="xp.3dta">3D Artist / Technical Artist</span></div>
+            <ul>
+              <li data-i18n="xp3.a">Made game-ready props and characters for several projects, including <b>Hired 2 Die: Moonlight Motel</b>.</li>
+              <li data-i18n="xp3.b">Brought assets into Unreal and Unity, and wrote the shaders and materials each client needed.</li>
+              <li data-i18n="xp3.c">Documented a Unity UI workflow so a client could build UIs on his own.</li>
+            </ul>
+          </div>
+          <div class="xp-row">
+            <div class="when" data-i18n="xp4.when">May 2023 — Aug 2023</div>
+            <div class="role"><h3>Electric Monkeys</h3><span class="label" data-i18n="xp.3d">3D Artist</span></div>
+            <ul>
+              <li data-i18n="xp4.a">Made props and characters for hyper-casual mobile games, integrated them in Unity and added VFX.</li>
+            </ul>
+          </div>
+          <div class="xp-row">
+            <div class="when" data-i18n="xp5.when">Graduated Jul 2023</div>
+            <div class="role"><h3>UNISO</h3><span class="label" data-i18n="xp5.deg">Associate Degree, Digital Games</span></div>
+            <ul>
+              <li>Universidade de Sorocaba, São Paulo.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mentor gap-l">
+          <div class="lead">
+            <span class="label" data-i18n="m.label">Mentorship · Uplink</span>
+            <h3 data-i18n="m.h3">Teaching what I use every day.</h3>
+            <p data-i18n="m.p">As a mentor at Uplink, I guided people breaking into games through the technical and artistic sides of production, from the first sculpt to a shader running in engine.</p>
+          </div>
+          <div class="areas">
+            <div class="area"><h4 data-i18n="m.a1.h">Tech art &amp; shaders</h4><p data-i18n="m.a1.p">HLSL and Shader Graph, VFX, and how to profile and optimise.</p></div>
+            <div class="area"><h4 data-i18n="m.a2.h">3D art pipeline</h4><p data-i18n="m.a2.p">Sculpting, retopology, UVs, baking, texturing and engine import.</p></div>
+            <div class="area"><h4 data-i18n="m.a3.h">Unity &amp; game dev</h4><p data-i18n="m.a3.p">Scene setup, URP, C# tooling and how production really works.</p></div>
+            <div class="area"><h4 data-i18n="m.a4.h">Portfolio &amp; career</h4><p data-i18n="m.a4.p">Portfolio reviews, presenting work and preparing for studio roles.</p></div>
+          </div>
+        </div>
+
+        <div class="gap-l">
+          <div class="sub"><span class="label" data-i18n="sk.label">Skills</span></div>
+          <div class="skills">
+            <div><span class="label">Engines</span><ul><li>Unity (URP)</li><li>Unreal Engine</li></ul></div>
+            <div><span class="label" data-i18n="sk.code">Code</span><ul><li>HLSL</li><li>C#</li><li>Python / MEL</li><li>JavaScript (CEP)</li></ul></div>
+            <div><span class="label" data-i18n="sk.3d">3D &amp; Texturing</span><ul><li>Maya</li><li>ZBrush</li><li>Blender</li><li>Substance Painter &amp; Designer</li><li>Marmoset Toolbag</li></ul></div>
+            <div><span class="label" data-i18n="sk.lang">Languages</span><ul><li data-i18n="sk.pt">Portuguese — native</li><li data-i18n="sk.en">English — professional</li></ul></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div class="view" data-v="contact" tabindex="-1">
+    <section class="block contact">
+      <div class="wrap">
+        <span class="label" data-i18n="ct.label">Contact</span>
+        <h2 data-i18n="ct.h2">Let's make your game look right — and run fast.</h2>
+        <div class="contact-row">
+          <div class="mail">
+            <a class="addr link" href="mailto:eduardo2002.fernandes@gmail.com">eduardo2002.fernandes@gmail.com</a>
+            <a class="btn resume" href="assets/Eduardo-Fernandes-Resume.pdf" target="_blank" rel="noopener" data-i18n="ct.cv">Download résumé</a>
+          </div>
+          <ul class="socials">
+            <li><a href="https://www.artstation.com/duzeraaa" target="_blank" rel="noopener">ArtStation <span>/duzeraaa</span></a></li>
+            <li><a href="https://www.linkedin.com/in/eduardo-fernandes-3d/" target="_blank" rel="noopener">LinkedIn <span>/eduardo-fernandes-3d</span></a></li>
+            <li><a href="https://github.com/DuzeraFer" target="_blank" rel="noopener">GitHub <span>/DuzeraFer</span></a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </div>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <a class="next" id="next" href="#all"><span class="label" data-i18n="next">Next</span><span class="next-name"><span id="nextName">All</span> →</span></a>
+    <div class="colophon">
+      <span class="label">© 2026 Eduardo Fernandes</span>
+      <span class="label" data-i18n="ct.loc">Sorocaba · São Paulo · Brazil</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var root=document.documentElement;
+  function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
+  function read(k){try{return localStorage.getItem(k)}catch(e){return null}}
+
+  var PT={
+    "t.light":"Claro","t.dark":"Escuro",
+    "brand.role":"Artista Técnico","bar.avail":"Disponível para trabalho",
+    "nav.sum":"Resumo","nav.all":"Todos","nav.games":"Projetos","nav.fx":"VFX e Shaders","nav.tools":"Ferramentas","nav.about":"Sobre","nav.contact":"Contato",
+    "hero.role":"Artista Técnico · Artista 3D","hero.loc":"Sorocaba, Brasil",
+    "hero.h1":"Shaders, ferramentas e arte pronta para&nbsp;jogos.",
+    "hero.p":"Escrevo HLSL para Unity URP, crio ferramentas em C#, Python e MEL e entrego assets 3D para jogos mobile e web — dois deles no ar na Poki agora mesmo.",
+    "hero.cta":"Ver trabalhos","hero.cv":"Currículo (PDF) →","hero.avail":"Disponível para CLT, contrato e freelance",
+    "feat.go":"Ver VFX e Shaders →",
+    "st.fps":"Ganho de FPS em Android low-end","st.games":"Jogos no ar na Poki","st.votes":"Votos de jogadores na Poki","st.yrs":"4 anos","st.yrs.l":"Entregando arte de jogos",
+    "sum.label":"Índice","sum.h2":"Navegue por área.",
+    "sum.games":"Dois jogos no ar na Poki com mais de 35 mil votos, além de jogos educacionais com a Yellow Panda.",
+    "sum.fx":"Renderer features no URP, materiais procedurais e uma otimização com ~200% de FPS.",
+    "sum.tools":"Uma extensão gratuita na Asset Store e três pacotes Unity usados em todos os jogos do estúdio.",
+    "sum.3d":"Personagens, props e assets prontos para jogo, da escultura à engine.",
+    "sum.more":"Experiência, mentoria e habilidades →",
+    "ab.p":"Sou Artista Técnico e Artista 3D de Sorocaba, Brasil. Estudei Jogos Digitais na UNISO, comecei como freelancer em 2022 e criei assets hiper-casuais na Electric Monkeys antes de entrar na Kreativitas Studio em 2023, onde escrevo os shaders e crio as ferramentas Unity que os jogos do estúdio usam.",
+    "all.label":"Todos os trabalhos","all.h2":"Tudo em um só lugar.","all.p":"Jogos, shaders, ferramentas e arte 3D. Escolha uma categoria acima para filtrar.",
+    "tag.game":"Jogo","tag.tool":"Ferramenta",
+    "c.rf.m":"SSAO · Bloom · Outline · Névoa","c.perf.m":"Kreativitas · Android low-end","c.heli.m":"Shader de recolorir · Freelance",
+    "c.mp.m":"LightMode · outlines por stencil","c.dt.m":"Camada de tween + editor visual",
+    "c.ma.l":"Verifica","c.ma.code":"orçamento de triângulos\ntangentes sem uso\ncores de vértice\nUVs extras\níndices 32-bit\ntamanho no build","c.ma.m":"Janela de editor da Unity",
+    "c.cw.w":"Anel de matiz + triângulo HSB","c.cw.m":"Painel CEP open source",
+    "viewer.link":"Veja o showcase no ArtStation →",
+    "tab.cmp":"Comparação","tab.fog":"Névoa gradiente",
+    "ship.h2":"Jogos em que entreguei a arte.",
+    "ship.p":"Jogos de navegador para a Poki com a Kreativitas Studio e jogos educacionais como freelancer para a Yellow Panda. Arte 3D e de cenário, props, UI, shaders e VFX bonitos e que rodam liso até em celulares low-end.",
+    "ship.poki":"No ar na Poki · Kreativitas Studio","ship.poki.m":"11M+ jogadores · 35 mil+ votos",
+    "ship.yp":"Jogos educacionais · Freelance para a Yellow Panda",
+    "xpy.when":"2025 — Atual","xpy.role":"Artista Freelancer",
+    "xpy.a":"Arte de cenário, props, UI e VFX para jogos educacionais, incluindo <b>Pop&amp;Play</b> e <b>Libras em Ação</b>.",
+    "xpy.b":"Pop&amp;Play é um jogo de plataforma multiplayer em que professores transformam aulas em fases; Libras em Ação ensina a Língua Brasileira de Sinais.",
+    "pp.label":"Jogo de plataforma educacional multiplayer",
+    "pp.p":"Professores transformam aulas em fases: adicionam o próprio conteúdo ao jogo e criam os níveis junto com a turma, e estudar vira algo que os alunos jogam juntos.",
+    "yp.role":"Arte de cenário · Props · UI · VFX",
+    "pp.link":"A arte de Pop&amp;Play no Instagram →",
+    "lb.label":"Jogo para aprender língua de sinais",
+    "lb.p":"Um jogo para aprender a Língua Brasileira de Sinais (Libras) de forma divertida e interativa. Uma iniciativa da XReall com fomento da Fapesc, a fundação de pesquisa e inovação de Santa Catarina, e produção técnica da Yellow Panda.",
+    "lb.client":"Cliente","lb.link":"Veja o vídeo no Instagram →",
+    "c.pp.m":"Yellow Panda · Jogo educacional","c.gz.m":"Unity Asset Store · Grátis",
+    "tools.h2":"Ferramentas que deixam o time todo mais rápido.",
+    "tools.p":"Uma extensão de editor gratuita que publico na Unity Asset Store e os pacotes Unity sobre os quais cada jogo da Kreativitas é construído.",
+    "gz.label":"Unity Asset Store · Grátis · 2026",
+    "gz.p":"Gizmos de editor, zero código. Coloque um componente Gizmo em qualquer GameObject e ajuste no Inspector em vez de escrever OnDrawGizmos para cada raycast, rota de patrulha ou cone de visão. Qualquer valor pode seguir um float ao vivo de outro componente, então o cone de visão de uma IA sempre bate com o raio de detecção real.",
+    "spec.incl":"Inclui","gz.incl":"27 gizmos · primitivas, vetores, movimento, localizadores, colliders, grids, rigging",
+    "spec.compat":"Compatível","gz.compat":"Unity 6 · Built-in, URP e HDRP · só no editor",
+    "gz.cta":"Baixar na Asset Store",
+    "game.live":"No ar na Poki",
+    "game.hl.p":"Um simulador de máquina agrícola: colha, venda, melhore sua máquina e avance para campos maiores.",
+    "game.svh.p":"Um shooter arcade contra serpentes cada vez maiores: colete recursos, aumente seu poder de fogo e segure a linha.",
+    "game.studio":"Estúdio","game.genre":"Gênero","game.rating":"Avaliação","game.role":"Função",
+    "game.hl.genre":"Simulação · Idle","game.svh.genre":"Tiro · Arcade",
+    "game.hl.rating":"4,3 / 5 · 4.300 votos","game.svh.rating":"4,5 / 5 · 31.502 votos",
+    "game.players":"Jogadores","game.hl.players":"1M+ na primeira semana","game.svh.players":"10M+ na Poki",
+    "game.also":"Também em","game.svh.also":"Google Play · App Store","game.gplay":"Baixar no Google Play →","game.appstore":"Baixar na App Store →",
+    "mine.label":"O que eu fiz",
+    "did.env":"Arte de cenário","did.props":"Props","did.vfx":"VFX","did.ui":"UI","did.skins":"Skins","did.opt":"Otimização",
+    "did.proto":"No projeto desde o primeiro protótipo",
+    "game.roleval":"Arte 3D e Técnica","game.play":"Jogar na Poki →",
+    "more.label":"E muitos outros",
+    "more.p":"Além desses, entreguei assets, shaders e VFX em diversos jogos mobile hiper-casuais e híbrido-casuais na Kreativitas Studio e na Electric Monkeys, além de trabalhos freelance como a criatura de <em>Hired 2 Die: Moonlight Motel</em>.",
+    "ta.h2":"Visuais feitos para ajustar, e para rodar.",
+    "ta.p":"Shaders, materiais e ferramentas que crio para o time de arte produzir mais rápido e o jogo caber no orçamento de performance.",
+    "perf.h3":"Otimização mobile",
+    "perf.p":"Como artista principal numa força-tarefa de performance para Android, refiz shaders, malhas e a configuração de arte em runtime, chegando a cerca de 200% de ganho de FPS em aparelhos low-end.",
+    "sw.label":"Materiais procedurais · 2025","sw.h3":"Calçadas Brasileiras",
+    "sw.p":"Três grafos totalmente procedurais no Substance Designer com padrões famosos de calçadas brasileiras: a “Bernardes” de São Paulo, um clássico de Sorocaba e a onda de Copacabana.",
+    "spec.tool":"Ferramenta","spec.output":"Saída","sw.out":"4096 × 2048 · conjunto PBR completo","sw.link":"Ver breakdown →",
+    "heli.label":"Freelance · Jogo de sobrevivência · 2025","heli.h3":"Veículos com cor customizável",
+    "heli.p":"Como único artista 3D de um jogo de sobrevivência em desenvolvimento, levei os assets do concept à texturização e à engine. Também escrevi um shader que permite recolorir o helicóptero direto na engine, sem refazer texturas.",
+    "spec.pipe":"Pipeline","spec.delivery":"Entrega","heli.del":"Pronto para jogo, rigado para animação","heli.link":"Ver projeto →",
+    "fx.more":"Mais trabalhos com shaders","tools.more":"Outras ferramentas",
+    "tk1.h":"Biblioteca de shaders do estúdio","tk1.p":"Escrevi todos os shaders dos projetos da Kreativitas e documentei como os artistas devem usá-los.",
+    "tk2.h":"Ferramentas de VFX por animation clip","tk2.p":"Ferramentas de editor para adicionar VFX e trocar texturas direto pelos animation clips.",
+    "tk3.h":"Renderer feature multipass","tk3.p":"Adiciona shaders multipass com tags de LightMode ao URP, com valores de stencil definindo outlines diferentes.",
+    "tk4.h":"Aceleradores de modelagem","tk4.p":"Scripts pessoais no Maya que eliminam etapas repetitivas do meu fluxo de modelagem.",
+    "tk5.p":"Painel CEP open source com anel de matiz e triângulo HSB no estilo do Photoshop, preenchimento e contorno ao vivo e conversão ciente de CMYK.",
+    "tk6.l":"Documentação","tk6.h":"Pipelines que outras pessoas conseguem seguir",
+    "tk6.p":"Guias de criação de assets e importação na Unity na Kreativitas, e um guia de criação de UI que permitiu a um cliente freelance montar suas próprias interfaces.",
+    "work.label":"Trabalhos 3D","work.h2":"Personagens, props e assets de jogo.",
+    "f.all":"Todos","f.game":"Assets de jogo","f.char":"Personagens","f.prop":"Props e cenários",
+    "c.gun":"Assets Survival — Arma","c.gun.m":"Pronto p/ jogo · rigado · Unreal",
+    "c.props":"Assets Survival — Props","c.props.m":"Do concept à engine, solo",
+    "c.cyber":"Criatura Cyberpunk","c.ink.m":"Render NPR pintado · Arnold",
+    "c.bard":"Bardo Companheiro","c.bard.m":"Escultura → modelagem → rig · Maya",
+    "c.ant":"Camponotus com Cordyceps","c.ant.m":"UDIM · 4 tiles · rigado",
+    "c.market":"Mercadinho","c.market.m":"Texturas 4K · Cycles",
+    "c.sot.m":"Estilizado · Marmoset","c.radio":"Rádio","c.radio.m":"PBR realista · Cycles",
+    "c.bar":"Bar Sci-Fi Isométrico","c.atst.m":"Refeito · UVs, bakes, rig",
+    "work.all":"Todos os 29 projetos no ArtStation →",
+    "m.label":"Mentoria · Uplink","m.h3":"Ensinando o que uso todo dia.",
+    "m.p":"Como mentor na Uplink, orientei pessoas entrando na indústria de jogos pelos lados técnico e artístico da produção, da primeira escultura até um shader rodando na engine.",
+    "m.a1.h":"Arte técnica e shaders","m.a1.p":"HLSL e Shader Graph, VFX, e como fazer profiling e otimizar.",
+    "m.a2.h":"Pipeline de arte 3D","m.a2.p":"Escultura, retopologia, UVs, bake, texturização e importação na engine.",
+    "m.a3.h":"Unity e desenvolvimento","m.a3.p":"Montagem de cena, URP, ferramentas em C# e como a produção funciona de verdade.",
+    "m.a4.h":"Portfólio e carreira","m.a4.p":"Revisão de portfólio, apresentação de trabalhos e preparação para vagas em estúdios.",
+    "xp.label":"Experiência","xp.h2":"Quatro anos entregando arte que roda.",
+    "xp.3dta":"Artista 3D / Artista Técnico","xp.3d":"Artista 3D",
+    "xp1.when":"Ago 2023 — Atual",
+    "xp1.a":"Escrevi <b>todos os shaders</b> dos projetos do estúdio e documentei como usá-los.",
+    "xp1.b":"Liderei uma otimização mobile com ganho de <b>~200% de FPS</b> em Android low-end.",
+    "xp1.c":"Criei ferramentas em C# na Unity que controlam VFX e trocas de textura por animation clips.",
+    "xp1.d":"Produzi props, personagens e VFX para jogos casuais mobile e na Poki.",
+    "xp1.e":"Mantive a documentação de criação e importação de assets na Unity.",
+    "xp2.when":"Mentoria",
+    "xp2.a":"Mentoria em arte técnica, shaders e VFX.",
+    "xp2.b":"Ensinei o pipeline 3D da escultura à engine, além de desenvolvimento na Unity.",
+    "xp2.c":"Revisei portfólios e dei orientação de carreira.",
+    "xp3.when":"Out 2022 — Atual",
+    "xp3.a":"Criei props e personagens prontos para jogo em vários projetos, incluindo <b>Hired 2 Die: Moonlight Motel</b>.",
+    "xp3.b":"Implementei assets na Unreal e na Unity e desenvolvi os shaders e materiais que cada cliente precisava.",
+    "xp3.c":"Documentei um fluxo de UI na Unity para que um cliente criasse suas próprias interfaces.",
+    "xp4.when":"Mai 2023 — Ago 2023",
+    "xp4.a":"Criei props e personagens para jogos mobile hiper-casuais, integrei na Unity e adicionei VFX.",
+    "xp5.when":"Formado em jul 2023","xp5.deg":"Tecnólogo em Jogos Digitais",
+    "sk.label":"Habilidades","sk.code":"Código","sk.3d":"3D e Texturização","sk.lang":"Idiomas","sk.pt":"Português — nativo","sk.en":"Inglês — profissional",
+    "kit.label":"Toolkit do estúdio · Kreativitas",
+    "kit.h2":"As ferramentas por trás de cada jogo do estúdio.",
+    "kit.p":"Pacotes Unity que criei e mantenho na Kreativitas Studio. Cada jogo os inclui como submódulos Git, então todos os projetos compartilham o mesmo pipeline de arte. Os repositórios são privados.",
+    "kc.h3":"Paletas e atlas de gradientes",
+    "kc.p":"As paletas vivem em ScriptableObjects onde cada cor nomeada é ligada a uma propriedade de shader, então qualquer material ou partícula pode ser recolorido por ID. Catálogos agrupam paletas em temas e skins. Os assets de gradiente fazem bake de um Gradient da Unity em textura, e o Gradient Atlas junta vários ramps em uma única textura potência de dois, com re-bake ao vivo enquanto você edita.",
+    "kc.bake":"Sub-assets de textura · 8–1024 px · horizontal ou vertical",
+    "spec.comp":"Compressão",
+    "kc.comp":"Definida pela plataforma no momento do bake: ETC2, ASTC ou DXT, crunch opcional",
+    "kp.h3":"VFX com pool, por ID",
+    "kp.p":"Todo efeito dos jogos do estúdio nasce de uma única API com pool: partículas, trails, MMF Players do Feel e texto flutuante. O catálogo se preenche sozinho a partir de pastas quando arquivos são adicionados ou movidos, os pools aquecem em lotes assíncronos para não travar a inicialização, e uma partícula pode seguir um alvo em movimento sem ser filha dele — voltando sozinha ao pool quando o alvo é destruído.",
+    "spec.types":"Tipos",
+    "kp.extras":"Recolorir por paleta · partículas no Canvas de UI · Spawner sem código",
+    "kd.h3":"Uma camada de tween com editor visual",
+    "kd.p":"Um conversor de tweens: o código do jogo só chama o DuduTweenService, e um provider traduz essas chamadas para a biblioteca de backend — hoje o PrimeTween — então a biblioteca por baixo pode mudar sem mexer no gameplay. O editor visual, o Dudu Tween Player, monta sequências com passos reordenáveis no Inspector — transforms, RectTransforms, propriedades de shader, alpha de CanvasGroup e Image, intervalos e callbacks — e faz preview em modo de edição, restaurando todos os valores depois.",
+    "kd.back":"PrimeTween, trocável via IDuduTweenProvider",
+    "spec.auth":"Criação",
+    "kd.auth":"Append · Join · Insert · 27 eases · await com UniTask",
+    "ka.label":"Também no toolkit",
+    "ka1.h":"Animações de UI",
+    "ka1.p":"Clique, negação com shake, toggle e loops de pulso sobre o DuduTween, ajustados em um único config.",
+    "ka2.p":"Janela de editor que varre pastas de modelos atrás de orçamento de triângulos, dados de vértice desperdiçados — tangentes, cores, UVs extras e índices 32-bit — e mede o tamanho no build.",
+    "ka3.p":"Texto flutuante com pool e billboards voltados para a câmera que podem atualizar a cada N frames.",
+    "xp1.f":"Criei e mantenho os pacotes Unity <b>ArtToolkit</b> e <b>DuduTween</b> do estúdio, compartilhados entre os jogos como submódulos Git.",
+    "ct.label":"Contato","ct.h2":"Vamos deixar seu jogo bonito — e rápido.","ct.cv":"Baixar currículo","ct.loc":"Sorocaba · São Paulo · Brasil",
+    "next":"Próximo"
+  };
+
+  var gridAll=document.getElementById("gridAll"),grid3d=document.getElementById("grid3d");
+  [].forEach.call(gridAll.querySelectorAll('.card[data-cat="3d"]'),function(c){grid3d.appendChild(c.cloneNode(true))});
+
+  var nodes=[].slice.call(document.querySelectorAll("[data-i18n]"));
+  var EN={};
+  nodes.forEach(function(n){var k=n.getAttribute("data-i18n");if(!(k in EN))EN[k]=n.innerHTML});
+  var TITLE={en:"Eduardo Fernandes · Technical Artist",pt:"Eduardo Fernandes · Artista Técnico"};
+  var PDF={en:"assets/Eduardo-Fernandes-Resume.pdf",pt:"assets/Eduardo-Fernandes-Curriculo.pdf"};
+
+  var feats=[
+    {src:"assets/work/art-postprocess-comparison.jpg",alt:"Post-process feature comparison in Unity URP",
+     en:["Every effect is a renderer feature with a fullscreen shader, tuned per Volume Profile — so artists change the look without touching code.","Fullscreen passes · Volume Profiles · HLSL"],
+     pt:["Cada efeito é um renderer feature com shader fullscreen, ajustado por Volume Profile — artistas mudam o visual sem mexer em código.","Passes fullscreen · Volume Profiles · HLSL"]},
+    {src:"assets/work/art-postprocess-ssao.jpg",alt:"Stylised ambient occlusion pass",
+     en:["Uses Unity's SSAO result as a mask to drive a custom, stylised occlusion treatment.","SSAO → mask → stylised pass"],
+     pt:["Usa o resultado do SSAO da Unity como máscara para um tratamento de oclusão estilizado e customizado.","SSAO → máscara → passe estilizado"]},
+    {src:"assets/work/art-postprocess-bloom.jpg",alt:"Custom bloom pass",
+     en:["Same idea as the occlusion pass: Unity's Bloom is repurposed as a mask for a custom glow.","Bloom → mask → custom glow"],
+     pt:["Mesma ideia da oclusão: o Bloom da Unity vira máscara para um brilho customizado.","Bloom → máscara → brilho customizado"]},
+    {src:"assets/work/art-postprocess-outline.jpg",alt:"Screen-space outline pass",
+     en:["Edges come from differences in the Normal and Color passes; Depth keeps outlines from appearing too far from the camera.","Normals + Color edges · Depth falloff"],
+     pt:["As bordas vêm das diferenças entre os passes de Normal e Color; o Depth evita outlines longe demais da câmera.","Bordas Normal + Color · falloff por Depth"]},
+    {src:"assets/work/art-postprocess-fog.jpg",alt:"Gradient fog pass",
+     en:["A gradient texture works as a LUT over the depth texture to tint distance. Technique after @minionsart.","Depth texture · Gradient LUT"],
+     pt:["Uma textura de gradiente funciona como LUT sobre a depth texture para tingir a distância. Técnica inspirada em @minionsart.","Depth texture · LUT de gradiente"]}
+  ];
+  var a=document.getElementById("frameA"),b=document.getElementById("frameB");
+  var note=document.getElementById("note"),meta=document.getElementById("noteMeta");
+  var tabs=[].slice.call(document.querySelectorAll(".tab"));
+  var cur=0,lang="en";
+  function writeNote(){var t=feats[cur][lang];note.textContent=t[0];meta.textContent=t[1]}
+  function show(i){
+    if(i===cur)return;cur=i;
+    var f=feats[i],top=a.classList.contains("off")?a:b,bot=top===a?b:a;
+    top.src=f.src;top.alt=f.alt;top.removeAttribute("aria-hidden");
+    top.classList.remove("off");bot.classList.add("off");bot.setAttribute("aria-hidden","true");bot.alt="";
+    writeNote();
+    tabs.forEach(function(t,k){t.setAttribute("aria-selected",k===i?"true":"false");t.tabIndex=k===i?0:-1});
+  }
+  tabs.forEach(function(t,k){
+    t.tabIndex=k===0?0:-1;
+    t.addEventListener("click",function(){show(k)});
+    t.addEventListener("keydown",function(e){
+      var d=e.key==="ArrowRight"?1:e.key==="ArrowLeft"?-1:0;
+      if(!d)return;e.preventDefault();var n=(cur+d+tabs.length)%tabs.length;show(n);tabs[n].focus();
+    });
+  });
+
+  var views=[].slice.call(document.querySelectorAll(".view"));
+  var ORDER=views.map(function(v){return v.getAttribute("data-v")});
+  var menu=document.getElementById("menu");
+  var links=[].slice.call(menu.querySelectorAll("a"));
+  var LEGACY={top:"summary",shipped:"games",techart:"shaders",toolkit:"tools",work:"3d",mentorship:"about",experience:"about",skills:"about"};
+  var next=document.getElementById("next"),nextName=document.getElementById("nextName");
+  var view=null,warmed=false;
+  function navLabel(v){var l=menu.querySelector('a[href="#'+v+'"]');return l?l.textContent:""}
+  function paintView(){
+    if(!view)return;
+    document.title=view==="summary"?TITLE[lang]:navLabel(view)+" · Eduardo Fernandes";
+    var n=ORDER[ORDER.indexOf(view)+1];
+    next.hidden=!n;
+    if(n){next.setAttribute("href","#"+n);nextName.textContent=navLabel(n)}
+  }
+  function route(){
+    var h=location.hash.slice(1);
+    if(LEGACY[h]){h=LEGACY[h];try{history.replaceState(null,"","#"+h)}catch(e){}}
+    if(ORDER.indexOf(h)<0)h="summary";
+    if(h===view)return;
+    var first=view===null,el=null;
+    view=h;
+    views.forEach(function(v){var on=v.getAttribute("data-v")===h;v.classList.toggle("on",on);if(on)el=v});
+    links.forEach(function(l){
+      if(l.getAttribute("href")==="#"+h){l.setAttribute("aria-current","page");menu.scrollLeft=l.offsetLeft-(menu.clientWidth-l.offsetWidth)/2}
+      else l.removeAttribute("aria-current");
+    });
+    if(h==="shaders"&&!warmed){warmed=true;feats.forEach(function(f){var i=new Image();i.src=f.src})}
+    paintView();
+    if(first)return;
+    try{window.scrollTo({top:0,left:0,behavior:"instant"})}catch(e){window.scrollTo(0,0)}
+    if(!menu.contains(document.activeElement))el.focus({preventScroll:true});
+  }
+  window.addEventListener("hashchange",route);
+
+  var langSwitch=document.getElementById("langSwitch");
+  function setLang(l){
+    lang=l;
+    root.setAttribute("lang",l==="pt"?"pt-BR":"en");
+    nodes.forEach(function(n){var k=n.getAttribute("data-i18n");n.innerHTML=(l==="pt"&&PT[k]!=null)?PT[k]:EN[k]});
+    [].forEach.call(document.querySelectorAll(".resume"),function(r){r.setAttribute("href",PDF[l])});
+    [].forEach.call(langSwitch.querySelectorAll(".opt"),function(o){o.classList.toggle("on",o.getAttribute("data-v")===l)});
+    langSwitch.setAttribute("aria-checked",l==="pt"?"true":"false");
+    writeNote();
+    paintView();
+  }
+  langSwitch.addEventListener("click",function(){var n=lang==="pt"?"en":"pt";setLang(n);store("ef-lang",n)});
+
+  var themeSwitch=document.getElementById("themeSwitch");
+  var mq=window.matchMedia?window.matchMedia("(prefers-color-scheme: dark)"):null;
+  function theme(){var s=root.getAttribute("data-theme");if(s==="dark"||s==="light")return s;return mq&&mq.matches?"dark":"light"}
+  function paintTheme(){
+    var t=theme();
+    [].forEach.call(themeSwitch.querySelectorAll(".opt"),function(o){o.classList.toggle("on",o.getAttribute("data-v")===t)});
+    themeSwitch.setAttribute("aria-checked",t==="dark"?"true":"false");
+  }
+  themeSwitch.addEventListener("click",function(){var n=theme()==="dark"?"light":"dark";root.setAttribute("data-theme",n);store("ef-theme",n);paintTheme()});
+  if(mq){var h=function(){paintTheme()};if(mq.addEventListener)mq.addEventListener("change",h);else if(mq.addListener)mq.addListener(h)}
+
+  var filters=[].slice.call(document.querySelectorAll(".filter"));
+  var cards3d=[].slice.call(grid3d.querySelectorAll(".card"));
+  filters.forEach(function(btn){
+    btn.addEventListener("click",function(){
+      var f=btn.dataset.f;
+      filters.forEach(function(x){x.setAttribute("aria-pressed",x===btn?"true":"false")});
+      cards3d.forEach(function(c){c.hidden=!(f==="all"||c.dataset.c===f)});
+    });
+  });
+
+  var vids=[].slice.call(document.querySelectorAll("video[data-auto]"));
+  var still=window.matchMedia&&window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if(still||!("IntersectionObserver" in window)){vids.forEach(function(v){v.controls=true})}
+  else{
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){
+      var v=e.target;
+      if(e.isIntersecting){v.muted=true;var p=v.play();if(p&&p.catch)p.catch(function(){})}else v.pause();
+    })},{threshold:.2});
+    vids.forEach(function(v){io.observe(v)});
+  }
+
+  var saved=read("ef-lang");
+  var initial=saved==="pt"?"pt":"en";
+  route();
+  setLang(initial);
+  paintTheme();
+})();
+</script>
+</body>
+</html>
