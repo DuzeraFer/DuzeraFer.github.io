@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portfolio redesign — design sheet</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root{
+  --bg:#0c0c0d; --surface:#141416; --surface-2:#1b1b1e;
+  --ink:#f2f0ed; --ink-60:#8f8c88; --rule:#26262a; --accent:#e8452a;
+  --wrap:1360px; --gut:80px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Inter,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.lbl{font:600 11px/1 Inter;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-60)}
+.mono{font:400 13px/1.5 'JetBrains Mono',monospace;letter-spacing:.02em}
+.chip{display:inline-block;font:400 11px/1 'JetBrains Mono',monospace;letter-spacing:.04em;color:var(--ink-60);border:1px solid var(--rule);background:var(--surface);padding:6px 9px;border-radius:2px}
+.chips{display:flex;flex-wrap:wrap;gap:6px}
+.btn{display:inline-block;background:var(--accent);color:#0c0c0d;font:600 11px/1 Inter;letter-spacing:.1em;text-transform:uppercase;padding:13px 20px;border-radius:2px;text-decoration:none}
+.tl{font-size:14px;text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--rule)}
+.tl:hover{text-decoration-color:var(--accent)}
+
+.top{position:sticky;top:0;z-index:20;background:rgba(12,12,13,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--rule)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:56px}
+.mark{font:700 15px/1 'Inter Tight';letter-spacing:.18em;text-transform:uppercase}
+.mark small{display:block;font:600 10px/1 Inter;letter-spacing:.14em;color:var(--ink-60);margin-top:5px;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-size:13px;text-decoration:none;color:var(--ink-60)}
+.nav a.on{color:var(--ink)}
+.util{display:flex;align-items:center;gap:16px}
+.util .sw{font:400 11px/1 'JetBrains Mono',monospace;color:var(--ink-60);letter-spacing:.08em}
+.util .sw b{color:var(--ink);font-weight:400}
+
+.hero{position:relative;height:78vh;min-height:560px;display:flex;flex-direction:column;justify-content:flex-end;overflow:hidden;border-bottom:1px solid var(--rule)}
+.hero .bgv{position:absolute;inset:0;z-index:0}
+.hero .bgv::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(12,12,13,.55) 0%,rgba(12,12,13,.72) 55%,rgba(12,12,13,.94) 100%)}
+.hero .inner{position:relative;z-index:1;padding-bottom:34px}
+.hero h1{font:800 clamp(2.75rem,6.5vw,5.5rem)/0.95 'Inter Tight';letter-spacing:-.04em;margin:18px 0 10px}
+.hero .role{font:700 clamp(1.1rem,1.8vw,1.5rem)/1.1 'Inter Tight';letter-spacing:-.02em;color:var(--ink-60);margin-bottom:16px}
+.hero p{max-width:52ch;color:#d6d3cf;margin-bottom:26px}
+.hero .cta{display:flex;align-items:center;gap:24px}
+.strip{position:relative;z-index:1;border-top:1px solid var(--rule);display:grid;grid-template-columns:repeat(4,1fr)}
+.strip div{padding:16px 0}
+.strip div+div{border-left:1px solid var(--rule);padding-left:24px}
+.strip b{display:block;font:400 22px/1 'JetBrains Mono',monospace;letter-spacing:-.02em;margin-bottom:6px}
+
+.sec{border-bottom:1px solid var(--rule);padding:88px 0}
+.sechead{margin-bottom:48px}
+.sechead h2{font:700 clamp(1.8rem,3vw,2.5rem)/1.05 'Inter Tight';letter-spacing:-.03em;margin:14px 0 14px}
+.sechead p{max-width:60ch;color:var(--ink-60);font-size:16px}
+
+.work{display:grid;grid-template-columns:200px 1fr;gap:56px}
+.rail{position:sticky;top:96px;align-self:start}
+.rail .lbl{display:block;margin-bottom:18px}
+.rail ol{list-style:none;display:grid;gap:14px}
+.rail a{display:block;font-size:13px;line-height:1.35;color:var(--ink-60);text-decoration:none;border-left:2px solid transparent;padding-left:12px}
+.rail li.on a{color:var(--ink);border-left-color:var(--accent);font-weight:500}
+
+.proj{padding-bottom:78px;margin-bottom:78px;border-bottom:1px solid var(--rule)}
+.proj:last-child{border-bottom:0;margin-bottom:0;padding-bottom:0}
+.proj .kick{display:flex;align-items:center;gap:8px;margin-bottom:16px}
+.proj .dot{width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.proj h3{font:800 clamp(1.9rem,3.4vw,3rem)/1 'Inter Tight';letter-spacing:-.035em;border-left:3px solid var(--accent);padding-left:16px;margin-bottom:16px}
+.proj .lede{max-width:58ch;color:#d6d3cf;margin-bottom:20px}
+.proj .chips{margin-bottom:24px}
+.meta{border-top:1px solid var(--rule);border-bottom:1px solid var(--rule);padding:16px 0;margin-bottom:28px;display:grid;gap:9px}
+.meta .row{display:grid;grid-template-columns:104px 1fr;gap:16px}
+.meta .k{font:400 11px/1.5 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--ink-60)}
+.meta .v{font:400 13px/1.5 'JetBrains Mono',monospace}
+.media{background:var(--surface);border:1px solid var(--rule);aspect-ratio:16/8;margin-bottom:10px;overflow:hidden}
+.stills{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:26px}
+.stills div{background:var(--surface);border:1px solid var(--rule);aspect-ratio:16/10;overflow:hidden}
+.links{display:flex;flex-wrap:wrap;gap:22px}
+.panel{background:var(--surface);border:1px solid var(--rule);padding:44px;margin-bottom:26px}
+.panel .big{font:800 clamp(3.5rem,9vw,7rem)/0.9 'Inter Tight';letter-spacing:-.05em;color:var(--accent)}
+.panel .big span{font:700 1.4rem/1 'Inter Tight';color:var(--ink-60);letter-spacing:0}
+.code{font:400 13px/1.9 'JetBrains Mono',monospace;color:#d6d3cf;white-space:pre-wrap}
+.code em{font-style:normal;color:var(--accent)}
+
+.also{display:grid;grid-template-columns:200px 1fr;gap:56px;margin-top:70px;padding-top:34px;border-top:1px solid var(--rule)}
+.also .chips{gap:8px}
+
+.filters{display:flex;gap:8px;margin-bottom:28px}
+.filters span{font:400 11px/1 'JetBrains Mono',monospace;letter-spacing:.08em;border:1px solid var(--rule);padding:9px 14px;border-radius:2px;color:var(--ink-60)}
+.filters span.on{background:var(--accent);border-color:var(--accent);color:#0c0c0d}
+.arch{border-top:1px solid var(--rule)}
+.arch .r{display:grid;grid-template-columns:48px 64px 104px 1fr auto 20px;gap:20px;align-items:center;padding:12px 0;border-bottom:1px solid var(--rule);border-left:2px solid transparent}
+.arch .r:hover{background:var(--surface-2);border-left-color:var(--accent)}
+.arch .th{width:48px;height:34px;background:var(--surface);overflow:hidden}
+.arch .y,.arch .d{font:400 11px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--ink-60)}
+.arch .t{font-size:15px}
+.arch .ar{color:var(--ink-60);font-size:13px;text-align:right}
+
+.spread{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.spread .side{position:sticky;top:96px}
+.job{padding-bottom:22px;margin-bottom:22px;border-bottom:1px solid var(--rule)}
+.job:last-child{border-bottom:0}
+.job .when{font:400 11px/1 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--ink-60);margin-bottom:8px}
+.job h4{font:700 18px/1.2 'Inter Tight';letter-spacing:-.01em;margin-bottom:4px}
+.job .what{font-size:13px;color:var(--ink-60);margin-bottom:10px}
+.job ul{list-style:none;display:grid;gap:5px;margin-bottom:12px}
+.job li{font-size:14px;color:#d6d3cf;padding-left:14px;position:relative}
+.job li::before{content:'·';position:absolute;left:2px;color:var(--accent)}
+.skill{display:grid;grid-template-columns:104px 1fr;gap:16px;padding:14px 0;border-bottom:1px solid var(--rule)}
+.skill .k{font:400 11px/1.6 'JetBrains Mono',monospace;letter-spacing:.1em;color:var(--ink-60)}
+
+.contact{padding:110px 0 90px}
+.contact .mail{font:800 clamp(1.6rem,4.4vw,3.6rem)/1 'Inter Tight';letter-spacing:-.04em;text-decoration:none;display:inline-block;margin:18px 0 34px;border-bottom:2px solid var(--rule);padding-bottom:10px}
+.contact .mail:hover{border-bottom-color:var(--accent)}
+.foot{display:flex;flex-wrap:wrap;gap:28px;align-items:center}
+.end{border-top:1px solid var(--rule);padding:22px 0;display:flex;justify-content:space-between;font:400 11px/1 'JetBrains Mono',monospace;letter-spacing:.08em;color:var(--ink-60)}
+
+@media (max-width:900px){
+  :root{--gut:24px}
+  .nav a[href^='#']{display:none}
+  .nav{gap:14px}
+  .mark{font-size:13px;letter-spacing:.14em}
+  .hero{height:auto;min-height:0;padding-top:92px}
+  .hero .inner{padding-bottom:30px}
+  .strip{grid-template-columns:1fr 1fr}
+  .strip div+div{border-left:0;padding-left:0}
+  .strip div:nth-child(2n){border-left:1px solid var(--rule);padding-left:20px}
+  .strip div:nth-child(n+3){border-top:1px solid var(--rule)}
+  .sec{padding:56px 0}
+  .work,.also,.spread{grid-template-columns:1fr;gap:28px}
+  .rail{position:static}
+  .rail ol{display:flex;gap:0;overflow-x:auto;border-top:1px solid var(--rule);border-bottom:1px solid var(--rule)}
+  .rail li a{border-left:0;border-bottom:2px solid transparent;padding:12px 14px 12px 0;white-space:nowrap}
+  .rail li.on a{border-left:0;border-bottom-color:var(--accent)}
+  .spread .side{position:static}
+  .meta .row,.skill{grid-template-columns:1fr;gap:4px}
+  .stills{grid-template-columns:1fr 1fr}
+  .panel{padding:26px}
+  .arch .r{grid-template-columns:40px 1fr auto;gap:12px;padding:14px 0}
+  .arch .y,.arch .d{display:none}
+  .arch .ar{font-size:11px}
+  .contact{padding:64px 0 56px}
+  .contact .mail{font-size:clamp(1.25rem,6.4vw,2rem);word-break:break-all}
+  .end{flex-direction:column;gap:8px}
+}
+</style>
+</head>
+<body>
+
+<header class="top"><div class="wrap bar">
+  <div class="mark">Eduardo Fernandes<small>Technical Artist</small></div>
+  <nav class="nav">
+    <a href="#work" class="on">Work</a><a href="#archive">Archive</a><a href="#who">Experience</a><a href="#contact">Contact</a>
+    <span class="sw"><b>EN</b> · PT</span>
+    <span class="sw">☼ · <b>☾</b></span>
+    <a class="btn" href="#">Résumé ↓</a>
+  </nav>
+</div></header>
+
+<section class="hero">
+  <div class="bgv"><video src="../assets/work/harvestloop-gameplay.mp4" autoplay muted loop playsinline></video></div>
+  <div class="wrap inner">
+    <span class="lbl">Shaders · Tools · Game-ready art</span>
+    <h1>Eduardo<br>Fernandes</h1>
+    <div class="role">Technical Artist · 3D Artist — Sorocaba, Brazil</div>
+    <p>I write HLSL for Unity URP, build the tools a studio runs on, and ship art that holds up on a cheap Android.</p>
+    <div class="cta"><a class="btn" href="#work">See the work</a><a class="tl" href="#">Résumé (PDF) →</a></div>
+  </div>
+  <div class="wrap strip">
+    <div><b>2</b><span class="lbl">Games live on Poki</span></div>
+    <div><b>11M+</b><span class="lbl">Players reached</span></div>
+    <div><b>35k+</b><span class="lbl">Player votes</span></div>
+    <div><b>~200%</b><span class="lbl">FPS gain on Android</span></div>
+  </div>
+</section>
+
+<section class="sec" id="work"><div class="wrap">
+  <div class="work">
+    <aside class="rail">
+      <span class="lbl">Selected work</span>
+      <ol>
+        <li class="on"><a href="#p1">Snake vs Human</a></li>
+        <li><a href="#p2">Harvest Loop</a></li>
+        <li><a href="#p3">URP Renderer Features</a></li>
+        <li><a href="#p4">~200% FPS on Android</a></li>
+        <li><a href="#p5">ArtToolkit</a></li>
+        <li><a href="#p6">Gizmos Drawer</a></li>
+      </ol>
+    </aside>
+    <div>
+
+      <article class="proj" id="p1">
+        <div class="kick"><span class="dot"></span><span class="lbl">Live on Poki · Kreativitas × Clap Clap</span></div>
+        <h3>Snake vs Human</h3>
+        <p class="lede">An arcade shooter against ever-bigger serpents: collect resources, upgrade your firepower and hold the line.</p>
+        <div class="chips"><span class="chip">Unity</span><span class="chip">URP</span><span class="chip">HLSL</span><span class="chip">C#</span><span class="chip">Environment art</span><span class="chip">VFX</span><span class="chip">UI</span></div>
+        <div class="meta">
+          <div class="row"><span class="k">ROLE</span><span class="v">Environment art · Props · VFX · UI · Skins · Optimization</span></div>
+          <div class="row"><span class="k">SHIPPED</span><span class="v">10M+ players · 4.5 / 5 from 31,502 votes</span></div>
+          <div class="row"><span class="k">ALSO ON</span><span class="v">Google Play · App Store</span></div>
+          <div class="row"><span class="k">SINCE</span><span class="v">The first prototype</span></div>
+        </div>
+        <div class="media"><img src="../assets/work/snake-play-keyart.jpg" alt=""></div>
+        <div class="stills"><div><img src="../assets/work/snake-play-canyon.jpg" alt=""></div><div><img src="../assets/work/snake-play-desert.jpg" alt=""></div><div><img src="../assets/work/snake-play-skills.jpg" alt=""></div></div>
+        <div class="links"><a class="tl" href="#">Play on Poki →</a><a class="tl" href="#">Google Play →</a><a class="tl" href="#">App Store →</a></div>
+      </article>
+
+      <article class="proj" id="p2">
+        <div class="kick"><span class="dot"></span><span class="lbl">Live on Poki · Kreativitas Studio</span></div>
+        <h3>Harvest Loop</h3>
+        <p class="lede">A farming-machine simulation: harvest crops, sell them, upgrade your machine and roll into bigger fields.</p>
+        <div class="chips"><span class="chip">Unity</span><span class="chip">URP</span><span class="chip">Shaders</span><span class="chip">Environment art</span><span class="chip">VFX</span><span class="chip">Skins</span></div>
+        <div class="meta">
+          <div class="row"><span class="k">ROLE</span><span class="v">Environment art · Props · VFX · UI · Skins · Optimization</span></div>
+          <div class="row"><span class="k">SHIPPED</span><span class="v">1M+ players in the first week · 4.3 / 5 from 4,300 votes</span></div>
+          <div class="row"><span class="k">GENRE</span><span class="v">Simulation · Idle</span></div>
+        </div>
+        <div class="media"><video src="../assets/work/harvestloop-gameplay.mp4" autoplay muted loop playsinline></video></div>
+        <div class="stills"><div><img src="../assets/work/harvestloop-fields.jpg" alt=""></div><div><img src="../assets/work/harvestloop-harvester.jpg" alt=""></div><div><img src="../assets/work/harvestloop-crops.jpg" alt=""></div></div>
+        <div class="links"><a class="tl" href="#">Play on Poki →</a></div>
+      </article>
+
+      <article class="proj" id="p3">
+        <div class="kick"><span class="lbl">Rendering · Unity URP · 2025</span></div>
+        <h3>URP Renderer Features</h3>
+        <p class="lede">SSAO, bloom, outline and gradient fog, each a renderer feature with its own fullscreen shader, tuned per Volume Profile — so artists change the look without touching code.</p>
+        <div class="chips"><span class="chip">HLSL</span><span class="chip">Fullscreen passes</span><span class="chip">Volume Profiles</span><span class="chip">Custom passes</span><span class="chip">C#</span></div>
+        <div class="meta">
+          <div class="row"><span class="k">BUILT</span><span class="v">4 renderer features · SSAO · Bloom · Outline · Gradient fog</span></div>
+          <div class="row"><span class="k">FOR</span><span class="v">Every Kreativitas Studio project</span></div>
+          <div class="row"><span class="k">WHY</span><span class="v">Art-directable post without a code change</span></div>
+        </div>
+        <div class="media"><img src="../assets/work/art-postprocess-comparison.jpg" alt=""></div>
+        <div class="stills"><div><img src="../assets/work/art-postprocess-ssao.jpg" alt=""></div><div><img src="../assets/work/art-postprocess-bloom.jpg" alt=""></div><div><img src="../assets/work/art-postprocess-outline.jpg" alt=""></div></div>
+        <div class="links"><a class="tl" href="#">Watch the showcase on ArtStation →</a></div>
+      </article>
+
+      <article class="proj" id="p4">
+        <div class="kick"><span class="lbl">Performance · Kreativitas Studio</span></div>
+        <h3>~200% FPS on low-end Android</h3>
+        <p class="lede">As lead artist on a performance push for Android, I reworked shaders, meshes and runtime art setup, reaching roughly a 200% frame-rate gain on low-end devices.</p>
+        <div class="chips"><span class="chip">HLSL</span><span class="chip">Unity</span><span class="chip">Maya</span><span class="chip">C#</span><span class="chip">Profiling</span></div>
+        <div class="meta">
+          <div class="row"><span class="k">RESULT</span><span class="v">~200% frame-rate gain on low-end Android</span></div>
+          <div class="row"><span class="k">ROLE</span><span class="v">Lead artist on the optimization pass</span></div>
+          <div class="row"><span class="k">TOUCHED</span><span class="v">Shaders · meshes · runtime art setup</span></div>
+        </div>
+        <div class="panel"><div class="big">~200<span> % FPS</span></div></div>
+      </article>
+
+      <article class="proj" id="p5">
+        <div class="kick"><span class="lbl">Studio toolkit · Kreativitas · private packages</span></div>
+        <h3>ArtToolkit</h3>
+        <p class="lede">The Unity packages every game at the studio is built on, pulled in as Git submodules so every project shares one art pipeline. Palettes recolour any material by ID; every effect in the studio spawns through one pooled API.</p>
+        <div class="chips"><span class="chip">C#</span><span class="chip">ScriptableObjects</span><span class="chip">Editor tooling</span><span class="chip">UniTask</span><span class="chip">Pooling</span></div>
+        <div class="meta">
+          <div class="row"><span class="k">COLORS</span><span class="v">Palettes, catalogs, gradient atlases · baked 8–1024 px</span></div>
+          <div class="row"><span class="k">PARTICLES</span><span class="v">Pooled particles, trails, MMF players, floating text</span></div>
+          <div class="row"><span class="k">USED BY</span><span class="v">Every Kreativitas game</span></div>
+        </div>
+        <div class="panel"><div class="code">material.<em>SetColorByID</em>("PRIMARY", palette);
+ColorsSO skin = Colors.<em>GetRandomColorsSO</em>(catalog);
+
+Particles.<em>PlayParticle</em>("HIT_SPARK", position: hitPoint);
+instance.<em>Follow</em>(target);</div></div>
+        <div class="links"><a class="tl" href="#">Read the breakdown →</a></div>
+      </article>
+
+      <article class="proj" id="p6">
+        <div class="kick"><span class="dot"></span><span class="lbl">Unity Asset Store · Free · 2026</span></div>
+        <h3>Gizmos Drawer</h3>
+        <p class="lede">Editor gizmos, zero code. Drop a Gizmo component on any GameObject and tune it in the Inspector instead of writing OnDrawGizmos for every raycast, patrol route or vision cone.</p>
+        <div class="chips"><span class="chip">Unity 6</span><span class="chip">Editor-only</span><span class="chip">Built-in</span><span class="chip">URP</span><span class="chip">HDRP</span><span class="chip">C#</span></div>
+        <div class="meta">
+          <div class="row"><span class="k">INCLUDES</span><span class="v">27 gizmos · primitives, vectors, movement, locators, colliders, grids, rigging</span></div>
+          <div class="row"><span class="k">BINDING</span><span class="v">Any value can follow a live float on another component</span></div>
+          <div class="row"><span class="k">PRICE</span><span class="v">Free on the Unity Asset Store</span></div>
+        </div>
+        <div class="media"><img src="../assets/work/gizmos-nocode.jpg" alt=""></div>
+        <div class="stills"><div><img src="../assets/work/gizmos-primitives.jpg" alt=""></div><div><img src="../assets/work/gizmos-vectors.jpg" alt=""></div><div><img src="../assets/work/gizmos-rigging.jpg" alt=""></div></div>
+        <div class="links"><a class="tl" href="#">Get it on the Asset Store →</a></div>
+      </article>
+
+    </div>
+  </div>
+
+  <div class="also">
+    <span class="lbl">Also shipped</span>
+    <div class="chips">
+      <span class="chip">Pop&amp;Play — Yellow Panda</span><span class="chip">Libras em Ação — XReall × Fapesc</span>
+      <span class="chip">Hired 2 Die: Moonlight Motel</span><span class="chip">Brazilian Sidewalks — Substance</span>
+      <span class="chip">Colour-customisable vehicles</span><span class="chip">Hyper-casual titles — Electric Monkeys</span>
+    </div>
+  </div>
+</div></section>
+
+<section class="sec" id="archive"><div class="wrap">
+  <div class="sechead">
+    <span class="lbl">Archive</span>
+    <h2>Everything else, in one list.</h2>
+    <p>Twenty-three more projects — 3D art, shaders, tools and documentation. Filter it, or jump straight to ArtStation.</p>
+  </div>
+  <div class="filters"><span class="on">All</span><span>Games</span><span>Shaders</span><span>Tools</span><span>3D</span></div>
+  <div class="arch">
+    <div class="r"><div class="th"><img src="../assets/work/art-cyberpunk-creature.jpg" alt=""></div><span class="y">2025</span><span class="d">3D</span><span class="t">Cyberpunk Creature</span><span class="ar">ZBrush · Maya retopo · Marmoset</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-sidewalk-materials.jpg" alt=""></div><span class="y">2025</span><span class="d">SHADER</span><span class="t">Brazilian Sidewalks</span><span class="ar">Substance 3D Designer</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-survival-gun.jpg" alt=""></div><span class="y">2025</span><span class="d">3D</span><span class="t">Survival Assets — Gun</span><span class="ar">Game-ready · rigged · Unreal</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-survival-helicopter.jpg" alt=""></div><span class="y">2025</span><span class="d">SHADER</span><span class="t">Colour-customisable vehicles</span><span class="ar">Recolour shader · Freelance</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-rey-skywalker.jpg" alt=""></div><span class="y">2025</span><span class="d">3D</span><span class="t">Rey Skywalker</span><span class="ar">Maya · ZBrush · Substance</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-trashy-bros-can.jpg" alt=""></div><span class="y">2025</span><span class="d">3D</span><span class="t">Can — Trashy Bros</span><span class="ar">ZBrush · Maya</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-ink-protector.jpg" alt=""></div><span class="y">2024</span><span class="d">3D</span><span class="t">Ink Protector</span><span class="ar">NPR painterly render · Arnold</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-bard-lizard.jpg" alt=""></div><span class="y">2024</span><span class="d">3D</span><span class="t">Bard Companion</span><span class="ar">Sculpt → model → rig · Maya</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-masked-horror.jpg" alt=""></div><span class="y">2023</span><span class="d">3D</span><span class="t">Masked Horror</span><span class="ar">16,042 tris · Hired 2 Die</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-cordyceps-ant.jpg" alt=""></div><span class="y">2023</span><span class="d">3D</span><span class="t">Camponotus with Cordyceps</span><span class="ar">UDIM · 4 tiles · rigged</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-scifi-bar.jpg" alt=""></div><span class="y">2023</span><span class="d">3D</span><span class="t">Isometric Sci-Fi Bar</span><span class="ar">Diorama · Blender · Maya</span><span class="ar">→</span></div>
+    <div class="r"><div class="th"><img src="../assets/work/art-little-market.jpg" alt=""></div><span class="y">2023</span><span class="d">3D</span><span class="t">Little Market</span><span class="ar">4K textures · Cycles</span><span class="ar">→</span></div>
+  </div>
+  <p style="margin-top:28px"><a class="tl" href="#">All 29 projects on ArtStation →</a></p>
+</div></section>
+
+<section class="sec" id="who"><div class="wrap">
+  <div class="sechead">
+    <span class="lbl">Experience</span>
+    <h2>Four years shipping art that runs.</h2>
+  </div>
+  <div class="spread">
+    <div>
+      <div class="job">
+        <div class="when">Aug 2023 — Present</div>
+        <h4>Kreativitas Studio</h4>
+        <div class="what">3D Artist / Technical Artist</div>
+        <ul><li>Wrote every shader for the studio's projects, and documented how artists use them.</li><li>Led a mobile performance pass that gained ~200% FPS on low-end Android.</li><li>Built and maintain ArtToolkit and DuduTween, shared across every game as Git submodules.</li></ul>
+        <div class="chips"><span class="chip">HLSL</span><span class="chip">C#</span><span class="chip">URP</span><span class="chip">Maya</span></div>
+      </div>
+      <div class="job">
+        <div class="when">2025 — Present</div><h4>Yellow Panda</h4><div class="what">Freelance Artist</div>
+        <ul><li>Environment art, props, UI and VFX for Pop&amp;Play and Libras em Ação.</li></ul>
+      </div>
+      <div class="job">
+        <div class="when">Mentorship</div><h4>Uplink</h4><div class="what">Mentor</div>
+        <ul><li>Technical art, shaders and VFX; the 3D pipeline from sculpt to engine; portfolio reviews.</li></ul>
+      </div>
+      <div class="job">
+        <div class="when">Oct 2022 — Present</div><h4>Freelance</h4><div class="what">3D Artist / Technical Artist</div>
+        <ul><li>Game-ready props and characters, brought into Unreal and Unity with the shaders each client needed.</li></ul>
+      </div>
+      <div class="job">
+        <div class="when">May 2023 — Aug 2023</div><h4>Electric Monkeys</h4><div class="what">3D Artist</div>
+      </div>
+      <div class="job">
+        <div class="when">Graduated Jul 2023</div><h4>UNISO</h4><div class="what">Associate Degree, Digital Games — Sorocaba, São Paulo</div>
+      </div>
+    </div>
+    <div class="side">
+      <span class="lbl">About</span>
+      <p style="margin:14px 0 30px;color:#d6d3cf">I'm a Technical Artist and 3D Artist from Sorocaba, Brazil. I studied Digital Games at UNISO, started freelancing in 2022 and made hyper-casual assets at Electric Monkeys before joining Kreativitas Studio in 2023, where I write the shaders and build the Unity tools the studio's games run on.</p>
+      <div class="skill"><span class="k">ENGINES</span><div class="chips"><span class="chip">Unity (URP)</span><span class="chip">Unreal Engine</span></div></div>
+      <div class="skill"><span class="k">CODE</span><div class="chips"><span class="chip">HLSL</span><span class="chip">C#</span><span class="chip">Python / MEL</span><span class="chip">JavaScript (CEP)</span></div></div>
+      <div class="skill"><span class="k">3D</span><div class="chips"><span class="chip">Maya</span><span class="chip">ZBrush</span><span class="chip">Blender</span><span class="chip">Substance</span><span class="chip">Marmoset</span></div></div>
+      <div class="skill"><span class="k">LANGUAGES</span><div class="chips"><span class="chip">Portuguese — native</span><span class="chip">English — professional</span></div></div>
+      <p style="margin-top:32px"><a class="btn" href="#">Résumé (PDF) ↓</a></p>
+    </div>
+  </div>
+</div></section>
+
+<section class="contact" id="contact"><div class="wrap">
+  <span class="lbl">Contact</span>
+  <h2 style="font:700 clamp(1.8rem,3vw,2.5rem)/1.05 'Inter Tight';letter-spacing:-.03em;margin:14px 0 6px">Let's make your game look right — and run fast.</h2>
+  <a class="mail" href="#">eduardo2002.fernandes@gmail.com</a>
+  <div class="foot"><a class="tl" href="#">Résumé ↓</a><a class="tl" href="#">ArtStation ↗</a><a class="tl" href="#">LinkedIn ↗</a><a class="tl" href="#">GitHub ↗</a><span class="chip" style="color:var(--accent);border-color:var(--accent)">Open to work</span></div>
+</div></section>
+
+<div class="wrap end"><span>© 2026 Eduardo Fernandes</span><span>Sorocaba · São Paulo · Brazil</span></div>
+
+</body>
+</html>
