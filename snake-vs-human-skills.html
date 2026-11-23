@@ -1,0 +1,399 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Snake vs Human — Skill VFX · Eduardo Fernandes</title>
+<meta name="description" content="Thirteen abilities from Snake vs Human, each at three upgrade tiers. Real-time VFX built in Unity URP by Eduardo Fernandes.">
+<meta property="og:title" content="Snake vs Human — Skill VFX">
+<meta property="og:description" content="Thirteen abilities, three upgrade tiers each. Real-time VFX in Unity URP.">
+<meta property="og:image" content="https://duzerafer.github.io/assets/work/snake-play-skills.jpg">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="icon" href="assets/avatar.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<style>
+:root{
+  --bg:#0B0B0B; --band:#4C1D95; --ink:#FFFFFF; --dim:#9A9A92;
+  --body:#D6D6CE; --violet:#A78BFA; --band-sub:#C9B8F0;
+  --line:#2A2A26; --wrap:1328px; --gut:56px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Poppins,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img,video{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:40px;font-weight:700;font-size:12px;letter-spacing:.04em;padding:10px 18px}
+.btn{background:var(--band);color:#fff;padding:13px 22px;border-radius:40px;font-weight:700;font-size:12px;letter-spacing:.06em}
+.btn:hover{background:#5B29AD}
+.tl{font-size:14px;border-bottom:1px solid var(--violet);padding-bottom:2px}
+
+.top{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.9);backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.mark{display:flex;align-items:center;gap:12px}
+.mark img{width:44px;height:56px;object-fit:contain}
+.mark span{font-weight:800;font-size:16px;letter-spacing:.22em;text-transform:uppercase}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-weight:500;font-size:13px;color:var(--dim)}
+.nav a:hover{color:var(--ink)}
+.lang{display:flex;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--dim)}
+.lang b{font-weight:600;color:var(--ink)}
+
+.head{padding:84px 0 46px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.head h1{font-weight:800;font-size:clamp(2.25rem,5.4vw,4.5rem);line-height:.98;letter-spacing:-.035em}
+.head h1 em{font-style:normal;color:var(--violet)}
+.head p{max-width:56ch;color:var(--body);font-size:clamp(1rem,1.3vw,1.0625rem)}
+
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:10px}
+.legend span{border:1px solid var(--line);border-radius:40px;padding:7px 14px;font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.rows{padding-bottom:40px}
+.row{padding:30px 0;border-top:1px solid var(--line)}
+.row h3{display:flex;align-items:baseline;gap:14px;font-weight:700;font-size:21px;letter-spacing:-.015em;padding-bottom:16px}
+.row h3 span{font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--violet)}
+.trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.trio figure{display:flex;flex-direction:column;gap:9px}
+.trio video{width:100%;aspect-ratio:1;object-fit:cover;border-radius:12px;background:#141414}
+.trio figcaption{font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.end{border-top:1px solid var(--line);padding:54px 0 70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px}
+.end .links{display:flex;flex-wrap:wrap;gap:24px;font-size:14px;color:var(--dim)}
+.end .links a:hover{color:var(--ink)}
+.foot{border-top:1px solid var(--line);padding:26px 0 36px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:var(--dim)}
+
+@media (max-width:900px){
+  :root{--gut:22px}
+  .nav a{display:none}
+  .head{padding:52px 0 32px}
+  .trio{gap:7px}
+  .trio video{border-radius:8px}
+  .trio figcaption{font-size:9px;letter-spacing:.08em}
+  .row h3{font-size:18px}
+  .end{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="mark" href="index.html"><img src="assets/avatar-cut.png" alt=""><span>Duzera</span></a>
+    <nav class="nav">
+      <a href="index.html#work" data-i18n="nav.work">Work</a>
+      <a href="index.html#about" data-i18n="nav.about">About</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <button type="button" data-l="en"><b data-v="en">EN</b></button><span>·</span><button type="button" data-l="pt"><span data-v="pt">PT</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap head">
+    <div class="tags">
+      <span class="pill" style="background:var(--band)" data-i18n="t.vfx">Real-time VFX</span>
+      <span class="pill" style="border:1px solid var(--line);color:var(--dim)">Unity URP</span>
+      <span class="pill" style="border:1px solid var(--line);color:var(--dim)">Snake vs Human</span>
+    </div>
+    <h1 data-i18n="h1">Thirteen abilities,<br><em>three tiers</em> each.</h1>
+    <p data-i18n="intro">Every ability in Snake vs Human upgrades twice over a run. Each row below reads left to right — level 1, level 5, level 6 — so you can see what the upgrade actually changes: reach, density, timing and read at a glance on a small screen.</p>
+    <a class="btn" href="https://poki.com/en/g/snake-vs-human" target="_blank" rel="noopener" data-i18n="cta">Play on Poki</a>
+  </section>
+
+  <section class="wrap rows">
+    <div class="legend">
+      <span data-i18n="lg.1">39 clips · 10s loops</span>
+      <span data-i18n="lg.2">Captured in engine</span>
+      <span data-i18n="lg.3">Sound removed</span>
+    </div>
+      <article class="row">
+        <h3><span>00</span>Pistol</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/00-pistol-lv1.mp4" poster="assets/skills/00-pistol-lv1.webp" muted loop playsinline preload="none" aria-label="Pistol, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/00-pistol-lv5.mp4" poster="assets/skills/00-pistol-lv5.webp" muted loop playsinline preload="none" aria-label="Pistol, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/00-pistol-lv6.mp4" poster="assets/skills/00-pistol-lv6.webp" muted loop playsinline preload="none" aria-label="Pistol, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>01</span>Shuriken</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/01-shuriken-lv1.mp4" poster="assets/skills/01-shuriken-lv1.webp" muted loop playsinline preload="none" aria-label="Shuriken, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/01-shuriken-lv5.mp4" poster="assets/skills/01-shuriken-lv5.webp" muted loop playsinline preload="none" aria-label="Shuriken, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/01-shuriken-lv6.mp4" poster="assets/skills/01-shuriken-lv6.webp" muted loop playsinline preload="none" aria-label="Shuriken, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>02</span>Bananarang</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/02-bananarang-lv1.mp4" poster="assets/skills/02-bananarang-lv1.webp" muted loop playsinline preload="none" aria-label="Bananarang, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/02-bananarang-lv5.mp4" poster="assets/skills/02-bananarang-lv5.webp" muted loop playsinline preload="none" aria-label="Bananarang, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/02-bananarang-lv6.mp4" poster="assets/skills/02-bananarang-lv6.webp" muted loop playsinline preload="none" aria-label="Bananarang, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>03</span>Poison Spit</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/03-poison-spit-lv1.mp4" poster="assets/skills/03-poison-spit-lv1.webp" muted loop playsinline preload="none" aria-label="Poison Spit, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/03-poison-spit-lv5.mp4" poster="assets/skills/03-poison-spit-lv5.webp" muted loop playsinline preload="none" aria-label="Poison Spit, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/03-poison-spit-lv6.mp4" poster="assets/skills/03-poison-spit-lv6.webp" muted loop playsinline preload="none" aria-label="Poison Spit, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>04</span>Magic Shots</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/04-magic-shots-lv1.mp4" poster="assets/skills/04-magic-shots-lv1.webp" muted loop playsinline preload="none" aria-label="Magic Shots, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/04-magic-shots-lv5.mp4" poster="assets/skills/04-magic-shots-lv5.webp" muted loop playsinline preload="none" aria-label="Magic Shots, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/04-magic-shots-lv6.mp4" poster="assets/skills/04-magic-shots-lv6.webp" muted loop playsinline preload="none" aria-label="Magic Shots, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>05</span>Water Bomb</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/05-water-bomb-lv1.mp4" poster="assets/skills/05-water-bomb-lv1.webp" muted loop playsinline preload="none" aria-label="Water Bomb, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/05-water-bomb-lv5.mp4" poster="assets/skills/05-water-bomb-lv5.webp" muted loop playsinline preload="none" aria-label="Water Bomb, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/05-water-bomb-lv6.mp4" poster="assets/skills/05-water-bomb-lv6.webp" muted loop playsinline preload="none" aria-label="Water Bomb, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>06</span>Electric Rods</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/06-electric-rods-lv1.mp4" poster="assets/skills/06-electric-rods-lv1.webp" muted loop playsinline preload="none" aria-label="Electric Rods, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/06-electric-rods-lv5.mp4" poster="assets/skills/06-electric-rods-lv5.webp" muted loop playsinline preload="none" aria-label="Electric Rods, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/06-electric-rods-lv6.mp4" poster="assets/skills/06-electric-rods-lv6.webp" muted loop playsinline preload="none" aria-label="Electric Rods, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>07</span>Snowballs</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/07-snowballs-lv1.mp4" poster="assets/skills/07-snowballs-lv1.webp" muted loop playsinline preload="none" aria-label="Snowballs, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/07-snowballs-lv5.mp4" poster="assets/skills/07-snowballs-lv5.webp" muted loop playsinline preload="none" aria-label="Snowballs, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/07-snowballs-lv6.mp4" poster="assets/skills/07-snowballs-lv6.webp" muted loop playsinline preload="none" aria-label="Snowballs, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>08</span>Lightning</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/08-lightning-lv1.mp4" poster="assets/skills/08-lightning-lv1.webp" muted loop playsinline preload="none" aria-label="Lightning, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/08-lightning-lv5.mp4" poster="assets/skills/08-lightning-lv5.webp" muted loop playsinline preload="none" aria-label="Lightning, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/08-lightning-lv6.mp4" poster="assets/skills/08-lightning-lv6.webp" muted loop playsinline preload="none" aria-label="Lightning, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>09</span>Slash</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/09-slash-lv1.mp4" poster="assets/skills/09-slash-lv1.webp" muted loop playsinline preload="none" aria-label="Slash, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/09-slash-lv5.mp4" poster="assets/skills/09-slash-lv5.webp" muted loop playsinline preload="none" aria-label="Slash, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/09-slash-lv6.mp4" poster="assets/skills/09-slash-lv6.webp" muted loop playsinline preload="none" aria-label="Slash, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>10</span>Laser</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/10-laser-lv1.mp4" poster="assets/skills/10-laser-lv1.webp" muted loop playsinline preload="none" aria-label="Laser, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/10-laser-lv5.mp4" poster="assets/skills/10-laser-lv5.webp" muted loop playsinline preload="none" aria-label="Laser, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/10-laser-lv6.mp4" poster="assets/skills/10-laser-lv6.webp" muted loop playsinline preload="none" aria-label="Laser, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>11</span>Sticky Gum</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/11-sticky-gum-lv1.mp4" poster="assets/skills/11-sticky-gum-lv1.webp" muted loop playsinline preload="none" aria-label="Sticky Gum, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/11-sticky-gum-lv5.mp4" poster="assets/skills/11-sticky-gum-lv5.webp" muted loop playsinline preload="none" aria-label="Sticky Gum, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/11-sticky-gum-lv6.mp4" poster="assets/skills/11-sticky-gum-lv6.webp" muted loop playsinline preload="none" aria-label="Sticky Gum, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+      <article class="row">
+        <h3><span>12</span>Sound Wave</h3>
+        <div class="trio">
+          <figure>
+            <video src="assets/skills/12-sound-wave-lv1.mp4" poster="assets/skills/12-sound-wave-lv1.webp" muted loop playsinline preload="none" aria-label="Sound Wave, Level 1"></video>
+            <figcaption>Level 1</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/12-sound-wave-lv5.mp4" poster="assets/skills/12-sound-wave-lv5.webp" muted loop playsinline preload="none" aria-label="Sound Wave, Level 5"></video>
+            <figcaption>Level 5</figcaption>
+          </figure>
+          <figure>
+            <video src="assets/skills/12-sound-wave-lv6.mp4" poster="assets/skills/12-sound-wave-lv6.webp" muted loop playsinline preload="none" aria-label="Sound Wave, Level 6"></video>
+            <figcaption>Level 6</figcaption>
+          </figure>
+        </div>
+      </article>
+  </section>
+
+  <section class="wrap end">
+    <div>
+      <h2 style="font-weight:800;font-size:clamp(1.5rem,3vw,2.25rem);letter-spacing:-.03em" data-i18n="end.h">More of the game, and the rest of the work.</h2>
+    </div>
+    <div class="links">
+      <a href="index.html#work" data-i18n="end.work">← All work</a>
+      <a href="https://poki.com/en/g/snake-vs-human" target="_blank" rel="noopener">Snake vs Human ↗</a>
+      <a href="https://www.artstation.com/duzeraaa" target="_blank" rel="noopener">ArtStation ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>© <span id="y"></span> Eduardo Fernandes</span>
+  <span data-i18n="f.role">Technical Artist · Sorocaba, Brazil</span>
+</footer>
+
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+
+var EN={};
+[].forEach.call(document.querySelectorAll("[data-i18n]"),function(n){EN[n.getAttribute("data-i18n")]=n.innerHTML});
+var PT={
+ "nav.work":"Trabalhos","nav.about":"Sobre","nav.contact":"Contato",
+ "t.vfx":"VFX em tempo real",
+ "h1":"Treze habilidades,<br><em>três níveis</em> cada.",
+ "intro":"Toda habilidade de Snake vs Human evolui duas vezes ao longo de uma partida. Cada linha abaixo lê-se da esquerda para a direita — nível 1, nível 5, nível 6 — para mostrar o que a melhoria muda de fato: alcance, densidade, ritmo e leitura em tela pequena.",
+ "cta":"Jogar na Poki",
+ "lg.1":"39 clipes · loops de 10s","lg.2":"Capturado na engine","lg.3":"Sem áudio",
+ "end.h":"Mais do jogo, e o resto do trabalho.","end.work":"← Todos os trabalhos",
+ "f.role":"Technical Artist · Sorocaba, Brasil"
+};
+function setLang(l){
+  var d=l==="pt"?PT:EN;
+  [].forEach.call(document.querySelectorAll("[data-i18n]"),function(n){
+    var k=n.getAttribute("data-i18n"); if(d[k]!==undefined)n.innerHTML=d[k];
+  });
+  document.documentElement.lang=l==="pt"?"pt-BR":"en";
+  [].forEach.call(document.querySelectorAll(".lang [data-v]"),function(n){
+    var on=n.getAttribute("data-v")===l, t=document.createElement(on?"b":"span");
+    t.setAttribute("data-v",n.getAttribute("data-v")); t.textContent=n.textContent;
+    n.parentNode.replaceChild(t,n);
+  });
+}
+[].forEach.call(document.querySelectorAll(".lang button"),function(b){
+  b.addEventListener("click",function(){setLang(b.getAttribute("data-l"))});
+});
+
+var vids=[].slice.call(document.querySelectorAll(".trio video"));
+if(window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+  vids.forEach(function(v){v.controls=true});
+}else{
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){
+      if(e.isIntersecting){e.target.play().catch(function(){})}else{e.target.pause()}
+    });
+  },{rootMargin:"150px 0px",threshold:.25});
+  vids.forEach(function(v){io.observe(v)});
+}
+</script>
+</body>
+</html>

@@ -64,6 +64,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card:hover{transform:translateY(-3px)}
 .card{transition:transform .22s ease}
 .card>img{width:100%;aspect-ratio:16/9;object-fit:cover}
+.card>.noshot{aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 26px;background:#141412;border-bottom:1px solid var(--line);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+.card>.noshot b{font-weight:800;font-size:27px;letter-spacing:-.025em;text-transform:none;color:var(--violet)}
 .card .body{display:flex;flex-direction:column;gap:10px;padding:22px 24px 26px}
 .card .meta{display:flex;flex-wrap:wrap;gap:7px}
 .card .meta span{border-radius:40px;padding:5px 11px;font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
@@ -189,7 +191,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           <p data-i18n="c.hl">Environment art, props, VFX and skins. 1M+ players in the first week.</p>
         </div>
       </a>
-      <a class="card" data-c="shaders" href="https://www.artstation.com/artwork/8BRwym" target="_blank" rel="noopener">
+      <a class="card" data-c="shaders" href="https://www.artstation.com/artwork/V20Lr4" target="_blank" rel="noopener">
         <img src="assets/work/art-postprocess-comparison.jpg" alt="URP renderer features — volume effects comparison" loading="lazy">
         <div class="body">
           <div class="meta"><span class="k" data-i18n="tag.shader">Shader</span><span class="t">HLSL</span></div>
@@ -205,15 +207,39 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           <p data-i18n="c.gz">Editor gizmos with zero code. 27 gizmos, free on the Unity Asset Store.</p>
         </div>
       </a>
-      <a class="card" data-c="tools" href="https://www.artstation.com/artwork/QKZn64" target="_blank" rel="noopener">
-        <img src="assets/work/gizmos-primitives.jpg" alt="Primitive gizmos drawn in the Unity editor" loading="lazy">
+      <a class="card" data-c="shaders" href="snake-vs-human-skills.html">
+        <img src="assets/work/snake-play-skills.jpg" alt="Snake vs Human ability effects" loading="lazy">
         <div class="body">
-          <div class="meta"><span class="k" data-i18n="tag.tool">Tool</span><span class="t">C#</span></div>
+          <div class="meta"><span class="k" data-i18n="tag.vfx">VFX</span><span class="t">Unity URP</span></div>
+          <h3 data-i18n="c.skills.h">Skill VFX — 13 abilities</h3>
+          <p data-i18n="c.skills">Every ability in Snake vs Human at three upgrade tiers, side by side.</p>
+        </div>
+      </a>
+      <a class="card" data-c="tools" href="https://github.com/DuzeraFer/VFXForge" target="_blank" rel="noopener">
+        <span class="noshot"><b>VFXForge</b>Node graph · 81 nodes</span>
+        <div class="body">
+          <div class="meta"><span class="k" data-i18n="tag.tool">Tool</span><span class="t">TypeScript</span></div>
+          <h3>VFXForge</h3>
+          <p data-i18n="c.vf">A node-based VFX texture and sprite-sheet tool, with a Unity import package.</p>
+        </div>
+      </a>
+      <a class="card" data-c="tools" href="https://github.com/DuzeraFer/Illustrator-Color-Wheel" target="_blank" rel="noopener">
+        <span class="noshot"><b>Color Wheel</b>Illustrator · CEP panel</span>
+        <div class="body">
+          <div class="meta"><span class="k" data-i18n="tag.tool">Tool</span><span class="t">JavaScript</span></div>
+          <h3 data-i18n="c.cw.h">Illustrator Color Wheel</h3>
+          <p data-i18n="c.cw">The hue ring and HSB triangle Illustrator never shipped, docked by the artboard.</p>
+        </div>
+      </a>
+      <div class="card" data-c="tools">
+        <span class="noshot"><b>ArtToolkit</b>Unity packages · private</span>
+        <div class="body">
+          <div class="meta"><span class="k" data-i18n="tag.tool">Tool</span><span class="t" data-i18n="tag.priv">Private</span></div>
           <h3>ArtToolkit</h3>
           <p data-i18n="c.atk">Palettes and pooled VFX. The Unity packages every studio game is built on.</p>
         </div>
-      </a>
-      <a class="card" data-c="3d" href="https://www.artstation.com/artwork/eRJA0G" target="_blank" rel="noopener">
+      </div>
+      <a class="card" data-c="3d" href="https://www.artstation.com/artwork/WBQJ8v" target="_blank" rel="noopener">
         <img src="assets/work/art-masked-horror.jpg" alt="Masked Horror — game-ready creature for Hired 2 Die" loading="lazy">
         <div class="body">
           <div class="meta"><span class="k">3D</span><span class="t">ZBrush</span></div>
@@ -317,6 +343,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
     "work.p":"Dois jogos na Poki · 11M+ jogadores · shaders, ferramentas e 3D",
     "f.all":"Todos","f.games":"Jogos","f.shaders":"Shaders","f.tools":"Ferramentas","f.3d":"3D",
     "tag.game":"Jogo","tag.shader":"Shader","tag.tool":"Ferramenta","tag.store":"Asset Store",
+    "tag.vfx":"VFX","tag.priv":"Privado",
+    "c.skills.h":"Skill VFX — 13 habilidades",
+    "c.skills":"Todas as habilidades de Snake vs Human em três níveis de melhoria, lado a lado.",
+    "c.vf":"Ferramenta de texturas e sprite sheets de VFX em grafo de nós, com pacote de importação para Unity.",
+    "c.cw.h":"Color Wheel para Illustrator",
+    "c.cw":"O anel de matiz e o triângulo HSB que o Illustrator nunca teve, encaixado ao lado da prancheta.",
     "c.svh":"Arte de cenário, VFX, UI e skins. 10M+ jogadores, 4,5★ de 31.502 votos.",
     "c.hl":"Arte de cenário, props, VFX e skins. 1M+ jogadores na primeira semana.",
     "c.urp.h":"Renderer Features no URP",
