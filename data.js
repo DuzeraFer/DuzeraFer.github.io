@@ -802,7 +802,7 @@ window.SITE = {
       },
       {
         "cat": "tools",
-        "href": "https://github.com/eduardo-fernandes-3d/VFXForge",
+        "href": "https://github.com/EduardoFernandes3D/VFXForge",
         "newTab": true,
         "image": "",
         "alt": "",
@@ -832,7 +832,7 @@ window.SITE = {
       },
       {
         "cat": "tools",
-        "href": "https://github.com/eduardo-fernandes-3d/Illustrator-Color-Wheel",
+        "href": "https://github.com/EduardoFernandes3D/Illustrator-Color-Wheel",
         "newTab": true,
         "image": "",
         "alt": "",
@@ -2069,7 +2069,7 @@ window.SITE = {
       },
       {
         "label": "GitHub ↗",
-        "href": "https://github.com/eduardo-fernandes-3d"
+        "href": "https://github.com/EduardoFernandes3D"
       }
     ]
   },

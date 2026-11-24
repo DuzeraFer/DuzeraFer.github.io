@@ -29,7 +29,7 @@ ffmpeg -i IN.mp4 -an -vf "scale=540:540:flags=lanczos,fps=30" \
 
 Design source: `REDESIGN.md` (spec) and the Paper file *Portfolio — Redesign*.
 
-Live at https://eduardo-fernandes-3d.github.io
+Live at https://eduardofernandes3d.github.io
 
 ## Local preview
 

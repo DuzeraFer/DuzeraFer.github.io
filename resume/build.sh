@@ -67,6 +67,10 @@ DuduTween
 VFXForge
 Marmoset Toolbag
 TypeScript
+VR and Steam titles
+Time Tracker Lite
+Sub Graph Library
+awaiting a submission slot
 Associate Degree
 SUMMARY
 EXPERIENCE
@@ -95,6 +99,9 @@ DuduTween
 VFXForge
 submódulos Git
 Marmoset Toolbag
+Jogos de VR e de Steam
+Time Tracker Lite
+aguardando vaga de submissão
 Tecnólogo
 Português
 RESUMO

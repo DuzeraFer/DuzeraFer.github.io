@@ -1,6 +1,6 @@
 Eduardo Fernandes — Technical Artist
 eduardo2002.fernandes@gmail.com · +55 15 99725-2407
-linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io
+linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardofernandes3d.github.io
 
 ---
 
@@ -38,7 +38,7 @@ pipeline now: mostly ChatGPT for concepts and sketching ideas, and Claude Code f
 and for building the tools that save me time.
 
 I'm based in Brazil and looking for remote work. My portfolio is at
-eduardo-fernandes-3d.github.io, and I'd be glad to walk you through any of it.
+eduardofernandes3d.github.io, and I'd be glad to walk you through any of it.
 
 Thanks for reading,
 Eduardo

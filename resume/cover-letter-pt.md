@@ -1,6 +1,6 @@
 Eduardo Fernandes — Artista Técnico
 eduardo2002.fernandes@gmail.com · +55 15 99725-2407
-linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io
+linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardofernandes3d.github.io
 
 ---
 
@@ -39,7 +39,7 @@ para esboçar ideias, e o Claude Code para programar e para desenvolver as ferra
 me poupam tempo.
 
 Moro no Brasil e procuro trabalho remoto. Meu portfólio está em
-eduardo-fernandes-3d.github.io, e fico à disposição para mostrar qualquer parte dele.
+eduardofernandes3d.github.io, e fico à disposição para mostrar qualquer parte dele.
 
 Obrigado pela leitura,
 Eduardo
