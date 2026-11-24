@@ -26,6 +26,8 @@ My major accomplishments:
 - Tools that other artists and level designers use daily, including our own tween library
   built to fit the studio's needs, a custom atlas creator, and a UI system reusable on
   every project.
+- MEL and Python scripts for Maya that take the repetition out of my own 3D work,
+  from a facial rig builder to batch export and mesh cleanup tools.
 - Mentoring artists into the industry at Casulo Indie · UpLink.
 - Tools published on the Unity Asset Store, including Simple VAT, which I wrote to cut
   the number of skinned meshes in web games.

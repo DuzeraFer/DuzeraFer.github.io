@@ -26,6 +26,9 @@ Minhas principais conquistas:
 - Ferramentas que outros artistas e level designers usam no dia a dia, incluindo nossa
   própria biblioteca de tween feita sob medida para o estúdio, um criador de atlas
   customizado e um sistema de UI reaproveitável em qualquer projeto.
+- Scripts em MEL e Python para o Maya que tiram a repetição do meu próprio trabalho
+  em 3D, de um construtor de rig facial a ferramentas de exportação em lote e de
+  limpeza de malha.
 - Mentoria para artistas entrarem na indústria, na Casulo Indie · UpLink.
 - Ferramentas publicadas na Unity Asset Store, entre elas o Simple VAT, que escrevi para
   reduzir a quantidade de skinned meshes em jogos web.

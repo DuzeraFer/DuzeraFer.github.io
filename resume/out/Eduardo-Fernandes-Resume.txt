@@ -1,7 +1,7 @@
 EDUARDO FERNANDES
 TECHNICAL ARTIST
 
-Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardofernandes3d.github.io
+Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/EduardoFernandes3D · eduardofernandes3d.github.io
 
 SUMMARY
 Technical artist who can author an asset and then fix the pipeline that exports it. Twelve shipped titles, three of them on Poki with more than 11 million players between them, VR and Steam work on the side, and a Unity Asset Store publisher with six tools live. I write HLSL for URP, build the tooling a studio runs on, and make art hold up on a cheap Android — and I build the tool rather than repeat the task.
@@ -51,7 +51,8 @@ Publishing Unity editor and tech-art tools under my own name — assetstore.unit
 Scene Notes (a PureRef-style reference board inside Unity, with Scene-view pins), Gizmos Drawer (free; 27 editor gizmos bound drag-and-drop to private fields, properties or ScriptableObject data), Gradient Atlas, Time Tracker and Time Tracker Lite. • In review — five: Sub Graph Library (60 Shader Graph nodes for URP), Reference Hunter, Texture Workbench, SDF Baker and Curve Texture. • Built, awaiting a submission slot — eight more, including Impostor Baker (octahedral impostors as the last LOD: a 5,000-tree forest drops from 1.61M triangles to 86,276), SimpleVAT Crowd (20,000 characters from one component) and Floating Numbers (damage numbers for thousands of targets in two draw calls).
 
 OTHER PROJECTS
-• VFXForge — a node-based VFX texture and sprite-sheet tool in TypeScript, 81 nodes, with a Unity import package. • Illustrator Color Wheel — the hue ring and HSB triangle Illustrator never shipped, as a docked CEP panel. • eduardofernandes3d.github.io — portfolio site written by hand, no framework; bilingual, light and dark.
+• VFXForge — a node-based VFX texture and sprite-sheet tool in TypeScript, 81 nodes, with a Unity import package. • Illustrator Color Wheel — the hue ring and HSB triangle Illustrator never shipped, as a docked CEP panel. • Maya tools — MEL and Python scripts written for my own 3D work: a guide-based facial rig builder, a port of Blender’s Tris to Quads, a batch
+exporter, an advanced renamer and a symmetry cutter. • eduardofernandes3d.github.io — portfolio site written by hand, no framework; bilingual, light and dark.
 
 SKILLS
 TECHNICAL ART — Shader authoring, VFX, animation, performance profiling and optimisation, tool and pipeline development, technical documentation PROGRAMMING — C#, HLSL, Python, MEL, TypeScript, JavaScript (Adobe CEP), HTML / CSS ENGINES — Unity (URP, Shader Graph, VFX Graph, editor tooling), Unreal Engine 3D & TEXTURING — Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Marmoset Toolbag, Photoshop PLATFORMS — Android, iOS, WebGL and HTML5 AI IN PIPELINE — Claude and GPT used daily for tooling, automation and concept work

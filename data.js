@@ -891,6 +891,96 @@ window.SITE = {
         }
       },
       {
+        "cat": "tools",
+        "href": "",
+        "newTab": false,
+        "image": "",
+        "alt": "",
+        "noshot": {
+          "big": "Facial Rig",
+          "sub": {
+            "en": "Maya · Python",
+            "pt": "Maya · Python"
+          }
+        },
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Maya",
+          "pt": "Maya"
+        },
+        "title": {
+          "en": "Facial Rig Builder",
+          "pt": "Facial Rig Builder"
+        },
+        "desc": {
+          "en": "Fit the guides to a head, mirror one side, and it builds the joints, the colour-coded controls, the eye aim and the skin bind.",
+          "pt": "Ajuste as guias na cabeça, espelhe um lado e ele constrói os joints, os controles com cores por lado, o aim dos olhos e o bind."
+        }
+      },
+      {
+        "cat": "tools",
+        "href": "",
+        "newTab": false,
+        "image": "",
+        "alt": "",
+        "noshot": {
+          "big": "Tris to Quads",
+          "sub": {
+            "en": "Maya · Python",
+            "pt": "Maya · Python"
+          }
+        },
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Maya",
+          "pt": "Maya"
+        },
+        "title": {
+          "en": "Tris to Quads for Maya",
+          "pt": "Tris to Quads para Maya"
+        },
+        "desc": {
+          "en": "Blender’s Alt+J brought over to Maya: the same quad-quality metric and angle limits, merging triangle pairs best-first.",
+          "pt": "O Alt+J do Blender trazido para o Maya: a mesma métrica de qualidade de quad e os mesmos limites de ângulo, unindo os pares de triângulos do melhor para o pior."
+        }
+      },
+      {
+        "cat": "tools",
+        "href": "",
+        "newTab": false,
+        "image": "",
+        "alt": "",
+        "noshot": {
+          "big": "Maya Scripts",
+          "sub": {
+            "en": "MEL · Python",
+            "pt": "MEL · Python"
+          }
+        },
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "MEL",
+          "pt": "MEL"
+        },
+        "title": {
+          "en": "Maya Workflow Scripts",
+          "pt": "Scripts de Workflow para Maya"
+        },
+        "desc": {
+          "en": "Shelf tools in MEL and Python: an advanced renamer, a batch exporter that writes one file per selected object, and a symmetry cutter.",
+          "pt": "Ferramentas de shelf em MEL e Python: um renomeador avançado, um exportador em lote que grava um arquivo por objeto selecionado e um cortador de simetria."
+        }
+      },
+      {
         "cat": "3d",
         "href": "https://www.artstation.com/artwork/gRKDPK",
         "newTab": true,

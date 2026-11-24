@@ -49,6 +49,8 @@ while IFS= read -r kw; do check "$EN" "$kw"; done <<'EOF'
 Technical Artist
 Kreativitas Studio
 eduardo2002.fernandes@gmail.com
+github.com/EduardoFernandes3D
+linkedin.com/in/eduardo-fernandes-3d
 Shader Graph
 Snake vs Human
 Harvest Loop
@@ -70,6 +72,9 @@ TypeScript
 VR and Steam titles
 Time Tracker Lite
 Sub Graph Library
+Maya tools
+Tris to Quads
+MEL and Python scripts
 awaiting a submission slot
 Associate Degree
 SUMMARY
@@ -101,6 +106,9 @@ submódulos Git
 Marmoset Toolbag
 Jogos de VR e de Steam
 Time Tracker Lite
+Ferramentas para Maya
+Tris to Quads
+scripts em MEL e Python
 aguardando vaga de submissão
 Tecnólogo
 Português

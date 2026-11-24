@@ -5,7 +5,7 @@
   "description": "Technical Artist. Shaders, Unity tooling, performance. 12 shipped titles and a Unity Asset Store publisher.",
   "contact": [
    "Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com",
-   " linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardofernandes3d.github.io"
+   " linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/EduardoFernandes3D · eduardofernandes3d.github.io"
   ],
   "sections": [
    {
@@ -71,6 +71,7 @@
     "bullets": [
      "**VFXForge** — a node-based VFX texture and sprite-sheet tool in TypeScript, 81 nodes, with a Unity import package.",
      "**Illustrator Color Wheel** — the hue ring and HSB triangle Illustrator never shipped, as a docked CEP panel.",
+     "**Maya tools** — MEL and Python scripts written for my own 3D work: a guide-based facial rig builder, a port of Blender’s Tris to Quads, a batch exporter, an advanced renamer and a symmetry cutter.",
      "**eduardofernandes3d.github.io** — portfolio site written by hand, no framework; bilingual, light and dark."
     ],
     "pageBreak": true
@@ -164,6 +165,11 @@
      "bullet": true
     },
     {
+     "t": "MEL and Python scripts for Maya that take the repetition out of my own 3D work, from a facial rig builder to batch export and mesh cleanup tools.",
+     "tight": false,
+     "bullet": true
+    },
+    {
      "t": "Mentoring artists into the industry at Casulo Indie · UpLink.",
      "tight": false,
      "bullet": true
@@ -202,7 +208,7 @@
   "description": "Artista Técnico. Shaders, ferramentas Unity, performance. 12 jogos publicados e publisher na Unity Asset Store.",
   "contact": [
    "Sorocaba, São Paulo, Brasil · Disponível para remoto · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com",
-   " linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardofernandes3d.github.io"
+   " linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/EduardoFernandes3D · eduardofernandes3d.github.io"
   ],
   "sections": [
    {
@@ -268,6 +274,7 @@
     "bullets": [
      "**VFXForge** — ferramenta de texturas e sprite sheets de VFX baseada em nós, em TypeScript, com 81 nós e um pacote de importação para Unity.",
      "**Illustrator Color Wheel** — o anel de matiz e o triângulo HSB que o Illustrator nunca teve, como painel CEP acoplado.",
+     "**Ferramentas para Maya** — scripts em MEL e Python escritos para o meu próprio trabalho em 3D: um construtor de rig facial por guias, uma porta do Tris to Quads do Blender, um exportador em lote, um renomeador avançado e um cortador de simetria.",
      "**eduardofernandes3d.github.io** — site de portfólio escrito à mão, sem framework; bilíngue, claro e escuro."
     ],
     "pageBreak": true
@@ -357,6 +364,11 @@
     },
     {
      "t": "Ferramentas que outros artistas e level designers usam no dia a dia, incluindo nossa própria biblioteca de tween feita sob medida para o estúdio, um criador de atlas customizado e um sistema de UI reaproveitável em qualquer projeto.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Scripts em MEL e Python para o Maya que tiram a repetição do meu próprio trabalho em 3D, de um construtor de rig facial a ferramentas de exportação em lote e de limpeza de malha.",
      "tight": false,
      "bullet": true
     },

@@ -1,7 +1,7 @@
 EDUARDO FERNANDES
 ARTISTA TÉCNICO
 
-Sorocaba, São Paulo, Brasil · Disponível para remoto · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardofernandes3d.github.io
+Sorocaba, São Paulo, Brasil · Disponível para remoto · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/EduardoFernandes3D · eduardofernandes3d.github.io
 
 RESUMO
 Artista técnico que modela o asset e também arruma o pipeline que o exporta. Doze jogos publicados, três deles na Poki somando mais de 11 milhões de jogadores, trabalhos de VR e de Steam em paralelo, e publisher na Unity Asset Store com seis ferramentas no ar. Escrevo HLSL para URP, crio as ferramentas que um estúdio usa e entrego arte que roda bem até em Android fraco — e prefiro construir a ferramenta a repetir a tarefa.
@@ -53,7 +53,8 @@ Publico ferramentas de editor e de arte técnica para Unity em meu próprio nome
 GPU), Scene Notes (um quadro de referências estilo PureRef dentro da Unity, com pins na Scene view), Gizmos Drawer (gratuito; 27 gizmos de editor vinculados por drag-and-drop a campos privados, propriedades ou dados de ScriptableObject), Gradient Atlas, Time Tracker e Time Tracker Lite. • Em revisão — cinco: Sub Graph Library (60 nós de Shader Graph para URP), Reference Hunter, Texture Workbench, SDF Baker e Curve Texture. • Prontos, aguardando vaga de submissão — mais oito, incluindo Impostor Baker (impostores octaédricos como último LOD: uma floresta de 5.000 árvores cai de 1,61M de triângulos para 86.276), SimpleVAT Crowd (20.000 personagens a partir de um componente) e Floating Numbers (números de dano para milhares de alvos em duas draw calls).
 
 OUTROS PROJETOS
-• VFXForge — ferramenta de texturas e sprite sheets de VFX baseada em nós, em TypeScript, com 81 nós e um pacote de importação para Unity. • Illustrator Color Wheel — o anel de matiz e o triângulo HSB que o Illustrator nunca teve, como painel CEP acoplado. • eduardofernandes3d.github.io — site de portfólio escrito à mão, sem framework; bilíngue, claro e escuro.
+• VFXForge — ferramenta de texturas e sprite sheets de VFX baseada em nós, em TypeScript, com 81 nós e um pacote de importação para Unity. • Illustrator Color Wheel — o anel de matiz e o triângulo HSB que o Illustrator nunca teve, como painel CEP acoplado. • Ferramentas para Maya — scripts em MEL e Python escritos para o meu próprio trabalho em 3D: um construtor de rig facial por guias, uma porta
+do Tris to Quads do Blender, um exportador em lote, um renomeador avançado e um cortador de simetria. • eduardofernandes3d.github.io — site de portfólio escrito à mão, sem framework; bilíngue, claro e escuro.
 
 HABILIDADES
 ARTE TÉCNICA — Criação de shaders, VFX, animação, profiling e otimização de performance, desenvolvimento de ferramentas e pipeline, documentação técnica PROGRAMAÇÃO — C#, HLSL, Python, MEL, TypeScript, JavaScript (Adobe CEP), HTML / CSS ENGINES — Unity (URP, Shader Graph, VFX Graph, ferramentas de editor), Unreal Engine 3D & TEXTURIZAÇÃO — Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Marmoset Toolbag, Photoshop PLATAFORMAS — Android, iOS, WebGL e HTML5 IA NO PIPELINE — Claude e GPT usados diariamente para ferramentas, automação e concept
