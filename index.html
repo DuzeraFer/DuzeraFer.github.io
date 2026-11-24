@@ -67,6 +67,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .filters button[aria-pressed="true"]{background:var(--bg);border-color:var(--bg)}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:36px}
 .card{display:flex;flex-direction:column;background:var(--bg);border-radius:18px;overflow:hidden}
+.card[hidden]{display:none}
 .card:hover{transform:translateY(-3px)}
 .card{transition:transform .22s ease}
 .card>img{width:100%;aspect-ratio:16/9;object-fit:cover}

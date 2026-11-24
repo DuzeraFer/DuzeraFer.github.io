@@ -73,8 +73,8 @@ window.SITE = {
       "pt": "Trabalhos selecionados"
     },
     "p": {
-      "en": "Two games on Poki · 11M+ players · shaders, tools and 3D",
-      "pt": "Dois jogos na Poki · 11M+ jogadores · shaders, ferramentas e 3D"
+      "en": "Three games on Poki · 11M+ players · 19 Unity Asset Store packages",
+      "pt": "Três jogos na Poki · 11M+ jogadores · 19 pacotes na Unity Asset Store"
     },
     "categories": [
       {
@@ -110,6 +110,13 @@ window.SITE = {
         "label": {
           "en": "3D",
           "pt": "3D"
+        }
+      },
+      {
+        "id": "store",
+        "label": {
+          "en": "Asset Store",
+          "pt": "Asset Store"
         }
       }
     ],
@@ -161,6 +168,29 @@ window.SITE = {
         }
       },
       {
+        "cat": "games",
+        "href": "https://poki.com/en/g/butterfly-catch",
+        "newTab": true,
+        "image": "assets/work/butterfly-catch.jpg",
+        "alt": "Butterfly Catch key art",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Poki",
+          "pt": "Poki"
+        },
+        "title": {
+          "en": "Butterfly Catch",
+          "pt": "Butterfly Catch"
+        },
+        "desc": {
+          "en": "Environment art, props, VFX, UI and skins. A cozy idle catcher, out November 2026.",
+          "pt": "Arte de cenário, props, VFX, UI e skins. Um idle aconchegante, lançado em novembro de 2026."
+        }
+      },
+      {
         "cat": "shaders",
         "href": "https://www.artstation.com/artwork/V20Lr4",
         "newTab": true,
@@ -184,7 +214,7 @@ window.SITE = {
         }
       },
       {
-        "cat": "tools",
+        "cat": "store",
         "href": "https://assetstore.unity.com/packages/tools/utilities/gizmos-drawer-371358",
         "newTab": true,
         "image": "assets/work/gizmos-nocode.jpg",
@@ -194,16 +224,16 @@ window.SITE = {
           "pt": "Ferramenta"
         },
         "tag": {
-          "en": "Asset Store",
-          "pt": "Asset Store"
+          "en": "Published",
+          "pt": "Publicado"
         },
         "title": {
           "en": "Gizmos Drawer",
           "pt": "Gizmos Drawer"
         },
         "desc": {
-          "en": "Editor gizmos with zero code. 27 gizmos, free on the Unity Asset Store.",
-          "pt": "Gizmos de editor, zero código. 27 gizmos, grátis na Unity Asset Store."
+          "en": "Editor gizmos with zero code. 27 components in 7 categories, free on the Asset Store.",
+          "pt": "Gizmos de editor sem código. 27 componentes em 7 categorias, grátis na Asset Store."
         }
       },
       {
@@ -255,8 +285,8 @@ window.SITE = {
           "pt": "VFXForge"
         },
         "desc": {
-          "en": "A node-based VFX texture and sprite-sheet tool, with a Unity import package.",
-          "pt": "Ferramenta de texturas e sprite sheets de VFX em grafo de nós, com pacote de importação para Unity."
+          "en": "A WebGPU node graph for VFX textures and sprite sheets: 81 nodes, loop checks and a Unity export.",
+          "pt": "Um grafo de nós em WebGPU para texturas e sprite sheets de VFX: 81 nós, verificação de loop e exportação para Unity."
         }
       },
       {
@@ -315,8 +345,8 @@ window.SITE = {
           "pt": "ArtToolkit"
         },
         "desc": {
-          "en": "Palettes and pooled VFX. The Unity packages every studio game is built on.",
-          "pt": "Paletas e VFX com pooling. Os pacotes Unity que todo jogo do estúdio usa."
+          "en": "Pooled particles and floating text, a gradient atlas baker, asset auditors and a UI animation library.",
+          "pt": "Partículas e textos flutuantes com pooling, baker de atlas de gradiente, auditores de assets e animações de UI."
         }
       },
       {
@@ -340,6 +370,397 @@ window.SITE = {
         "desc": {
           "en": "Game-ready creature at 16,042 tris for Hired 2 Die: Moonlight Motel.",
           "pt": "Criatura pronta para jogo com 16.042 tris para Hired 2 Die: Moonlight Motel."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "https://assetstore.unity.com/publishers/142088",
+        "newTab": true,
+        "image": "assets/work/store-simplevat.jpg",
+        "alt": "2,500 characters, zero Animators. Skinned animation baked to vertex textures and played on the GPU.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Published",
+          "pt": "Publicado"
+        },
+        "title": {
+          "en": "Simple VAT",
+          "pt": "Simple VAT"
+        },
+        "desc": {
+          "en": "2,500 characters, zero Animators. Skinned animation baked to vertex textures and played on the GPU.",
+          "pt": "2.500 personagens, zero Animators. Animação skinned em texturas de vértice, reproduzida na GPU."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "https://assetstore.unity.com/publishers/142088",
+        "newTab": true,
+        "image": "assets/work/store-scenenotes.jpg",
+        "alt": "A PureRef-style reference board inside Unity: notes, tasks, images, voice memos and Scene view pins.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Published",
+          "pt": "Publicado"
+        },
+        "title": {
+          "en": "Scene Notes",
+          "pt": "Scene Notes"
+        },
+        "desc": {
+          "en": "A PureRef-style reference board inside Unity: notes, tasks, images, voice memos and Scene view pins.",
+          "pt": "Um painel de referência estilo PureRef dentro da Unity: notas, tarefas, imagens, áudios e pins na Scene view."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "https://assetstore.unity.com/publishers/142088",
+        "newTab": true,
+        "image": "assets/work/store-gradientatlas.jpg",
+        "alt": "Author dozens of gradients in the Inspector and bake them into one PNG atlas for toon ramps and palettes.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Published",
+          "pt": "Publicado"
+        },
+        "title": {
+          "en": "Gradient Atlas",
+          "pt": "Gradient Atlas"
+        },
+        "desc": {
+          "en": "Author dozens of gradients in the Inspector and bake them into one PNG atlas for toon ramps and palettes.",
+          "pt": "Crie dezenas de gradientes no Inspector e faça o bake num único atlas PNG para ramps toon e paletas."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "https://assetstore.unity.com/publishers/142088",
+        "newTab": true,
+        "image": "assets/work/store-timetracker.jpg",
+        "alt": "Upwork-style time tracking inside the Editor: segments, activity levels, a work diary and HTML reports.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Published",
+          "pt": "Publicado"
+        },
+        "title": {
+          "en": "Time Tracker",
+          "pt": "Time Tracker"
+        },
+        "desc": {
+          "en": "Upwork-style time tracking inside the Editor: segments, activity levels, a work diary and HTML reports.",
+          "pt": "Controle de horas estilo Upwork dentro do Editor: segmentos, níveis de atividade, diário e relatórios HTML."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "https://assetstore.unity.com/publishers/142088",
+        "newTab": true,
+        "image": "assets/work/store-referencehunter.jpg",
+        "alt": "Find where any asset is used, down to the GameObject and field, even in scenes that are not open.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "In review",
+          "pt": "Em revisão"
+        },
+        "title": {
+          "en": "Reference Hunter",
+          "pt": "Reference Hunter"
+        },
+        "desc": {
+          "en": "Find where any asset is used, down to the GameObject and field, even in scenes that are not open.",
+          "pt": "Descubra onde cada asset é usado, até o GameObject e o campo, mesmo em cenas que não estão abertas."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-impostor.jpg",
+        "alt": "Octahedral impostors as the last LOD. A 5,000-tree forest drops from 1.61M triangles to 86,276.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Impostor Baker",
+          "pt": "Impostor Baker"
+        },
+        "desc": {
+          "en": "Octahedral impostors as the last LOD. A 5,000-tree forest drops from 1.61M triangles to 86,276.",
+          "pt": "Impostores octaédricos como último LOD. Uma floresta de 5.000 árvores cai de 1,61M de triângulos para 86.276."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-windfield.jpg",
+        "alt": "One wind for the whole scene. Foliage, cloth, particles, VFX Graph and rigidbodies all read the same field.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Wind Field",
+          "pt": "Wind Field"
+        },
+        "desc": {
+          "en": "One wind for the whole scene. Foliage, cloth, particles, VFX Graph and rigidbodies all read the same field.",
+          "pt": "Um vento para a cena toda. Folhagem, tecido, partículas, VFX Graph e rigidbodies leem o mesmo campo."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-surfacetrails.jpg",
+        "alt": "Footprints, tyre tracks and paths that stay. Snow, sand and mud deform underfoot and slowly recover.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Surface Trails",
+          "pt": "Surface Trails"
+        },
+        "desc": {
+          "en": "Footprints, tyre tracks and paths that stay. Snow, sand and mud deform underfoot and slowly recover.",
+          "pt": "Pegadas, marcas de pneu e trilhas que ficam. Neve, areia e lama deformam e se recuperam aos poucos."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-skycycle.jpg",
+        "alt": "Time of day for URP authored with gradients and curves: procedural sky, sun, moon, stars and clouds.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Sky Cycle",
+          "pt": "Sky Cycle"
+        },
+        "desc": {
+          "en": "Time of day for URP authored with gradients and curves: procedural sky, sun, moon, stars and clouds.",
+          "pt": "Ciclo de dia para URP feito com gradientes e curvas: céu procedural, sol, lua, estrelas e nuvens."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-roommaps.jpg",
+        "alt": "A room behind every window. Baked interior mapping, one material for a whole building.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Room Maps",
+          "pt": "Room Maps"
+        },
+        "desc": {
+          "en": "A room behind every window. Baked interior mapping, one material for a whole building.",
+          "pt": "Um cômodo atrás de cada janela. Interior mapping com bake, um material para o prédio inteiro."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-subgraph.jpg",
+        "alt": "Sixty ready Shader Graph nodes for URP: UV tricks, noise, 2D SDF shapes, colour, lighting and masks.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Sub Graph Library",
+          "pt": "Sub Graph Library"
+        },
+        "desc": {
+          "en": "Sixty ready Shader Graph nodes for URP: UV tricks, noise, 2D SDF shapes, colour, lighting and masks.",
+          "pt": "Sessenta nós prontos de Shader Graph para URP: truques de UV, ruído, formas SDF 2D, cor, luz e máscaras."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-floatingnumbers.jpg",
+        "alt": "Damage numbers and health bars for thousands of targets, drawn by the GPU in two draw calls.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Floating Numbers",
+          "pt": "Floating Numbers"
+        },
+        "desc": {
+          "en": "Damage numbers and health bars for thousands of targets, drawn by the GPU in two draw calls.",
+          "pt": "Números de dano e barras de vida para milhares de alvos, desenhados pela GPU em dois draw calls."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-vatcrowd.jpg",
+        "alt": "20,000 characters from one component. GPU instancing, culling and LOD on top of Simple VAT.",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "SimpleVAT Crowd",
+          "pt": "SimpleVAT Crowd"
+        },
+        "desc": {
+          "en": "20,000 characters from one component. GPU instancing, culling and LOD on top of Simple VAT.",
+          "pt": "20.000 personagens a partir de um componente. Instancing na GPU, culling e LOD sobre o Simple VAT."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-cabledraper.jpg",
+        "alt": "Draw cables, wires and light strings in the Scene view. They sag like real cables and bake to meshes.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Unreleased",
+          "pt": "Não lançado"
+        },
+        "title": {
+          "en": "Cable Draper",
+          "pt": "Cable Draper"
+        },
+        "desc": {
+          "en": "Draw cables, wires and light strings in the Scene view. They sag like real cables and bake to meshes.",
+          "pt": "Desenhe cabos, fios e varais de luz na Scene view. Eles cedem como cabos reais e viram malhas."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-textureworkbench.jpg",
+        "alt": "Three texture tools in one Inspector: a channel packer, a noise baker and a texture array builder.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "In review",
+          "pt": "Em revisão"
+        },
+        "title": {
+          "en": "Texture Workbench",
+          "pt": "Texture Workbench"
+        },
+        "desc": {
+          "en": "Three texture tools in one Inspector: a channel packer, a noise baker and a texture array builder.",
+          "pt": "Três ferramentas de textura num Inspector: channel packer, baker de ruído e construtor de texture arrays."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-sdfbaker.jpg",
+        "alt": "Turn sprites and icons into signed distance fields: crisp at any scale, plus outlines, glows and morphs.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "In review",
+          "pt": "Em revisão"
+        },
+        "title": {
+          "en": "SDF Baker",
+          "pt": "SDF Baker"
+        },
+        "desc": {
+          "en": "Turn sprites and icons into signed distance fields: crisp at any scale, plus outlines, glows and morphs.",
+          "pt": "Transforme sprites e ícones em signed distance fields: nítidos em qualquer escala, com contornos, brilhos e morphs."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "",
+        "newTab": false,
+        "image": "assets/work/store-curvetexture.jpg",
+        "alt": "Bake four AnimationCurves into one small texture any shader can sample. One curve asset per effect.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "In review",
+          "pt": "Em revisão"
+        },
+        "title": {
+          "en": "Curve Texture",
+          "pt": "Curve Texture"
+        },
+        "desc": {
+          "en": "Bake four AnimationCurves into one small texture any shader can sample. One curve asset per effect.",
+          "pt": "Faça o bake de quatro AnimationCurves numa textura pequena que qualquer shader lê. Um asset de curva por efeito."
         }
       }
     ],
