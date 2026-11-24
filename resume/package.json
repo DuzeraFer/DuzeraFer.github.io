@@ -1,0 +1,15 @@
+{
+  "name": "eduardo-fernandes-resume",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Builds the resume and cover letter .docx files from resume-content.json",
+  "scripts": {
+    "docx": "node build-docx.js",
+    "pdf": "bash build.sh",
+    "content": "python extract-content.py",
+    "all": "npm run content && npm run pdf && npm run docx"
+  },
+  "dependencies": {
+    "docx": "^9.16.0"
+  }
+}
