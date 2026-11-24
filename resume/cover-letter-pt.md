@@ -1,41 +1,51 @@
 Eduardo Fernandes — Artista Técnico
 eduardo2002.fernandes@gmail.com · +55 15 99725-2407
-linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/DuzeraFer · duzerafer.github.io
+linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io
 
 ---
 
 Olá,
 
-Sou artista técnico na Kreativitas Studio, trabalhando em jogos mobile e web, tanto em
-Unity quanto em HTML puro. Três deles estão publicados na Poki: Snake vs Human, que já
-passou de 10 milhões de jogadores e foi o jogo mais jogado da Green Game Jam, Harvest
-Loop, de 1 milhão, e Butterfly Catch, lançado este mês. Estou no Snake vs Human desde o
-primeiro protótipo — arte de ambiente, props, VFX, UI, skins e o trabalho de otimização
-que rendeu cerca de 200% mais FPS em aparelhos Android low-end.
+Sou artista técnico na Kreativitas Studio, trabalhando em jogos mobile, web e VR, em
+Unity, HTML puro e Unreal. Três deles estão no ar na Poki — Snake vs Human, Harvest Loop
+e Butterfly Catch — e outros nove estão na Google Play, a maioria sem nunca ter tido um
+lançamento completo.
+
+Também trabalhei em jogos de VR e de Steam como freelancer, fazendo modelos 3D,
+otimização, VFX e materiais.
+
+Minhas principais conquistas:
+
+- Doze jogos publicados, três deles na Poki. O Snake vs Human passou de 10 milhões de
+  jogadores e foi o jogo mais jogado da Green Game Jam; estive nele desde o primeiro
+  protótipo e ajudei a moldar seu conceito e seu design.
+- Trabalho de otimização que rendeu cerca de 200% mais FPS em aparelhos Android low-end,
+  e a conversão que levou o jogo original de Android para web.
+- Concebi e criei um grande volume de VFX, shaders e animação técnica em todos os jogos
+  em que trabalhei.
+- Ferramentas que outros artistas e level designers usam no dia a dia, incluindo nossa
+  própria biblioteca de tween feita sob medida para o estúdio, um criador de atlas
+  customizado e um sistema de UI reaproveitável em qualquer projeto.
+- Mentoria para artistas entrarem na indústria, na Casulo Indie · UpLink.
+- Ferramentas publicadas na Unity Asset Store, entre elas o Simple VAT, que escrevi para
+  reduzir a quantidade de skinned meshes em jogos web.
 
 Cheguei à arte técnica a partir do 3D — Maya, ZBrush, Substance, Photoshop — então
-consigo modelar o asset e também arrumar o pipeline que o exporta. É também por isso que
-sigo construindo ferramentas em vez de repetir trabalho: ferramentas de editor na Unity
-que adicionam VFX e trocam texturas direto de animation clips, ferramentas de Maya em
-Python e MEL, e o Gizmos Drawer, um pacote de editor gratuito que publiquei na Unity
-Asset Store. IA hoje faz parte desse pipeline — GPT para imagens e concept, Claude para
-código e para o trabalho repetitivo e pesado. Também faço mentoria de artistas na Casulo Indie · UpLink
-em shaders, pipeline 3D e direção de portfólio.
+consigo modelar o asset e também arrumar o pipeline que o exporta. Conhecer o pipeline é
+também o que torna fácil enxergar onde ele pode melhorar, e é por isso que sigo
+construindo ferramentas, para mim e para os outros, para tirar a repetição do trabalho.
+IA hoje é uma parte grande desse pipeline: uso principalmente o ChatGPT para conceitos e
+para esboçar ideias, e o Claude Code para programar e para desenvolver as ferramentas que
+me poupam tempo.
 
-Moro no Brasil e procuro trabalho remoto. Meu portfólio está em duzerafer.github.io, e
-fico à disposição para mostrar qualquer parte dele.
+Moro no Brasil e procuro trabalho remoto. Meu portfólio está em
+eduardo-fernandes-3d.github.io, e fico à disposição para mostrar qualquer parte dele.
 
 Obrigado pela leitura,
 Eduardo
 
 ---
 
-OPCIONAL — um fechamento mais pessoal, para entrar antes de "Obrigado pela leitura"
-quando o tom do estúdio pedir:
-
-> Cresci jogando videogame e gostei o bastante para ir estudar desenvolvimento de jogos,
-> e o processo de fazer um acabou sendo a parte de que mais gosto.
-
-NOTA — troque os exemplos do segundo parágrafo pelo que a vaga realmente pede (shaders,
-ferramentas, otimização, 3D), e cite o estúdio e o cargo na primeira linha. Uma carta que
-nomeia a vaga ganha de uma genérica sempre.
+NOTA — troque as conquistas pelo que a vaga realmente pede (shaders, ferramentas,
+otimização, 3D), e cite o estúdio e o cargo na primeira linha. Uma carta que nomeia a
+vaga ganha de uma genérica sempre.

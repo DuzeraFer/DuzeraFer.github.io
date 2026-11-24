@@ -1,0 +1,394 @@
+{
+ "en": {
+  "name": "Eduardo Fernandes",
+  "role": "Technical Artist",
+  "description": "Technical Artist. Shaders, Unity tooling, performance. 12 shipped titles and a Unity Asset Store publisher.",
+  "contact": [
+   "Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com",
+   " linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io"
+  ],
+  "sections": [
+   {
+    "h": "Summary",
+    "para": "Technical artist who can author an asset and then fix the pipeline that exports it. Twelve shipped titles, three of them on Poki with more than 11 million players between them, and a Unity Asset Store publisher with five tools live. I write HLSL for URP, build the tooling a studio runs on, and make art hold up on a cheap Android — and I build the tool rather than repeat the task."
+   },
+   {
+    "h": "Experience",
+    "jobs": [
+     {
+      "title": "Technical Artist",
+      "at": "Kreativitas Studio · Remote",
+      "date": "Aug 2023 – Present",
+      "bullets": [
+       "Shipped **12 titles**: three on Poki — **Snake vs Human** (Nov 2025; 10M+ players, 4.5/5, most-played game of the Green Game Jam, also on Google Play and the App Store), **Harvest Loop** (1M+ players, 4.3/5) and **Butterfly Catch** (Nov 2026) — plus nine hyper-casual games on Google Play, among them Pizza Paws, Jam Drive Thru and Emoji Sort.",
+       "Led the performance work that gained roughly **200% more FPS on low-end Android**, across shader cost, draw calls, texture budgets and the asset-authoring rules that keep them down.",
+       "Authored every shader used across the studio's projects in HLSL and Shader Graph on URP, including the **13 ability VFX in Snake vs Human** at three upgrade tiers each, and own the documentation that lets other artists use them unaided.",
+       "Built and maintain **ArtToolkit** and **DuduTween**, shared Unity packages consumed by every game in the studio as Git submodules.",
+       "Built Unity editor tools in C# that attach VFX and swap textures straight from animation clips, taking a repetitive manual step out of the animation pipeline.",
+       "Work across Unity and plain HTML/JavaScript targets, maintaining the Unity import rules the rest of the art team follows."
+      ]
+     },
+     {
+      "title": "Technical Artist / 3D Artist",
+      "at": "Freelance",
+      "date": "Oct 2022 – Present",
+      "bullets": [
+       "**Yellow Panda** (2025 – present): environment art, props, UI and VFX for educational games, including **Pop&Play**, a multiplayer platformer, and **Libras em Ação**, a Brazilian sign-language game produced for the XReall initiative funded by Fapesc.",
+       "Game-ready props and characters delivered into Unity and Unreal Engine, with the shaders and materials each client's target look needed.",
+       "Documented a client's Unity UI build process so their team could carry it into later projects without me."
+      ]
+     },
+     {
+      "title": "Mentor",
+      "at": "Casulo Indie · UpLink",
+      "date": "2025 – Present",
+      "bullets": [
+       "Recurring technical-art mentorships for the UpLink programme: Unity, shaders, VFX, animation and optimisation, the 3D pipeline from sculpt to engine, what the role actually is inside a team, and portfolio and career direction."
+      ]
+     },
+     {
+      "title": "3D Artist",
+      "at": "Electric Monkeys Game Studio",
+      "date": "May – Aug 2023",
+      "bullets": [
+       "Props and characters for mobile hyper-casual games, implemented in engine with their VFX."
+      ]
+     }
+    ]
+   },
+   {
+    "h": "Unity Asset Store",
+    "para": "Publishing Unity tools and shaders under my own name — assetstore.unity.com/publishers/142088.",
+    "bullets": [
+     "**Live** — **Gizmos Drawer** (free; 27 editor gizmos in 7 categories, bound drag-and-drop to private fields, properties or ScriptableObject data), **Simple VAT** (2,500 characters with zero Animators: skinned animation baked to vertex textures and played on the GPU), **Scene Notes** (a PureRef-style reference board inside Unity, with Scene-view pins), **Gradient Atlas** and **Time Tracker**.",
+     "**In review** — Reference Hunter, Texture Workbench, SDF Baker and Curve Texture.",
+     "**In development** — nine more, including **Impostor Baker** (octahedral impostors as the last LOD: a 5,000-tree forest drops from 1.61M triangles to 86,276), **SimpleVAT Crowd** (20,000 characters from one component), **Sub Graph Library** (60 Shader Graph nodes for URP) and **Floating Numbers** (damage numbers for thousands of targets in two draw calls)."
+    ]
+   },
+   {
+    "h": "Other Projects",
+    "bullets": [
+     "**VFXForge** — a node-based VFX texture and sprite-sheet tool in TypeScript, 81 nodes, with a Unity import package.",
+     "**Illustrator Color Wheel** — the hue ring and HSB triangle Illustrator never shipped, as a docked CEP panel.",
+     "**eduardo-fernandes-3d.github.io** — portfolio site written by hand, no framework; bilingual, light and dark."
+    ],
+    "pageBreak": true
+   },
+   {
+    "h": "Skills",
+    "skills": [
+     [
+      "Technical art",
+      "Shader authoring, VFX, animation, performance profiling and optimisation, tool and pipeline development, technical documentation"
+     ],
+     [
+      "Programming",
+      "C#, HLSL, Python, MEL, TypeScript, JavaScript (Adobe CEP), HTML / CSS"
+     ],
+     [
+      "Engines",
+      "Unity (URP, Shader Graph, VFX Graph, editor tooling), Unreal Engine"
+     ],
+     [
+      "3D & texturing",
+      "Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Marmoset Toolbag, Photoshop"
+     ],
+     [
+      "Platforms",
+      "Android, iOS, WebGL and HTML5"
+     ],
+     [
+      "AI in pipeline",
+      "Claude and GPT used daily for tooling, automation and concept work"
+     ]
+    ]
+   },
+   {
+    "h": "Education",
+    "row": [
+     "**Associate Degree, Digital Games** — UNISO, Universidade de Sorocaba",
+     "Jul 2023"
+    ]
+   },
+   {
+    "h": "Languages",
+    "para": "Portuguese — native · English — professional"
+   }
+  ],
+  "letter": {
+   "header": [
+    "Eduardo Fernandes — Technical Artist",
+    "eduardo2002.fernandes@gmail.com · +55 15 99725-2407",
+    "linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io"
+   ],
+   "paragraphs": [
+    {
+     "t": "Hello,",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "I'm a technical artist at Kreativitas Studio, working on mobile, web and VR games in Unity, plain HTML and Unreal. Three of them are live on Poki — Snake vs Human, Harvest Loop and Butterfly Catch — and nine more are on Google Play, most of which never got a full launch.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "I've also worked on VR and Steam titles as a freelancer, doing 3D models, optimisation, VFX and materials.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "My major accomplishments:",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Twelve shipped games, three of them on Poki. Snake vs Human passed 10 million players and was the most-played game of the Green Game Jam; I was on it from the first prototype and helped shape its concept and design.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Optimisation work that gained around 200% more FPS on low-end Android, and the port that took the original game from Android to web.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Conceptualised and built a large body of VFX, shaders and technical animation across every game I've worked on.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Tools that other artists and level designers use daily, including our own tween library built to fit the studio's needs, a custom atlas creator, and a UI system reusable on every project.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Mentoring artists into the industry at Casulo Indie · UpLink.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Tools published on the Unity Asset Store, including Simple VAT, which I wrote to cut the number of skinned meshes in web games.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "I came into technical art from 3D — Maya, ZBrush, Substance, Photoshop — so I can author an asset and then fix the pipeline that exports it. Knowing the pipeline is also what makes it easy to see where it can be improved, which is why I keep building tools, for myself and for others, to take the repetition out of the work. AI is a big part of that pipeline now: mostly ChatGPT for concepts and sketching ideas, and Claude Code for coding and for building the tools that save me time.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "I'm based in Brazil and looking for remote work. My portfolio is at eduardo-fernandes-3d.github.io, and I'd be glad to walk you through any of it.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Thanks for reading,",
+     "tight": true,
+     "bullet": false
+    },
+    {
+     "t": "Eduardo",
+     "tight": false,
+     "bullet": false
+    }
+   ]
+  }
+ },
+ "pt": {
+  "name": "Eduardo Fernandes",
+  "role": "Artista Técnico",
+  "description": "Artista Técnico. Shaders, ferramentas Unity, performance. 12 jogos publicados e publisher na Unity Asset Store.",
+  "contact": [
+   "Sorocaba, São Paulo, Brasil · Disponível para remoto · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com",
+   " linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io"
+  ],
+  "sections": [
+   {
+    "h": "Resumo",
+    "para": "Artista técnico que modela o asset e também arruma o pipeline que o exporta. Doze jogos publicados, três deles na Poki somando mais de 11 milhões de jogadores, e publisher na Unity Asset Store com cinco ferramentas no ar. Escrevo HLSL para URP, crio as ferramentas que um estúdio usa e entrego arte que roda bem até em Android fraco — e prefiro construir a ferramenta a repetir a tarefa."
+   },
+   {
+    "h": "Experiência",
+    "jobs": [
+     {
+      "title": "Artista Técnico",
+      "at": "Kreativitas Studio · Remoto",
+      "date": "Ago 2023 – Atual",
+      "bullets": [
+       "Publiquei **12 jogos**: três na Poki — **Snake vs Human** (nov 2025; 10M+ jogadores, 4,5/5, jogo mais jogado da Green Game Jam, também na Google Play e na App Store), **Harvest Loop** (1M+ jogadores, 4,3/5) e **Butterfly Catch** (nov 2026) — mais nove jogos hiper-casuais na Google Play, entre eles Pizza Paws, Jam Drive Thru e Emoji Sort.",
+       "Conduzi o trabalho de performance que rendeu cerca de **200% mais FPS em aparelhos Android low-end**, atuando em custo de shader, draw calls, orçamento de texturas e nas regras de criação de assets que mantém esse custo baixo.",
+       "Criei todos os shaders usados nos projetos do estúdio, em HLSL e Shader Graph sobre URP, incluindo os **13 VFX de habilidades do Snake vs Human**, cada um em três níveis de upgrade, e mantenho a documentação que permite outros artistas usá-los sem ajuda.",
+       "Criei e mantenho o **ArtToolkit** e o **DuduTween**, pacotes Unity compartilhados entre todos os jogos do estúdio como submódulos Git.",
+       "Desenvolvi ferramentas de editor em C# que adicionam VFX e trocam texturas direto de animation clips, removendo uma etapa manual repetitiva do pipeline de animação.",
+       "Desenvolvo tanto para Unity quanto para HTML/JavaScript puro, e mantenho as regras de importação na Unity que o resto do time de arte segue."
+      ]
+     },
+     {
+      "title": "Artista Técnico / Artista 3D",
+      "at": "Freelancer",
+      "date": "Out 2022 – Atual",
+      "bullets": [
+       "**Yellow Panda** (2025 – atual): arte de cenário, props, UI e VFX para jogos educacionais, entre eles **Pop&Play**, um jogo de plataforma multiplayer, e **Libras em Ação**, jogo de Libras produzido para a iniciativa XReall com financiamento da Fapesc.",
+       "Props e personagens prontos para jogo entregues em Unity e Unreal Engine, com os shaders e materiais necessários para atingir o visual pedido por cada cliente.",
+       "Documentei o processo de construção de UI na Unity de um cliente para que a equipe pudesse levá-lo a outros projetos sem mim."
+      ]
+     },
+     {
+      "title": "Mentor",
+      "at": "Casulo Indie · UpLink",
+      "date": "2025 – Atual",
+      "bullets": [
+       "Mentorias recorrentes de arte técnica no programa da UpLink: Unity, shaders, VFX, animação e otimização, pipeline 3D da escultura até a engine, o que a função realmente é dentro de um time, e orientação de portfólio e carreira."
+      ]
+     },
+     {
+      "title": "Artista 3D",
+      "at": "Electric Monkeys Game Studio",
+      "date": "Mai – Ago 2023",
+      "bullets": [
+       "Props e personagens para jogos mobile hiper-casuais, implementados na engine junto com seus VFX."
+      ]
+     }
+    ]
+   },
+   {
+    "h": "Unity Asset Store",
+    "para": "Publico ferramentas e shaders de Unity em meu próprio nome — assetstore.unity.com/publishers/142088.",
+    "bullets": [
+     "**No ar** — **Gizmos Drawer** (gratuito; 27 gizmos de editor em 7 categorias, vinculados por drag-and-drop a campos privados, propriedades ou dados de ScriptableObject), **Simple VAT** (2.500 personagens sem nenhum Animator: animação skinned assada em vertex textures e reproduzida na GPU), **Scene Notes** (um quadro de referências estilo PureRef dentro da Unity, com pins na Scene view), **Gradient Atlas** e **Time Tracker**.",
+     "**Em revisão** — Reference Hunter, Texture Workbench, SDF Baker e Curve Texture.",
+     "**Em desenvolvimento** — mais nove, incluindo **Impostor Baker** (impostores octaédricos como último LOD: uma floresta de 5.000 árvores cai de 1,61M de triângulos para 86.276), **SimpleVAT Crowd** (20.000 personagens a partir de um componente), **Sub Graph Library** (60 nós de Shader Graph para URP) e **Floating Numbers** (números de dano para milhares de alvos em duas draw calls)."
+    ]
+   },
+   {
+    "h": "Outros Projetos",
+    "bullets": [
+     "**VFXForge** — ferramenta de texturas e sprite sheets de VFX baseada em nós, em TypeScript, com 81 nós e um pacote de importação para Unity.",
+     "**Illustrator Color Wheel** — o anel de matiz e o triângulo HSB que o Illustrator nunca teve, como painel CEP acoplado.",
+     "**eduardo-fernandes-3d.github.io** — site de portfólio escrito à mão, sem framework; bilíngue, claro e escuro."
+    ],
+    "pageBreak": true
+   },
+   {
+    "h": "Habilidades",
+    "skills": [
+     [
+      "Arte técnica",
+      "Criação de shaders, VFX, animação, profiling e otimização de performance, desenvolvimento de ferramentas e pipeline, documentação técnica"
+     ],
+     [
+      "Programação",
+      "C#, HLSL, Python, MEL, TypeScript, JavaScript (Adobe CEP), HTML / CSS"
+     ],
+     [
+      "Engines",
+      "Unity (URP, Shader Graph, VFX Graph, ferramentas de editor), Unreal Engine"
+     ],
+     [
+      "3D & texturização",
+      "Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Marmoset Toolbag, Photoshop"
+     ],
+     [
+      "Plataformas",
+      "Android, iOS, WebGL e HTML5"
+     ],
+     [
+      "IA no pipeline",
+      "Claude e GPT usados diariamente para ferramentas, automação e concept"
+     ]
+    ]
+   },
+   {
+    "h": "Formação",
+    "row": [
+     "**Tecnólogo em Jogos Digitais** — UNISO, Universidade de Sorocaba",
+     "Jul 2023"
+    ]
+   },
+   {
+    "h": "Idiomas",
+    "para": "Português — nativo · Inglês — profissional"
+   }
+  ],
+  "letter": {
+   "header": [
+    "Eduardo Fernandes — Artista Técnico",
+    "eduardo2002.fernandes@gmail.com · +55 15 99725-2407",
+    "linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io"
+   ],
+   "paragraphs": [
+    {
+     "t": "Olá,",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Sou artista técnico na Kreativitas Studio, trabalhando em jogos mobile, web e VR, em Unity, HTML puro e Unreal. Três deles estão no ar na Poki — Snake vs Human, Harvest Loop e Butterfly Catch — e outros nove estão na Google Play, a maioria sem nunca ter tido um lançamento completo.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Também trabalhei em jogos de VR e de Steam como freelancer, fazendo modelos 3D, otimização, VFX e materiais.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Minhas principais conquistas:",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Doze jogos publicados, três deles na Poki. O Snake vs Human passou de 10 milhões de jogadores e foi o jogo mais jogado da Green Game Jam; estive nele desde o primeiro protótipo e ajudei a moldar seu conceito e seu design.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Trabalho de otimização que rendeu cerca de 200% mais FPS em aparelhos Android low-end, e a conversão que levou o jogo original de Android para web.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Concebi e criei um grande volume de VFX, shaders e animação técnica em todos os jogos em que trabalhei.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Ferramentas que outros artistas e level designers usam no dia a dia, incluindo nossa própria biblioteca de tween feita sob medida para o estúdio, um criador de atlas customizado e um sistema de UI reaproveitável em qualquer projeto.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Mentoria para artistas entrarem na indústria, na Casulo Indie · UpLink.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Ferramentas publicadas na Unity Asset Store, entre elas o Simple VAT, que escrevi para reduzir a quantidade de skinned meshes em jogos web.",
+     "tight": false,
+     "bullet": true
+    },
+    {
+     "t": "Cheguei à arte técnica a partir do 3D — Maya, ZBrush, Substance, Photoshop — então consigo modelar o asset e também arrumar o pipeline que o exporta. Conhecer o pipeline é também o que torna fácil enxergar onde ele pode melhorar, e é por isso que sigo construindo ferramentas, para mim e para os outros, para tirar a repetição do trabalho. IA hoje é uma parte grande desse pipeline: uso principalmente o ChatGPT para conceitos e para esboçar ideias, e o Claude Code para programar e para desenvolver as ferramentas que me poupam tempo.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Moro no Brasil e procuro trabalho remoto. Meu portfólio está em eduardo-fernandes-3d.github.io, e fico à disposição para mostrar qualquer parte dele.",
+     "tight": false,
+     "bullet": false
+    },
+    {
+     "t": "Obrigado pela leitura,",
+     "tight": true,
+     "bullet": false
+    },
+    {
+     "t": "Eduardo",
+     "tight": false,
+     "bullet": false
+    }
+   ]
+  }
+ }
+}

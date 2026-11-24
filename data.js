@@ -12,7 +12,7 @@ window.SITE = {
     "line": "#2A2A26"
   },
   "brand": {
-    "name": "Duzera",
+    "name": "Eduardo Fernandes",
     "logo": "assets/avatar-cut.png"
   },
   "resume": {
@@ -802,7 +802,7 @@ window.SITE = {
       },
       {
         "cat": "tools",
-        "href": "https://github.com/DuzeraFer/VFXForge",
+        "href": "https://github.com/eduardo-fernandes-3d/VFXForge",
         "newTab": true,
         "image": "",
         "alt": "",
@@ -832,7 +832,7 @@ window.SITE = {
       },
       {
         "cat": "tools",
-        "href": "https://github.com/DuzeraFer/Illustrator-Color-Wheel",
+        "href": "https://github.com/eduardo-fernandes-3d/Illustrator-Color-Wheel",
         "newTab": true,
         "image": "",
         "alt": "",
@@ -2069,7 +2069,7 @@ window.SITE = {
       },
       {
         "label": "GitHub ↗",
-        "href": "https://github.com/DuzeraFer"
+        "href": "https://github.com/eduardo-fernandes-3d"
       }
     ]
   },

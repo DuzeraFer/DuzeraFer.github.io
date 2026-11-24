@@ -7,7 +7,7 @@
 <meta name="description" content="Thirteen abilities from Snake vs Human, each at three upgrade tiers. Real-time VFX built in Unity URP by Eduardo Fernandes.">
 <meta property="og:title" content="Snake vs Human — Skill VFX">
 <meta property="og:description" content="Thirteen abilities, three upgrade tiers each. Real-time VFX in Unity URP.">
-<meta property="og:image" content="https://duzerafer.github.io/assets/work/snake-play-skills.jpg">
+<meta property="og:image" content="https://eduardo-fernandes-3d.github.io/assets/work/snake-play-skills.jpg">
 <meta name="theme-color" content="#0B0B0B">
 <link rel="icon" href="assets/avatar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,9 +39,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 .top{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.9);backdrop-filter:blur(10px)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
-.mark{display:flex;align-items:center;gap:12px}
+.mark{display:flex;align-items:center;gap:12px;min-width:0}
 .mark img{width:44px;height:56px;object-fit:contain}
-.mark span{font-weight:800;font-size:16px;letter-spacing:.22em;text-transform:uppercase}
+.mark span{font-weight:800;font-size:16px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{font-weight:500;font-size:13px;color:var(--dim)}
 .nav a:hover{color:var(--ink)}
@@ -72,9 +72,14 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .end .links a:hover{color:var(--ink)}
 .foot{border-top:1px solid var(--line);padding:26px 0 36px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:var(--dim)}
 
+@media (max-width:600px){
+  .mark span{display:none}
+}
 @media (max-width:900px){
   :root{--gut:22px}
   .nav a{display:none}
+  .mark img{width:36px;height:46px}
+  .mark span{font-size:11px;letter-spacing:.08em}
   .head{padding:52px 0 32px}
   .trio{gap:7px}
   .trio video{border-radius:8px}
@@ -89,7 +94,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <header class="top">
   <div class="wrap bar">
-    <a class="mark" href="index.html"><img src="assets/avatar-cut.png" alt=""><span>Duzera</span></a>
+    <a class="mark" href="index.html"><img src="assets/avatar-cut.png" alt=""><span>Eduardo Fernandes</span></a>
     <nav class="nav">
       <a href="index.html#work" data-i18n="nav.work">Work</a>
       <a href="index.html#about" data-i18n="nav.about">About</a>

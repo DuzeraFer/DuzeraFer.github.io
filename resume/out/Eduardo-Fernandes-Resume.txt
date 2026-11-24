@@ -1,10 +1,10 @@
 EDUARDO FERNANDES
 TECHNICAL ARTIST
 
-Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/DuzeraFer · duzerafer.github.io
+Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · eduardo-fernandes-3d.github.io
 
 SUMMARY
-Technical artist who can author an asset and then fix the pipeline that exports it. Three years of shaders, Unity tooling and optimisation for mobile and web games — three of them live on Poki, with more than 11 million players between them. Came into technical art from 3D, so I work both sides of the art–engineering handoff, and I build the tool rather than repeat the task.
+Technical artist who can author an asset and then fix the pipeline that exports it. Twelve shipped titles, three of them on Poki with more than 11 million players between them, VR and Steam work on the side, and a Unity Asset Store publisher with six tools live. I write HLSL for URP, build the tooling a studio runs on, and make art hold up on a cheap Android — and I build the tool rather than repeat the task.
 
 EXPERIENCE
 
@@ -12,11 +12,13 @@ Technical Artist — Kreativitas Studio · Remote
 
 AUG 2023 – PRESENT
 
-• Shipped three titles on Poki: Snake vs Human (Nov 2025; 10M+ players, 4.5/5, most-played game of the Green Game Jam, also on Google Play and the App Store), Harvest Loop (1M+ players, 4.3/5) and Butterfly Catch (Nov 2026). Environment art, props, VFX, UI, skins and optimisation on each; on Snake vs Human since the first prototype.
+• Shipped 12 titles: three on Poki — Snake vs Human (Nov 2025; 10M+ players, 4.5/5, most-played game of the Green Game Jam, also on Google Play and the App Store), Harvest Loop (1M+ players, 4.3/5) and Butterfly Catch (Nov 2026) — plus nine hyper-casual games on Google Play, among them Pizza Paws, Jam Drive Thru and Emoji Sort.
 
-• Led the performance work that gained roughly 200% more FPS on low-end Android, across shader cost, draw calls, texture budgets and the asset-authoring rules that keep them down.
+• Led the performance work that gained roughly 200% more FPS on low-end Android, across shader cost, draw calls, texture budgets and the asset-authoring rules that keep them down — and ported the original Android build to web.
 
-• Authored every shader used across the studio's projects in HLSL and Shader Graph on URP, and own the shader and art-pipeline documentation that lets other artists use them unaided.
+• Authored every shader used across the studio's projects in HLSL and Shader Graph on URP, including the 13 ability VFX in Snake vs Human at three upgrade tiers each, and own the documentation that lets other artists use them unaided.
+
+• Built and maintain ArtToolkit and DuduTween, shared Unity packages consumed by every game in the studio as Git submodules.
 
 • Built Unity editor tools in C# that attach VFX and swap textures straight from animation clips, taking a repetitive manual step out of the animation pipeline.
 
@@ -27,6 +29,8 @@ Technical Artist / 3D Artist — Freelance
 OCT 2022 – PRESENT
 
 • Yellow Panda (2025 – present): environment art, props, UI and VFX for educational games, including Pop&Play, a multiplayer platformer, and Libras em Ação, a Brazilian sign-language game produced for the XReall initiative funded by Fapesc.
+
+• VR and Steam titles: 3D models, optimisation, VFX and materials, in both Unity and Unreal Engine.
 
 • Game-ready props and characters delivered into Unity and Unreal Engine, with the shaders and materials each client's target look needed.
 
@@ -42,12 +46,15 @@ Mentor — Casulo Indie · UpLink
 
 MAY – AUG 2023
 
-PROJECTS
-• Gizmos Drawer — free editor package published on the Unity Asset Store (June 2026): editor-only gizmos from primitives to area-of-effect collision and projectile reflection normals, bound drag-and-drop to private fields, properties or ScriptableObject data.
-• duzerafer.github.io — portfolio site written by hand, no framework; bilingual, light and dark, hash-routed.
+UNITY ASSET STORE
+Publishing Unity editor and tech-art tools under my own name — assetstore.unity.com/publishers/142088, nineteen packages built. • Published — six: Simple VAT (2,500 characters with zero Animators — skinned animation baked to vertex textures and played on the GPU),
+Scene Notes (a PureRef-style reference board inside Unity, with Scene-view pins), Gizmos Drawer (free; 27 editor gizmos bound drag-and-drop to private fields, properties or ScriptableObject data), Gradient Atlas, Time Tracker and Time Tracker Lite. • In review — five: Sub Graph Library (60 Shader Graph nodes for URP), Reference Hunter, Texture Workbench, SDF Baker and Curve Texture. • Built, awaiting a submission slot — eight more, including Impostor Baker (octahedral impostors as the last LOD: a 5,000-tree forest drops from 1.61M triangles to 86,276), SimpleVAT Crowd (20,000 characters from one component) and Floating Numbers (damage numbers for thousands of targets in two draw calls).
+
+OTHER PROJECTS
+• VFXForge — a node-based VFX texture and sprite-sheet tool in TypeScript, 81 nodes, with a Unity import package. • Illustrator Color Wheel — the hue ring and HSB triangle Illustrator never shipped, as a docked CEP panel. • eduardo-fernandes-3d.github.io — portfolio site written by hand, no framework; bilingual, light and dark.
 
 SKILLS
-TECHNICAL ART — Shader authoring, VFX, animation, performance profiling and optimisation, tool and pipeline development, technical documentation PROGRAMMING — C#, HLSL, Python, MEL, JavaScript, HTML / CSS ENGINES — Unity (URP, Shader Graph, editor tooling), Unreal Engine 3D & TEXTURING — Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Photoshop PLATFORMS — Android, iOS, WebGL and HTML5 AI IN PIPELINE — Claude and GPT used daily for tooling, automation and concept work
+TECHNICAL ART — Shader authoring, VFX, animation, performance profiling and optimisation, tool and pipeline development, technical documentation PROGRAMMING — C#, HLSL, Python, MEL, TypeScript, JavaScript (Adobe CEP), HTML / CSS ENGINES — Unity (URP, Shader Graph, VFX Graph, editor tooling), Unreal Engine 3D & TEXTURING — Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Marmoset Toolbag, Photoshop PLATFORMS — Android, iOS, WebGL and HTML5 AI IN PIPELINE — Claude and GPT used daily for tooling, automation and concept work
 
 EDUCATION
 Associate Degree, Digital Games — UNISO, Universidade de Sorocaba

@@ -154,3 +154,8 @@ li b { font-weight: 700; }
   }
 }
 
+
+/* Two-page layout: break where it reads as a decision, not an overflow.
+   Small sections must not split across the break. */
+.sec.break { page-break-before: always; padding-top: 2mm; }
+.sec.keep { page-break-inside: avoid; }

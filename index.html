@@ -7,7 +7,7 @@
 <meta name="description" content="Eduardo Fernandes — Technical Artist and 3D Artist. HLSL shaders for URP, Unity and Maya tools, and game-ready art for mobile and web games live on Poki.">
 <meta property="og:title" content="Eduardo Fernandes · Technical Artist">
 <meta property="og:description" content="Shaders, tools and art that runs. Kreativitas Studio, Sorocaba, Brazil.">
-<meta property="og:image" content="https://duzerafer.github.io/assets/work/snake-play-keyart.jpg">
+<meta property="og:image" content="https://eduardo-fernandes-3d.github.io/assets/work/snake-play-keyart.jpg">
 <meta name="theme-color" content="#0B0B0B">
 <link rel="icon" href="assets/avatar.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -40,9 +40,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 .top{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.9);backdrop-filter:blur(10px)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
-.mark{display:flex;align-items:center;gap:12px}
+.mark{display:flex;align-items:center;gap:12px;min-width:0}
 .mark img{width:44px;height:56px;object-fit:contain}
-.mark span{font-weight:800;font-size:16px;letter-spacing:.22em;text-transform:uppercase}
+.mark span{font-weight:800;font-size:16px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
 .nav{display:flex;align-items:center;gap:26px}
 .nav a{font-weight:500;font-size:13px;color:var(--dim)}
 .nav a:hover{color:var(--ink)}
@@ -115,12 +115,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .cside .links a:hover{color:var(--ink)}
 .foot{display:flex;justify-content:space-between;gap:16px;padding:22px 0;border-top:1px solid var(--line);font-size:12px;letter-spacing:.06em;color:var(--dim)}
 
+@media (max-width:600px){
+  .mark span{display:none}
+}
 @media (max-width:900px){
   :root{--gut:22px}
   .nav a[href^="#"]{display:none}
   .nav{gap:14px}
   .mark img{width:36px;height:46px}
-  .mark span{font-size:13px;letter-spacing:.16em}
+  .mark span{font-size:11px;letter-spacing:.08em}
+  .btn{white-space:nowrap}
   .bar{height:64px}
   .hero{min-height:0}
   .hero .in{padding-top:88px;padding-bottom:40px}

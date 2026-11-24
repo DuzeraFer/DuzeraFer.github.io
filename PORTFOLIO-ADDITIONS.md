@@ -1,7 +1,7 @@
 # Portfolio additions — GitHub + Asset Store audit
 
-Audit run 2026-11-23. Sources: 973 commits authored by `DuzeraFer` across 29 repos in
-`kreativitas-studio`, 175 in your own repos, the `DuzeraFer/AssetStore` repo (all nine
+Audit run 2026-11-23. Sources: 973 commits authored by `eduardo-fernandes-3d` across 29 repos in
+`kreativitas-studio`, 175 in your own repos, the `eduardo-fernandes-3d/AssetStore` repo (all nine
 `asset/*` branches), and the live Unity Publisher Portal.
 
 ---
