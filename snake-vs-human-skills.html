@@ -58,7 +58,8 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .legend span{border:1px solid var(--line);border-radius:40px;padding:7px 14px;font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 
 .rows{padding-bottom:40px}
-.row{padding:30px 0;border-top:1px solid var(--line)}
+.row{padding:30px 0;border-top:1px solid var(--line);scroll-margin-top:92px}
+.row:target h3 span{color:var(--gold,#F5C518)}
 .row h3{display:flex;align-items:baseline;gap:14px;font-weight:700;font-size:21px;letter-spacing:-.015em;padding-bottom:16px}
 .row h3 span{font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--violet)}
 .trio{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
@@ -118,7 +119,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <span data-i18n="lg.2">Captured in engine</span>
       <span data-i18n="lg.3">Sound removed</span>
     </div>
-      <article class="row">
+      <article class="row" id="pistol">
         <h3><span>00</span>Pistol</h3>
         <div class="trio">
           <figure>
@@ -135,7 +136,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="shuriken">
         <h3><span>01</span>Shuriken</h3>
         <div class="trio">
           <figure>
@@ -152,7 +153,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="bananarang">
         <h3><span>02</span>Bananarang</h3>
         <div class="trio">
           <figure>
@@ -169,7 +170,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="poison-spit">
         <h3><span>03</span>Poison Spit</h3>
         <div class="trio">
           <figure>
@@ -186,7 +187,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="magic-shots">
         <h3><span>04</span>Magic Shots</h3>
         <div class="trio">
           <figure>
@@ -203,7 +204,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="water-bomb">
         <h3><span>05</span>Water Bomb</h3>
         <div class="trio">
           <figure>
@@ -220,7 +221,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="electric-rods">
         <h3><span>06</span>Electric Rods</h3>
         <div class="trio">
           <figure>
@@ -237,7 +238,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="snowballs">
         <h3><span>07</span>Snowballs</h3>
         <div class="trio">
           <figure>
@@ -254,7 +255,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="lightning">
         <h3><span>08</span>Lightning</h3>
         <div class="trio">
           <figure>
@@ -271,7 +272,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="slash">
         <h3><span>09</span>Slash</h3>
         <div class="trio">
           <figure>
@@ -288,7 +289,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="laser">
         <h3><span>10</span>Laser</h3>
         <div class="trio">
           <figure>
@@ -305,7 +306,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="sticky-gum">
         <h3><span>11</span>Sticky Gum</h3>
         <div class="trio">
           <figure>
@@ -322,7 +323,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
           </figure>
         </div>
       </article>
-      <article class="row">
+      <article class="row" id="sound-wave">
         <h3><span>12</span>Sound Wave</h3>
         <div class="trio">
           <figure>

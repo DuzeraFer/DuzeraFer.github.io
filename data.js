@@ -73,8 +73,8 @@ window.SITE = {
       "pt": "Trabalhos selecionados"
     },
     "p": {
-      "en": "Three games on Poki, six on Google Play · 11M+ players · 19 Unity Asset Store packages",
-      "pt": "Três jogos na Poki, seis na Google Play · 11M+ jogadores · 19 pacotes na Unity Asset Store"
+      "en": "Three games on Poki, nine on Google Play · 11M+ players · 19 Unity Asset Store packages",
+      "pt": "Três jogos na Poki, nove na Google Play · 11M+ jogadores · 19 pacotes na Unity Asset Store"
     },
     "categories": [
       {
@@ -94,8 +94,8 @@ window.SITE = {
       {
         "id": "shaders",
         "label": {
-          "en": "Shaders",
-          "pt": "Shaders"
+          "en": "Shaders + VFX",
+          "pt": "Shaders + VFX"
         }
       },
       {
@@ -188,6 +188,75 @@ window.SITE = {
         "desc": {
           "en": "Environment art, props, VFX, UI and skins. A cozy idle catcher, out November 2026.",
           "pt": "Arte de cenário, props, VFX, UI e skins. Um idle aconchegante, lançado em novembro de 2026."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pizzapaws",
+        "newTab": true,
+        "image": "assets/work/play-pizzapaws.jpg",
+        "alt": "Pizza Paws — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Pizza Paws",
+          "pt": "Pizza Paws"
+        },
+        "desc": {
+          "en": "A terrain painter and grass surface baker, trail and currency VFX, camera juice and the optimisation pass.",
+          "pt": "Um pintor de terreno e baker de grama, VFX de trilhas e moedas, juice de câmera e o trabalho de otimização."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.KreativitasStudio.JamDriveThru",
+        "newTab": true,
+        "image": "assets/work/play-jamdrivethru.jpg",
+        "alt": "Jam Drive Thru — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Jam Drive Thru",
+          "pt": "Jam Drive Thru"
+        },
+        "desc": {
+          "en": "Food and car models, outline and ground shaders, cloche animations and the coin and food-box VFX.",
+          "pt": "Modelos de comidas e carros, shaders de contorno e chão, animações da cloche e VFX de moedas e caixas."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.faceaway",
+        "newTab": true,
+        "image": "assets/work/play-faceaway.jpg",
+        "alt": "Face Away — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Face Away",
+          "pt": "Face Away"
+        },
+        "desc": {
+          "en": "Tile and symbol materials, contrast-safe shader maths, the booster tutorial and button states.",
+          "pt": "Materiais de peças e símbolos, matemática de shader segura para contraste, tutorial de booster e estados de botão."
         }
       },
       {
@@ -352,6 +421,52 @@ window.SITE = {
         }
       },
       {
+        "cat": "shaders",
+        "href": "https://www.artstation.com/artwork/V2086P",
+        "newTab": true,
+        "image": "assets/work/art-postprocess-bloom.jpg",
+        "alt": "Unity post-process features showcase — bloom pass",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Post-Process Showcase",
+          "pt": "Showcase de Post-Process"
+        },
+        "desc": {
+          "en": "The same render features in motion — SSAO, bloom, outline and gradient fog, all driven from Volume Profiles.",
+          "pt": "As mesmas render features em movimento — SSAO, bloom, outline e névoa gradiente, controlados por Volume Profiles."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "https://www.artstation.com/artwork/QKZn64",
+        "newTab": true,
+        "image": "assets/work/art-sidewalk-materials.jpg",
+        "alt": "Brazilian sidewalk tiling materials made in Substance Designer",
+        "badge": {
+          "en": "Material",
+          "pt": "Material"
+        },
+        "tag": {
+          "en": "Substance Designer",
+          "pt": "Substance Designer"
+        },
+        "title": {
+          "en": "Brazilian Sidewalks",
+          "pt": "Calçadas Brasileiras"
+        },
+        "desc": {
+          "en": "Three Brazilian sidewalk patterns — the Bernardes, a Sorocaba tile and Copacabana — authored as tiling materials.",
+          "pt": "Três calçadas brasileiras — a Bernardes, uma de Sorocaba e a de Copacabana — feitas como materiais tileáveis."
+        }
+      },
+      {
         "cat": "store",
         "href": "https://assetstore.unity.com/packages/tools/utilities/gizmos-drawer-371358",
         "newTab": true,
@@ -376,10 +491,10 @@ window.SITE = {
       },
       {
         "cat": "shaders",
-        "href": "snake-vs-human-skills.html",
+        "href": "snake-vs-human-skills.html#pistol",
         "newTab": false,
-        "image": "assets/work/snake-play-skills.jpg",
-        "alt": "Snake vs Human ability effects",
+        "image": "assets/skills/00-pistol-lv6.webp",
+        "alt": "Pistol — Snake vs Human ability effect at level 6",
         "badge": {
           "en": "VFX",
           "pt": "VFX"
@@ -389,12 +504,288 @@ window.SITE = {
           "pt": "Unity URP"
         },
         "title": {
-          "en": "Skill VFX — 13 abilities",
-          "pt": "Skill VFX — 13 habilidades"
+          "en": "Pistol",
+          "pt": "Pistola"
         },
         "desc": {
-          "en": "Every ability in Snake vs Human at three upgrade tiers, side by side.",
-          "pt": "Todas as habilidades de Snake vs Human em três níveis de melhoria, lado a lado."
+          "en": "Muzzle flash, tracer and impact spark — the starter weapon, at levels 1, 5 and 6.",
+          "pt": "Fogacho, traçante e faísca de impacto — a arma inicial, nos níveis 1, 5 e 6."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#shuriken",
+        "newTab": false,
+        "image": "assets/skills/01-shuriken-lv6.webp",
+        "alt": "Shuriken — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Shuriken",
+          "pt": "Shuriken"
+        },
+        "desc": {
+          "en": "Orbiting blades on a ribbon trail that widens and thickens with every upgrade.",
+          "pt": "Lâminas orbitando numa trilha de fita que fica mais larga e densa a cada melhoria."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#bananarang",
+        "newTab": false,
+        "image": "assets/skills/02-bananarang-lv6.webp",
+        "alt": "Bananarang — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Bananarang",
+          "pt": "Bananarang"
+        },
+        "desc": {
+          "en": "Boomerangs that arc out and come back, smearing yellow motion behind them.",
+          "pt": "Bumerangues que saem em arco e voltam, deixando um rastro amarelo de movimento."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#poison-spit",
+        "newTab": false,
+        "image": "assets/skills/03-poison-spit-lv6.webp",
+        "alt": "Poison Spit — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Poison Spit",
+          "pt": "Cuspe Venenoso"
+        },
+        "desc": {
+          "en": "Crimson poison pools that spread over the ground and keep working after the hit.",
+          "pt": "Poças de veneno carmesim que se espalham pelo chão e seguem agindo depois do acerto."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#magic-shots",
+        "newTab": false,
+        "image": "assets/skills/04-magic-shots-lv6.webp",
+        "alt": "Magic Shots — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Magic Shots",
+          "pt": "Tiros Mágicos"
+        },
+        "desc": {
+          "en": "Violet beams fanning out in every direction, with more arms at each tier.",
+          "pt": "Feixes violeta se abrindo em todas as direções, com mais braços a cada nível."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#water-bomb",
+        "newTab": false,
+        "image": "assets/skills/05-water-bomb-lv6.webp",
+        "alt": "Water Bomb — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Water Bomb",
+          "pt": "Bomba d'Água"
+        },
+        "desc": {
+          "en": "Blue splash zones with a ring shockwave where each bomb lands.",
+          "pt": "Zonas de respingo azul com uma onda de choque em anel onde cada bomba cai."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#electric-rods",
+        "newTab": false,
+        "image": "assets/skills/06-electric-rods-lv6.webp",
+        "alt": "Electric Rods — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Electric Rods",
+          "pt": "Hastes Elétricas"
+        },
+        "desc": {
+          "en": "An arcing cage of electricity that chains between nearby enemies.",
+          "pt": "Uma gaiola de eletricidade que arqueia e encadeia entre os inimigos próximos."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#snowballs",
+        "newTab": false,
+        "image": "assets/skills/07-snowballs-lv6.webp",
+        "alt": "Snowballs — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Snowballs",
+          "pt": "Bolas de Neve"
+        },
+        "desc": {
+          "en": "Crossing streams of ice crystals that leave a frozen trail across the field.",
+          "pt": "Fluxos cruzados de cristais de gelo que deixam um rastro congelado pelo campo."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#lightning",
+        "newTab": false,
+        "image": "assets/skills/08-lightning-card.webp",
+        "alt": "Lightning — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Lightning",
+          "pt": "Relâmpago"
+        },
+        "desc": {
+          "en": "Bolts that snap down onto a target in a short yellow flash.",
+          "pt": "Raios que descem sobre o alvo num estouro amarelo curto."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#slash",
+        "newTab": false,
+        "image": "assets/skills/09-slash-lv6.webp",
+        "alt": "Slash — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Slash",
+          "pt": "Corte"
+        },
+        "desc": {
+          "en": "Crescent blades sweeping a wide orange arc, with sparks where they land.",
+          "pt": "Lâminas em crescente varrendo um arco laranja largo, com faíscas onde acertam."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#laser",
+        "newTab": false,
+        "image": "assets/skills/10-laser-lv6.webp",
+        "alt": "Laser — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Laser",
+          "pt": "Laser"
+        },
+        "desc": {
+          "en": "Beams that cut the whole screen with a white-hot core and a red bloom.",
+          "pt": "Feixes que cortam a tela inteira com um núcleo incandescente e um brilho vermelho."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#sticky-gum",
+        "newTab": false,
+        "image": "assets/skills/11-sticky-gum-lv6.webp",
+        "alt": "Sticky Gum — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Sticky Gum",
+          "pt": "Chiclete"
+        },
+        "desc": {
+          "en": "Pink gum that splatters over whatever it hits and clings there.",
+          "pt": "Chiclete rosa que espirra sobre o que acerta e fica grudado ali."
+        }
+      },
+      {
+        "cat": "shaders",
+        "href": "snake-vs-human-skills.html#sound-wave",
+        "newTab": false,
+        "image": "assets/skills/12-sound-wave-lv6.webp",
+        "alt": "Sound Wave — Snake vs Human ability effect at level 6",
+        "badge": {
+          "en": "VFX",
+          "pt": "VFX"
+        },
+        "tag": {
+          "en": "Unity URP",
+          "pt": "Unity URP"
+        },
+        "title": {
+          "en": "Sound Wave",
+          "pt": "Onda Sonora"
+        },
+        "desc": {
+          "en": "An expanding ring of sound with notes riding the wavefront.",
+          "pt": "Um anel de som que se expande com notas acompanhando a frente da onda."
         }
       },
       {
@@ -489,6 +880,236 @@ window.SITE = {
       },
       {
         "cat": "3d",
+        "href": "https://www.artstation.com/artwork/gRKDPK",
+        "newTab": true,
+        "image": "assets/work/art-rey-skywalker.jpg",
+        "alt": "Rey Skywalker — stylized character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Rey Skywalker",
+          "pt": "Rey Skywalker"
+        },
+        "desc": {
+          "en": "A May the 4th personal piece, built from a Qarlos Quintero artwork.",
+          "pt": "Um projeto pessoal de May the 4th, feito a partir de uma arte de Qarlos Quintero."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/8BRwym",
+        "newTab": true,
+        "image": "assets/work/art-cyberpunk-creature.jpg",
+        "alt": "Cyberpunk creature — ZBrush sculpt rendered in Marmoset Toolbag",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Cyberpunk Creature",
+          "pt": "Criatura Cyberpunk"
+        },
+        "desc": {
+          "en": "A bulky cyberpunk creature: sculpt in ZBrush, retopology in Maya, lookdev in Substance Painter and Marmoset.",
+          "pt": "Uma criatura cyberpunk corpulenta: escultura no ZBrush, retopologia no Maya, lookdev no Substance Painter e Marmoset."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/Ke6ezX",
+        "newTab": true,
+        "image": "assets/work/art-succulent-sorcerer.jpg",
+        "alt": "Succulent Sorcerer — stylized character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Marmoset",
+          "pt": "Marmoset"
+        },
+        "title": {
+          "en": "Succulent Sorcerer",
+          "pt": "Succulent Sorcerer"
+        },
+        "desc": {
+          "en": "Weekly challenge piece from a Robert Brown concept, and the first thing I ever rendered in Marmoset Toolbag.",
+          "pt": "Peça de desafio semanal a partir de um concept de Robert Brown, e meu primeiro render no Marmoset Toolbag."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/Ezgdm0",
+        "newTab": true,
+        "image": "assets/work/art-survival-gun.jpg",
+        "alt": "Game-ready survival game weapon",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Unreal Engine",
+          "pt": "Unreal Engine"
+        },
+        "title": {
+          "en": "Survival Assets — Gun",
+          "pt": "Assets de Survival — Arma"
+        },
+        "desc": {
+          "en": "Freelance weapon for a survival game in development: concept, model, textures and engine, constrained to animate.",
+          "pt": "Arma freelance para um jogo de survival em desenvolvimento: concept, modelo, texturas e engine, com constraints para animar."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/eRJA0G",
+        "newTab": true,
+        "image": "assets/work/art-ink-protector.jpg",
+        "alt": "Ink Protector — stylized character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Ink Protector",
+          "pt": "Ink Protector"
+        },
+        "desc": {
+          "en": "Character built on a Duy An concept with Hwei and Jhin in mind, rendered through an NPR shader.",
+          "pt": "Personagem feito sobre um concept de Duy An, com Hwei e Jhin em mente, renderizado com um shader NPR."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/5Wvxq1",
+        "newTab": true,
+        "image": "assets/work/art-doodo.jpg",
+        "alt": "Doodo — stylized bird character sculpted in ZBrush",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Doodo",
+          "pt": "Doodo"
+        },
+        "desc": {
+          "en": "A ZBrush-only sketch from a Jin Yi concept — asymmetric sculpting, some hard surface, rendered in ZBrush too.",
+          "pt": "Um sketch feito só no ZBrush a partir de um concept de Jin Yi — escultura assimétrica, algum hard surface e render no próprio ZBrush."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/OvBKVe",
+        "newTab": true,
+        "image": "assets/work/art-survival-props.jpg",
+        "alt": "Game-ready survival game props",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Unreal Engine",
+          "pt": "Unreal Engine"
+        },
+        "title": {
+          "en": "Survival Assets — Props",
+          "pt": "Assets de Survival — Props"
+        },
+        "desc": {
+          "en": "Prop set for the same survival game, concepted, modelled, textured and implemented solo.",
+          "pt": "Conjunto de props para o mesmo jogo de survival: concept, modelagem, textura e implementação feitos sozinho."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/ZlXEV1",
+        "newTab": true,
+        "image": "assets/work/art-survival-helicopter.jpg",
+        "alt": "Game-ready survival game helicopter with a recolour shader",
+        "badge": {
+          "en": "Shader",
+          "pt": "Shader"
+        },
+        "tag": {
+          "en": "Game-ready",
+          "pt": "Game-ready"
+        },
+        "title": {
+          "en": "Survival Assets — Helicopter",
+          "pt": "Assets de Survival — Helicóptero"
+        },
+        "desc": {
+          "en": "A game-ready minicopter, plus the shader that recolours it inside the engine.",
+          "pt": "Um minicóptero pronto para jogo, com o shader que troca as cores dele dentro da engine."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/WXx9Jy",
+        "newTab": true,
+        "image": "assets/work/art-trashy-bros-can.jpg",
+        "alt": "Trashy Bros can — stylized character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Stylized",
+          "pt": "Stylized"
+        },
+        "title": {
+          "en": "Can — Trashy Bros",
+          "pt": "Lata — Trashy Bros"
+        },
+        "desc": {
+          "en": "A trash can character from a Denis Spichkin concept, with a few liberties taken.",
+          "pt": "Um personagem lata de lixo a partir de um concept de Denis Spichkin, com algumas liberdades."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/dK59qw",
+        "newTab": true,
+        "image": "assets/work/art-bard-lizard.jpg",
+        "alt": "Bard Companion — lizard character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Maya",
+          "pt": "Maya"
+        },
+        "title": {
+          "en": "Bard Companion",
+          "pt": "Bardo Companheiro"
+        },
+        "desc": {
+          "en": "A lizard bard, months in the making — and my first character taken start to finish in Maya instead of Blender.",
+          "pt": "Um bardo lagarto, meses de trabalho — e meu primeiro personagem feito do início ao fim no Maya em vez do Blender."
+        }
+      },
+      {
+        "cat": "3d",
         "href": "https://www.artstation.com/artwork/WBQJ8v",
         "newTab": true,
         "image": "assets/work/art-masked-horror.jpg",
@@ -508,6 +1129,351 @@ window.SITE = {
         "desc": {
           "en": "Game-ready creature at 16,042 tris for Hired 2 Die: Moonlight Motel.",
           "pt": "Criatura pronta para jogo com 16.042 tris para Hired 2 Die: Moonlight Motel."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/QXEAQE",
+        "newTab": true,
+        "image": "assets/work/art-cordyceps-ant.jpg",
+        "alt": "Camponotus obscuripes ant overtaken by cordyceps fungus",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Rigged",
+          "pt": "Rigged"
+        },
+        "title": {
+          "en": "Cordyceps Ant",
+          "pt": "Formiga com Cordyceps"
+        },
+        "desc": {
+          "en": "Two months from sculpt to render: an ant taken over by cordyceps, the real fungus behind The Last of Us.",
+          "pt": "Dois meses da escultura ao render: uma formiga tomada pelo cordyceps, o fungo real por trás de The Last of Us."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/6NbZKr",
+        "newTab": true,
+        "image": "assets/work/art-at-st.jpg",
+        "alt": "Star Wars AT-ST walker model",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Blender",
+          "pt": "Blender"
+        },
+        "title": {
+          "en": "Star Wars AT-ST",
+          "pt": "AT-ST de Star Wars"
+        },
+        "desc": {
+          "en": "One of my first Blender models, rebuilt years later: UVs, a high-poly bake, new textures and a rig.",
+          "pt": "Um dos meus primeiros modelos no Blender, refeito anos depois: UVs, bake do high-poly, texturas novas e rig."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/04YdLy",
+        "newTab": true,
+        "image": "assets/work/art-loader.jpg",
+        "alt": "Loader — stylized low-poly character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Loader",
+          "pt": "Loader"
+        },
+        "desc": {
+          "en": "A stylized low-poly character from a found concept, start to finish in about ten hours.",
+          "pt": "Um personagem stylized low-poly a partir de um concept encontrado, do início ao fim em cerca de dez horas."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/VJ8m0R",
+        "newTab": true,
+        "image": "assets/work/art-radio-animation.jpg",
+        "alt": "Radio animation still — lit interior scene",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Cycles",
+          "pt": "Cycles"
+        },
+        "title": {
+          "en": "Radio Animation",
+          "pt": "Animação do Rádio"
+        },
+        "desc": {
+          "en": "The radio again, this time as an animation study: camera moves, lighting and a Premiere composite.",
+          "pt": "O mesmo rádio, agora como estudo de animação: movimento de câmera, iluminação e composição no Premiere."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/obJaVw",
+        "newTab": true,
+        "image": "assets/work/art-radio-prop.jpg",
+        "alt": "Radio prop — realistic render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Cycles",
+          "pt": "Cycles"
+        },
+        "title": {
+          "en": "Radio",
+          "pt": "Rádio"
+        },
+        "desc": {
+          "en": "A realistic take for the 27th weekly challenge, from a Boris Rogozin concept, rendered in Cycles.",
+          "pt": "Uma abordagem realista para o 27º desafio semanal, de um concept de Boris Rogozin, renderizado no Cycles."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/lDGqb5",
+        "newTab": true,
+        "image": "assets/work/art-little-market.jpg",
+        "alt": "Little Market — stylized environment scene",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Cycles",
+          "pt": "Cycles"
+        },
+        "title": {
+          "en": "Little Market",
+          "pt": "Little Market"
+        },
+        "desc": {
+          "en": "A full scene from a Natalia Danilchanka concept, 4K textures throughout, with fireflies added for life.",
+          "pt": "Uma cena completa a partir de um concept de Natalia Danilchanka, texturas 4K em tudo, com vaga-lumes para dar vida."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/qeeE9D",
+        "newTab": true,
+        "image": "assets/work/art-scifi-bar.jpg",
+        "alt": "Isometric sci-fi bar environment",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Cycles",
+          "pt": "Cycles"
+        },
+        "title": {
+          "en": "Isometric Sci-Fi Bar",
+          "pt": "Bar Sci-Fi Isométrico"
+        },
+        "desc": {
+          "en": "Isometric bar from a Jesse Riggle concept, with a few Fight Club details smuggled in.",
+          "pt": "Bar isométrico de um concept de Jesse Riggle, com alguns detalhes de Clube da Luta escondidos nele."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/g0JAQZ",
+        "newTab": true,
+        "image": "assets/work/art-sot-telescope.jpg",
+        "alt": "Sea of Thieves arena telescope prop",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Marmoset",
+          "pt": "Marmoset"
+        },
+        "title": {
+          "en": "Sea of Thieves Props",
+          "pt": "Props de Sea of Thieves"
+        },
+        "desc": {
+          "en": "Arena telescope and treasure map from a Thomas Mahon concept, presented with wireframes and AO passes.",
+          "pt": "Telescópio de arena e mapa do tesouro de um concept de Thomas Mahon, apresentados com wireframes e passes de AO."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/ZeLdNN",
+        "newTab": true,
+        "image": "assets/work/art-stylized-suitcase.jpg",
+        "alt": "Stylized cartoon suitcase prop",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Blender",
+          "pt": "Blender"
+        },
+        "title": {
+          "en": "Stylized Suitcase",
+          "pt": "Mala Stylized"
+        },
+        "desc": {
+          "en": "A cartoon travel case kept faithful to Denis Davletov's concept, and kept low-poly.",
+          "pt": "Uma mala cartoon fiel ao concept de Denis Davletov, e mantida low-poly."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/xYlbgY",
+        "newTab": true,
+        "image": "assets/work/art-rhinoceros.jpg",
+        "alt": "Rhinoceros anatomy study render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Rhinoceros",
+          "pt": "Rinoceronte"
+        },
+        "desc": {
+          "en": "An anatomy study of a rhino — one of five species, all of them now at risk.",
+          "pt": "Um estudo de anatomia de rinoceronte — uma das cinco espécies, todas hoje ameaçadas."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/Om8WKv",
+        "newTab": true,
+        "image": "assets/work/art-mantis.jpg",
+        "alt": "Praying mantis study render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Blender",
+          "pt": "Blender"
+        },
+        "title": {
+          "en": "Mantis",
+          "pt": "Louva-a-deus"
+        },
+        "desc": {
+          "en": "A praying mantis study, the insect old civilisations credited with finding whatever was lost.",
+          "pt": "Um estudo de louva-a-deus, o inseto a que civilizações antigas atribuíam o poder de achar o que se perdeu."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/JeXvKa",
+        "newTab": true,
+        "image": "assets/work/art-tonker.jpg",
+        "alt": "Tonker — wooden robot elf character",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Blender",
+          "pt": "Blender"
+        },
+        "title": {
+          "en": "Tonker",
+          "pt": "Tonker"
+        },
+        "desc": {
+          "en": "A wooden robot elf from a Karrit Moss concept — Blender, ZBrush and Substance Painter.",
+          "pt": "Um elfo robô de madeira a partir de um concept de Karrit Moss — Blender, ZBrush e Substance Painter."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/B3BW09",
+        "newTab": true,
+        "image": "assets/work/art-lil-spicy.jpg",
+        "alt": "Lil Spicy — hot sauce bottle character",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Blender",
+          "pt": "Blender"
+        },
+        "title": {
+          "en": "Lil Spicy",
+          "pt": "Lil Spicy"
+        },
+        "desc": {
+          "en": "A hot sauce bottle with attitude, made for a challenge from a Mike Mitchell concept.",
+          "pt": "Uma garrafa de pimenta com atitude, feita para um desafio a partir de um concept de Mike Mitchell."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/aGnyqz",
+        "newTab": true,
+        "image": "assets/work/art-digivice.jpg",
+        "alt": "Adventure Digivice prop render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "Blender",
+          "pt": "Blender"
+        },
+        "title": {
+          "en": "Digivice",
+          "pt": "Digivice"
+        },
+        "desc": {
+          "en": "The Adventure Digivice, modelled as a prop.",
+          "pt": "O Digivice de Adventure, modelado como prop."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/xYVz31",
+        "newTab": true,
+        "image": "assets/work/art-agony.jpg",
+        "alt": "Agony — creature bust sculpt",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Agony",
+          "pt": "Agonia"
+        },
+        "desc": {
+          "en": "A sculpt about acute suffering — the word comes from the Latin for “sacred victim”.",
+          "pt": "Uma escultura sobre o sofrimento agudo — a palavra vem do latim para “vítima sagrada”."
         }
       },
       {
@@ -905,8 +1871,8 @@ window.SITE = {
     "allLink": {
       "href": "https://www.artstation.com/duzeraaa",
       "label": {
-        "en": "All 29 projects on ArtStation →",
-        "pt": "Todos os 29 projetos no ArtStation →"
+        "en": "Follow along on ArtStation →",
+        "pt": "Acompanhe no ArtStation →"
       }
     }
   },
