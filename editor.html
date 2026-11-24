@@ -428,7 +428,7 @@ function group(title,nodes,right){
 /* ---------- sections ---------- */
 
 var BLANK={
-  card:{cat:"",href:"",newTab:true,image:"",alt:"",icon:"",badge:{en:"",pt:""},tag:{en:"",pt:""},
+  card:{cat:"",href:"",newTab:true,image:"",alt:"",icon:"",badge:{en:"",pt:""},tag:{en:"",pt:""},tag2:{en:"",pt:""},
         title:{en:"New project",pt:""},desc:{en:"",pt:""},noshot:{big:"",sub:{en:"",pt:""}}},
   cat:{id:"new",label:{en:"New",pt:""}},
   job:{when:{en:"",pt:""},title:{en:"New role",pt:""},what:{en:"",pt:""},p:{en:"",pt:""}},
@@ -528,6 +528,7 @@ VIEWS.cards=function(m){
       var two=el("div","two");
       two.appendChild(i18n(o,"badge","Filled badge"));
       two.appendChild(i18n(o,"tag","Outlined badge"));
+      two.appendChild(i18n(o,"tag2","Outlined badge 2"));
       b.appendChild(two);
 
       b.appendChild(text(o,"href","Link (leave empty for no link)"));

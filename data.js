@@ -137,8 +137,12 @@ window.SITE = {
           "pt": "Jogo"
         },
         "tag": {
-          "en": "Poki · Google Play",
-          "pt": "Poki · Google Play"
+          "en": "Poki",
+          "pt": "Poki"
+        },
+        "tag2": {
+          "en": "Google Play",
+          "pt": "Google Play"
         },
         "title": {
           "en": "Snake vs Human",
