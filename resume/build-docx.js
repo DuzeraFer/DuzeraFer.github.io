@@ -1,7 +1,7 @@
 const {
   Document, Packer, Paragraph, TextRun, HeadingLevel, AlignmentType,
   BorderStyle, LevelFormat, PositionalTab, PositionalTabAlignment,
-  PositionalTabLeader, PageBreak,
+  PositionalTabLeader, PageBreak, ExternalHyperlink,
 } = require("docx");
 const fs = require("fs");
 const path = require("path");
@@ -18,20 +18,34 @@ const LABEL = 16;
 const TITLE = 21;
 const NAME = 42;
 
+const LINK = /([\w.+-]+@[\w-]+\.[a-z]{2,}|(?:[\w-]+\.)+(?:com|io|net|org|dev|app|br)(?:\/[^\s,;)"]*)?)/gi;
+const IS_LINK = new RegExp(`^(?:${LINK.source})$`, "i");
+
+function href(t) {
+  return t.includes("@") ? `mailto:${t}` : `https://${t}`;
+}
+
 function runs(text, base = {}) {
   const out = [];
   for (const part of String(text).split(/(\*\*[^*]+\*\*)/g)) {
     if (!part) continue;
     const bold = part.startsWith("**") && part.endsWith("**");
-    out.push(new TextRun({
-      text: bold ? part.slice(2, -2) : part,
-      bold: bold || base.bold === true,
-      font: FONT,
-      size: base.size || BODY,
-      color: base.color || INK,
-      characterSpacing: base.characterSpacing,
-      allCaps: base.allCaps,
-    }));
+    const body = bold ? part.slice(2, -2) : part;
+    for (const piece of body.split(LINK)) {
+      if (!piece) continue;
+      const link = IS_LINK.test(piece);
+      const run = new TextRun({
+        text: piece,
+        bold: bold || base.bold === true,
+        font: FONT,
+        size: base.size || BODY,
+        color: base.color || INK,
+        characterSpacing: base.characterSpacing,
+        allCaps: base.allCaps,
+        underline: link ? {} : undefined,
+      });
+      out.push(link ? new ExternalHyperlink({ children: [run], link: href(piece) }) : run);
+    }
   }
   return out;
 }

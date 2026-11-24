@@ -78,8 +78,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card .meta span{border-radius:40px;padding:5px 11px;font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase}
 .card .meta .k{background:var(--band);color:#fff}
 .card .meta .t{border:1px solid #3A3A32;color:var(--dim)}
-.card .ttl{display:flex;align-items:center;gap:13px}
-.card .ico{flex:0 0 auto;width:46px;height:46px;border-radius:11px;border:1px solid var(--line)}
+.card>.shot{position:relative;aspect-ratio:16/9;overflow:hidden;background:#141412;border-bottom:1px solid var(--line)}
+.card>.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:18px}
+.card>.shot .bg{padding:0;object-fit:cover;filter:blur(26px) saturate(1.2) brightness(.8);transform:scale(1.35)}
 .card h3{font-weight:700;font-size:22px;letter-spacing:-.02em}
 .card p{font-size:14px;line-height:1.57;color:var(--dim)}
 .band .all{display:flex;justify-content:center;padding-top:34px}
@@ -220,15 +221,16 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   function card(c){
     var tag=c.href?"a":"div",attr=c.href?' href="'+esc(c.href)+'"'+(c.newTab?' target="_blank" rel="noopener"':""):"";
-    var shot=c.image
+    var shot=c.icon
+      ? '<span class="shot"><img class="bg" src="'+esc(c.icon)+'" alt="" aria-hidden="true" loading="lazy"><img src="'+esc(c.icon)+'" alt="'+esc(t(c.title))+'" loading="lazy"></span>'
+      : c.image
       ? '<img src="'+esc(c.image)+'" alt="'+esc(t(c.alt))+'" loading="lazy">'
       : '<span class="noshot"><b>'+esc(c.noshot&&c.noshot.big||t(c.title))+'</b>'+esc(t(c.noshot&&c.noshot.sub))+'</span>';
-    var ico=c.icon?'<img class="ico" src="'+esc(c.icon)+'" alt="" loading="lazy">':"";
     var meta="";
     if(t(c.badge))meta+='<span class="k">'+esc(t(c.badge))+'</span>';
     if(t(c.tag))meta+='<span class="t">'+esc(t(c.tag))+'</span>';
     return '<'+tag+' class="card" data-c="'+esc(c.cat||"")+'"'+attr+'>'+shot
-      +'<div class="body"><div class="meta">'+meta+'</div><div class="ttl">'+ico+'<h3>'+t(c.title)+'</h3></div><p>'+t(c.desc)+'</p></div></'+tag+'>';
+      +'<div class="body"><div class="meta">'+meta+'</div><h3>'+t(c.title)+'</h3><p>'+t(c.desc)+'</p></div></'+tag+'>';
   }
 
   function applyFilter(){
