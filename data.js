@@ -73,8 +73,8 @@ window.SITE = {
       "pt": "Trabalhos selecionados"
     },
     "p": {
-      "en": "Three games on Poki · 11M+ players · 19 Unity Asset Store packages",
-      "pt": "Três jogos na Poki · 11M+ jogadores · 19 pacotes na Unity Asset Store"
+      "en": "Three games on Poki, six on Google Play · 11M+ players · 19 Unity Asset Store packages",
+      "pt": "Três jogos na Poki, seis na Google Play · 11M+ jogadores · 19 pacotes na Unity Asset Store"
     },
     "categories": [
       {
@@ -188,6 +188,144 @@ window.SITE = {
         "desc": {
           "en": "Environment art, props, VFX, UI and skins. A cozy idle catcher, out November 2026.",
           "pt": "Arte de cenário, props, VFX, UI e skins. Um idle aconchegante, lançado em novembro de 2026."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pencilpack",
+        "newTab": true,
+        "image": "assets/work/play-pencilpack.jpg",
+        "alt": "Pencil Pack — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Pencil Pack",
+          "pt": "Pencil Pack"
+        },
+        "desc": {
+          "en": "Art implementation, pencil and tray animations, booster VFX, tutorials and the combo feedback.",
+          "pt": "Implementação de arte, animações de lápis e bandejas, VFX de boosters, tutoriais e o feedback de combo."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.stackaway",
+        "newTab": true,
+        "image": "assets/work/play-stackaway.jpg",
+        "alt": "Stack Away — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Stack Away",
+          "pt": "Stack Away"
+        },
+        "desc": {
+          "en": "Piece and lock shaders, blocked-tile animations, box-complete VFX and the level generator.",
+          "pt": "Shaders de peça e cadeado, animações de peças bloqueadas, VFX de caixa completa e o gerador de níveis."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.sortmycoins",
+        "newTab": true,
+        "image": "assets/work/play-sortmycoins.jpg",
+        "alt": "Sort My Coins — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Sort My Coins",
+          "pt": "Sort My Coins"
+        },
+        "desc": {
+          "en": "Art implementation, a mesh spline generator and the move to pooled particles.",
+          "pt": "Implementação de arte, um gerador de malha por spline e a migração para partículas em pool."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.leveluprings",
+        "newTab": true,
+        "image": "assets/work/play-leveluprings.jpg",
+        "alt": "Level Up Rings — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Level Up Rings",
+          "pt": "Level Up Rings"
+        },
+        "desc": {
+          "en": "Ring model and shader, booster VFX, bouncer animations, tutorials and the colour pass.",
+          "pt": "Modelo e shader dos anéis, VFX de boosters, animações dos bumpers, tutoriais e o ajuste de cores."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.layercolors",
+        "newTab": true,
+        "image": "assets/work/play-layercolors.jpg",
+        "alt": "Layer Colors — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Layer Colors",
+          "pt": "Layer Colors"
+        },
+        "desc": {
+          "en": "Foreshadow shader, goal and fall animations, destroy VFX and the tutorial flow.",
+          "pt": "Shader de prenúncio, animações de objetivo e queda, VFX de destruição e o fluxo de tutoriais."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitassstudio.emojisort",
+        "newTab": true,
+        "image": "assets/work/play-emojisort.jpg",
+        "alt": "Emoji Sort — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Emoji Sort",
+          "pt": "Emoji Sort"
+        },
+        "desc": {
+          "en": "Emoji case visuals, heart-break VFX, level transitions and the diagram art.",
+          "pt": "Visual dos estojos de emoji, VFX de coração partido, transições de nível e a arte dos diagramas."
         }
       },
       {

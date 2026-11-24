@@ -116,10 +116,27 @@ every new studio project starts from. Better as a line in About than a card.
 
 ---
 
-## Open question
+## The six mobile games — resolved, and on the site
 
-**Which of these six games are public?** PencilPack (144 commits), StackAway (100),
-SortMyCoins (99), LevelUpRings (72), LayerColors (59), EmojiSort (59) — all have
-"Build version" and "Game icon" commits, so they shipped somewhere, but I found no Poki or
-store page for any of them. Six more shipped titles is a big addition to the Games filter;
-nothing goes up without a link or your confirmation.
+They are not unannounced. All six are **live on Google Play** under "Kreativitas Studio
+Ltda", and each now has a card under the Games filter with its real store screenshot:
+
+| Game | Package | Your commits |
+|---|---|---|
+| Pencil Pack | `com.kreativitasstudio.pencilpack` | 144 |
+| Stack Away | `com.kreativitasstudio.stackaway` | 100 |
+| Sort My Coins | `com.kreativitasstudio.sortmycoins` | 99 |
+| Level Up Rings | `com.kreativitasstudio.leveluprings` | 72 |
+| Layer Colors | `com.kreativitasstudio.layercolors` | 59 |
+| Emoji Sort | `com.kreativitassstudio.emojisort` (note the triple `s`) | 59 |
+
+They are mobile, not Poki — Pencil Pack carries a Lion Studios / AppLovin MAX / Adjust /
+Facebook SDK stack, so the line is hypercasual publishing rather than web. `work.p` now
+reads "Three games on Poki, six on Google Play".
+
+### Four more on that developer page you also worked on
+Not added — your commit counts are lower and I did not want to pad the grid, but they are
+there if you want them: **Jam Drive Thru** (71 commits, a game jam build),
+**Face Away** (10), **Cat Squad** (12, as `com.DefaultCompany.Cat_Squad`) and
+**Pizza Paws** (1). The page also lists Mahjong Monster Arena, Snake Ball Bounce and
+Snake Assault, which have no commits from you.
