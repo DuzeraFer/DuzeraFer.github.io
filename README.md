@@ -4,9 +4,18 @@ Personal portfolio of Eduardo Fernandes — Technical Artist / 3D Artist.
 
 Static site: `index.html`, one case-study page, plus `assets/`. No build step.
 
-Dark, single-theme layout: hero, a filterable 9-card work grid, about, contact.
-EN/PT copy lives in the `PT` dictionary at the bottom of each page; English is read
-from the markup via `data-i18n`.
+Dark, single-theme layout: hero, a filterable work grid, about, contact. All of the
+home page — colours, banner, texts, categories, projects, experience, links — lives in
+`data.js` (`window.SITE`) and is rendered client-side. Every text field holds `en` and
+`pt`; the case-study page reads only the colours from there and keeps its own copy.
+
+## Editing the site
+
+Open `editor.html` through the local server, press **Connect folder** and pick this
+folder: Save then writes `data.js` straight to disk and dropping an image on a picture
+field copies it into `assets/work/`. Needs Chrome or Edge for the folder access —
+anywhere else, edit and use **Download data.js** to replace the file by hand.
+Changes are live once `data.js` is committed and pushed.
 
 `snake-vs-human-skills.html` shows 13 abilities at three upgrade tiers each — 39 square
 loops in `assets/skills/`, one `.mp4` and one `.webp` poster per clip. Clips play only
@@ -27,3 +36,6 @@ Live at https://duzerafer.github.io
 ```
 python -m http.server 8765
 ```
+
+Site: http://localhost:8765/ · editor: http://localhost:8765/editor.html
+
