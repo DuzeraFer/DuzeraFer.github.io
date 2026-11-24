@@ -428,7 +428,7 @@ function group(title,nodes,right){
 /* ---------- sections ---------- */
 
 var BLANK={
-  card:{cat:"",href:"",newTab:true,image:"",alt:"",badge:{en:"",pt:""},tag:{en:"",pt:""},
+  card:{cat:"",href:"",newTab:true,image:"",alt:"",icon:"",badge:{en:"",pt:""},tag:{en:"",pt:""},
         title:{en:"New project",pt:""},desc:{en:"",pt:""},noshot:{big:"",sub:{en:"",pt:""}}},
   cat:{id:"new",label:{en:"New",pt:""}},
   job:{when:{en:"",pt:""},title:{en:"New role",pt:""},what:{en:"",pt:""},p:{en:"",pt:""}},
@@ -537,6 +537,7 @@ VIEWS.cards=function(m){
       b.appendChild(ck);
 
       b.appendChild(imageField(o,"image","Image"));
+      b.appendChild(imageField(o,"icon","Icon","assets/icons"));
       b.appendChild(i18n(o,"alt","Image description (alt)"));
 
       if(!o.noshot)o.noshot={big:"",sub:{en:"",pt:""}};

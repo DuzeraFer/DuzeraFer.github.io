@@ -126,6 +126,7 @@ window.SITE = {
         "href": "https://poki.com/en/g/snake-vs-human",
         "newTab": true,
         "image": "assets/work/snake-play-keyart.jpg",
+        "icon": "assets/icons/snake-vs-human.png",
         "alt": "Snake vs Human key art",
         "badge": {
           "en": "Game",
@@ -149,6 +150,7 @@ window.SITE = {
         "href": "https://poki.com/en/g/harvest-loop",
         "newTab": true,
         "image": "assets/work/harvestloop-fields.jpg",
+        "icon": "assets/icons/harvest-loop.png",
         "alt": "Harvest Loop gameplay — crop fields",
         "badge": {
           "en": "Game",
@@ -172,6 +174,7 @@ window.SITE = {
         "href": "https://poki.com/en/g/butterfly-catch",
         "newTab": true,
         "image": "assets/work/butterfly-catch.jpg",
+        "icon": "assets/icons/butterfly-catch.png",
         "alt": "Butterfly Catch key art",
         "badge": {
           "en": "Game",
@@ -195,6 +198,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pizzapaws",
         "newTab": true,
         "image": "assets/work/play-pizzapaws.jpg",
+        "icon": "assets/icons/pizza-paws.png",
         "alt": "Pizza Paws — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -218,6 +222,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.KreativitasStudio.JamDriveThru",
         "newTab": true,
         "image": "assets/work/play-jamdrivethru.jpg",
+        "icon": "assets/icons/jam-drive-thru.png",
         "alt": "Jam Drive Thru — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -241,6 +246,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.faceaway",
         "newTab": true,
         "image": "assets/work/play-faceaway.jpg",
+        "icon": "assets/icons/face-away.png",
         "alt": "Face Away — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -264,6 +270,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pencilpack",
         "newTab": true,
         "image": "assets/work/play-pencilpack.jpg",
+        "icon": "assets/icons/pencil-pack.png",
         "alt": "Pencil Pack — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -287,6 +294,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.stackaway",
         "newTab": true,
         "image": "assets/work/play-stackaway.jpg",
+        "icon": "assets/icons/stack-away.png",
         "alt": "Stack Away — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -310,6 +318,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.sortmycoins",
         "newTab": true,
         "image": "assets/work/play-sortmycoins.jpg",
+        "icon": "assets/icons/sort-my-coins.png",
         "alt": "Sort My Coins — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -333,6 +342,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.leveluprings",
         "newTab": true,
         "image": "assets/work/play-leveluprings.jpg",
+        "icon": "assets/icons/level-up-rings.png",
         "alt": "Level Up Rings — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -356,6 +366,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.layercolors",
         "newTab": true,
         "image": "assets/work/play-layercolors.jpg",
+        "icon": "assets/icons/layer-colors.png",
         "alt": "Layer Colors — Google Play screenshot",
         "badge": {
           "en": "Game",
@@ -379,6 +390,7 @@ window.SITE = {
         "href": "https://play.google.com/store/apps/details?id=com.kreativitassstudio.emojisort",
         "newTab": true,
         "image": "assets/work/play-emojisort.jpg",
+        "icon": "assets/icons/emoji-sort.png",
         "alt": "Emoji Sort — Google Play screenshot",
         "badge": {
           "en": "Game",
