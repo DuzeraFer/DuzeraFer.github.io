@@ -1,0 +1,60 @@
+EDUARDO FERNANDES
+TECHNICAL ARTIST
+
+Sorocaba, São Paulo, Brazil · Open to remote · +55 15 99725-2407 · eduardo2002.fernandes@gmail.com linkedin.com/in/eduardo-fernandes-3d · artstation.com/duzeraaa · github.com/DuzeraFer · duzerafer.github.io
+
+SUMMARY
+Technical artist who can author an asset and then fix the pipeline that exports it. Three years of shaders, Unity tooling and optimisation for mobile and web games — three of them live on Poki, with more than 11 million players between them. Came into technical art from 3D, so I work both sides of the art–engineering handoff, and I build the tool rather than repeat the task.
+
+EXPERIENCE
+
+Technical Artist — Kreativitas Studio · Remote
+
+AUG 2023 – PRESENT
+
+• Shipped three titles on Poki: Snake vs Human (Nov 2025; 10M+ players, 4.5/5, most-played game of the Green Game Jam, also on Google Play and the App Store), Harvest Loop (1M+ players, 4.3/5) and Butterfly Catch (Nov 2026). Environment art, props, VFX, UI, skins and optimisation on each; on Snake vs Human since the first prototype.
+
+• Led the performance work that gained roughly 200% more FPS on low-end Android, across shader cost, draw calls, texture budgets and the asset-authoring rules that keep them down.
+
+• Authored every shader used across the studio's projects in HLSL and Shader Graph on URP, and own the shader and art-pipeline documentation that lets other artists use them unaided.
+
+• Built Unity editor tools in C# that attach VFX and swap textures straight from animation clips, taking a repetitive manual step out of the animation pipeline.
+
+• Work across Unity and plain HTML/JavaScript targets, maintaining the Unity import rules the rest of the art team follows.
+
+Technical Artist / 3D Artist — Freelance
+
+OCT 2022 – PRESENT
+
+• Yellow Panda (2025 – present): environment art, props, UI and VFX for educational games, including Pop&Play, a multiplayer platformer, and Libras em Ação, a Brazilian sign-language game produced for the XReall initiative funded by Fapesc.
+
+• Game-ready props and characters delivered into Unity and Unreal Engine, with the shaders and materials each client's target look needed.
+
+• Documented a client's Unity UI build process so their team could carry it into later projects without me.
+
+Mentor — Casulo Indie · UpLink
+
+2025 – PRESENT
+
+• Recurring technical-art mentorships for the UpLink programme: Unity, shaders, VFX, animation and optimisation, the 3D pipeline from sculpt to engine, what the role actually is inside a team, and portfolio and career direction.
+
+3D Artist — Electric Monkeys Game Studio • Props and characters for mobile hyper-casual games, implemented in engine with their VFX.
+
+MAY – AUG 2023
+
+PROJECTS
+• Gizmos Drawer — free editor package published on the Unity Asset Store (June 2026): editor-only gizmos from primitives to area-of-effect collision and projectile reflection normals, bound drag-and-drop to private fields, properties or ScriptableObject data.
+• duzerafer.github.io — portfolio site written by hand, no framework; bilingual, light and dark, hash-routed.
+
+SKILLS
+TECHNICAL ART — Shader authoring, VFX, animation, performance profiling and optimisation, tool and pipeline development, technical documentation PROGRAMMING — C#, HLSL, Python, MEL, JavaScript, HTML / CSS ENGINES — Unity (URP, Shader Graph, editor tooling), Unreal Engine 3D & TEXTURING — Autodesk Maya, ZBrush, Substance Painter & Designer, Blender, Photoshop PLATFORMS — Android, iOS, WebGL and HTML5 AI IN PIPELINE — Claude and GPT used daily for tooling, automation and concept work
+
+EDUCATION
+Associate Degree, Digital Games — UNISO, Universidade de Sorocaba
+
+JUL 2023
+
+LANGUAGES
+Portuguese — native · English — professional
+
+
