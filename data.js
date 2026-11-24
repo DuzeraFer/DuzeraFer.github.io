@@ -38,8 +38,8 @@ window.SITE = {
     }
   },
   "hero": {
-    "image": "assets/work/art-cyberpunk-creature.jpg",
-    "alt": "Cyberpunk creature — ZBrush sculpt rendered in Marmoset Toolbag",
+    "image": "assets/work/hero-banner.webp",
+    "alt": "Key art panels from games I shipped — Snake vs Human, Harvest Loop and Butterfly Catch",
     "tags": [
       {
         "text": {

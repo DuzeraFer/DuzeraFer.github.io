@@ -102,6 +102,15 @@ dialog .db{padding:18px 22px 24px;overflow:auto;max-height:68vh}
 .note{background:var(--surface);border:1px solid var(--line);border-left:2px solid var(--accent);padding:16px 20px;margin-bottom:22px;font-size:13px;max-width:80ch}
 .note b{font-weight:600}
 .note code{font-family:ui-monospace,Consolas,monospace;font-size:12px;background:var(--paper);padding:1px 5px}
+.fitbox{position:relative;width:100%;max-width:440px;aspect-ratio:16/9;overflow:hidden;margin-top:6px;
+  background:var(--paper);border:1px solid var(--line2);cursor:grab;touch-action:none}
+.fitbox.drag{cursor:grabbing}
+.fitbox img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;user-select:none;-webkit-user-drag:none}
+.fitrow{display:flex;align-items:center;gap:10px;padding-top:8px;max-width:440px}
+.fitrow input[type=range]{flex:1;accent-color:var(--ink)}
+.fitrow .z{width:5ch;text-align:right;font-size:11px;color:var(--soft);font-variant-numeric:tabular-nums}
+.item.over{box-shadow:inset 0 2px 0 var(--ink)}
+.b[aria-pressed="true"]{background:var(--ink);border-color:var(--ink);color:#fff}
 @media (max-width:1080px){.shell,.shell.pv{grid-template-columns:1fr}nav{display:flex;overflow:auto;border-right:0;border-bottom:1px solid var(--line);padding:0}nav button{padding:14px 16px}aside{display:none}main{padding:24px 20px 80px}}
 </style>
 </head>
@@ -110,6 +119,8 @@ dialog .db{padding:18px 22px 24px;overflow:auto;max-height:68vh}
 <div class="bar">
   <h1>Portfolio Editor</h1>
   <span class="st" id="status">Not connected</span>
+  <button class="b sm" id="btnUndo" type="button" title="Undo (Ctrl+Z)" disabled>&#8630;</button>
+  <button class="b sm" id="btnRedo" type="button" title="Redo (Ctrl+Shift+Z)" disabled>&#8631;</button>
   <button class="b" id="btnPv" type="button">Preview</button>
   <button class="b" id="btnConnect" type="button">Connect folder</button>
   <button class="b" id="btnDl" type="button">Download data.js</button>
@@ -122,6 +133,7 @@ dialog .db{padding:18px 22px 24px;overflow:auto;max-height:68vh}
   <aside id="aside">
     <div class="ph">
       <span class="lbl" style="flex:1">Live preview</span>
+      <button class="b sm" id="btnEdit" type="button" aria-pressed="false" title="Click anything in the preview to jump to its fields">Click to edit</button>
       <button class="b sm" id="btnReload" type="button">Reload</button>
       <a class="b sm" href="index.html" target="_blank" rel="noopener">Open ↗</a>
     </div>
@@ -150,6 +162,7 @@ var SECTIONS=[
 var IMG=/\.(jpg|jpeg|png|webp|gif|avif|svg)$/i, VID=/\.(mp4|webm|mov)$/i;
 
 var D=null, dir=null, fileH=null, assets=[], dirty=false, cur="site", open={};
+var hist=[], hi=-1, ht=null, pvt=null, editOn=false;
 
 /* ---------- plumbing ---------- */
 
@@ -157,7 +170,35 @@ function clone(o){return JSON.parse(JSON.stringify(o))}
 function el(t,cls,txt){var n=document.createElement(t);if(cls)n.className=cls;if(txt!=null)n.textContent=txt;return n}
 function $(id){return document.getElementById(id)}
 
-function touch(){dirty=true;$("btnSave").disabled=!dir;setStatus()}
+function touch(){
+  dirty=true;$("btnSave").disabled=!dir;setStatus();
+  clearTimeout(ht);ht=setTimeout(pushHist,500);
+  pushPreview();
+}
+
+function pushHist(){
+  var j=JSON.stringify(D);
+  if(hist[hi]===j)return;
+  hist=hist.slice(0,hi+1);hist.push(j);
+  if(hist.length>60)hist.shift();
+  hi=hist.length-1;histBtns();
+}
+function histBtns(){$("btnUndo").disabled=hi<=0;$("btnRedo").disabled=hi>=hist.length-1}
+function step(d){
+  var n=hi+d;
+  if(n<0||n>=hist.length)return;
+  clearTimeout(ht);hi=n;D=JSON.parse(hist[hi]);
+  dirty=true;$("btnSave").disabled=!dir;setStatus();histBtns();render();pushPreview();
+}
+
+function pushPreview(){
+  var f=$("pvFrame");
+  if(!$("shell").classList.contains("pv")||!f.getAttribute("src"))return;
+  clearTimeout(pvt);
+  pvt=setTimeout(function(){
+    try{f.contentWindow.postMessage({site:D,editMode:editOn},location.origin)}catch(e){}
+  },120);
+}
 
 function setStatus(){
   var s=dir?("<b>"+dir.name+"</b> · data.js"):"Not connected — editing the bundled copy";
@@ -177,13 +218,14 @@ async function connect(){
     fileH=await dir.getFileHandle("data.js");
     var txt=await (await fileH.getFile()).text();
     D=parseData(txt);
+    hist=[];hi=-1;
   }catch(e){
     alert("Couldn't read data.js in that folder.\nPick the folder that holds index.html.");
     dir=null;fileH=null;return;
   }
   dirty=false;$("btnSave").disabled=true;
   await scanAssets();
-  render();setStatus();
+  pushHist();render();setStatus();pushPreview();
 }
 
 function parseData(txt){
@@ -285,7 +327,7 @@ function color(obj,key,label){
 }
 function norm(v){return /^#[0-9a-f]{6}$/i.test(v||"")?v:"#000000"}
 
-function imageField(obj,key,label,dest){
+function imageField(obj,key,label,dest,onset){
   dest=dest||"assets/work";
   var f=el("div","f"), l=el("span","lbl",label), box=el("div","imgf");
   var pv=el("img","pv2");pv.alt="";
@@ -302,9 +344,9 @@ function imageField(obj,key,label,dest){
     else if(v){pv.src=v;pv.style.background=""}
     else{pv.removeAttribute("src");pv.style.background=""}
   }
-  function set(v){obj[key]=v;i.value=v;show(v);touch()}
+  function set(v){obj[key]=v;i.value=v;show(v);if(onset)onset(v);touch()}
   show(obj[key]);
-  i.addEventListener("input",function(){obj[key]=i.value;show(i.value);touch()});
+  i.addEventListener("input",function(){obj[key]=i.value;show(i.value);if(onset)onset(i.value);touch()});
   pick.addEventListener("click",function(){openPicker(set)});
   clr.addEventListener("click",function(){set("")});
 
@@ -326,6 +368,77 @@ function imageField(obj,key,label,dest){
   ctl.appendChild(i);ctl.appendChild(row);ctl.appendChild(drop);
   box.appendChild(pv);box.appendChild(ctl);
   f.appendChild(l);f.appendChild(box);return f;
+}
+
+function fitField(o){
+  var f=el("div","f"), l=el("span","lbl","Framing \u2014 drag the image to move it, wheel or slider to zoom");
+  var fit={x:(o.fit&&+o.fit.x)||0, y:(o.fit&&+o.fit.y)||0, z:(o.fit&&+o.fit.z)||1};
+  var box=el("div","fitbox"), im=el("img");
+  im.alt="";im.draggable=false;box.appendChild(im);
+  var row=el("div","fitrow");
+  var z=el("input");z.type="range";z.min="1";z.max="4";z.step="0.01";
+  var out=el("span","z");
+  var rs=el("button","b sm","Reset");rs.type="button";
+  row.appendChild(z);row.appendChild(out);row.appendChild(rs);
+  f.appendChild(l);f.appendChild(box);f.appendChild(row);
+
+  function commit(){
+    if(!fit.x&&!fit.y&&fit.z===1)delete o.fit;
+    else o.fit={x:fit.x,y:fit.y,z:fit.z};
+    touch();
+  }
+  function clamp(){
+    var W=box.clientWidth,H=box.clientHeight,nw=im.naturalWidth,nh=im.naturalHeight;
+    if(!W||!H||!nw||!nh)return;
+    var cov=Math.max(W/nw,H/nh);
+    var mx=Math.max(0,(nw*cov*fit.z-W)/2/W*100), my=Math.max(0,(nh*cov*fit.z-H)/2/H*100);
+    fit.x=Math.min(mx,Math.max(-mx,fit.x));
+    fit.y=Math.min(my,Math.max(-my,fit.y));
+  }
+  function paint(){
+    fit.x=Math.round(fit.x*10)/10;fit.y=Math.round(fit.y*10)/10;fit.z=Math.round(fit.z*100)/100;
+    im.style.transform="translate("+fit.x+"%,"+fit.y+"%) scale("+fit.z+")";
+    z.value=fit.z;out.textContent=fit.z.toFixed(2)+"\u00d7";
+  }
+  f.setSrc=function(v){
+    if(v&&IMG.test(v)){im.src=v;f.style.display=""}
+    else{im.removeAttribute("src");f.style.display="none"}
+  };
+
+  var drag=null;
+  box.addEventListener("pointerdown",function(e){
+    if(!im.getAttribute("src"))return;
+    drag={x:e.clientX,y:e.clientY};box.classList.add("drag");
+    try{box.setPointerCapture(e.pointerId)}catch(_){}
+  });
+  box.addEventListener("pointermove",function(e){
+    if(!drag)return;
+    var W=box.clientWidth||1, H=box.clientHeight||1;
+    fit.x+=(e.clientX-drag.x)/W*100;
+    fit.y+=(e.clientY-drag.y)/H*100;
+    drag={x:e.clientX,y:e.clientY};
+    clamp();paint();
+  });
+  ["pointerup","pointercancel"].forEach(function(ev){
+    box.addEventListener(ev,function(e){
+      if(!drag)return;
+      drag=null;box.classList.remove("drag");
+      try{box.releasePointerCapture(e.pointerId)}catch(_){}
+      commit();
+    });
+  });
+  box.addEventListener("wheel",function(e){
+    if(!im.getAttribute("src"))return;
+    e.preventDefault();
+    fit.z=Math.min(4,Math.max(1,fit.z*(1-e.deltaY*0.0015)));
+    clamp();paint();commit();
+  },{passive:false});
+  z.addEventListener("input",function(){fit.z=+z.value;clamp();paint();commit()});
+  rs.addEventListener("click",function(){fit.x=0;fit.y=0;fit.z=1;paint();commit()});
+  im.addEventListener("load",function(){clamp();paint()});
+
+  f.setSrc(o.image);paint();
+  return f;
 }
 
 function openPicker(cb){
@@ -372,12 +485,29 @@ function strList(arr,label){
 
 /* generic list of objects with header + collapsible body */
 function list(arr,cfg){
-  var host=el("div");
+  var host=el("div"), from=null;
   function draw(){
     host.innerHTML="";
     arr.forEach(function(o,idx){
       var key=cfg.key+":"+idx;
       var it=el("div","item"), h=el("div","ih");
+      it.setAttribute("data-k",key);
+      h.draggable=true;h.title="Drag to reorder";
+      h.addEventListener("dragstart",function(e){
+        from=idx;e.dataTransfer.effectAllowed="move";
+        try{e.dataTransfer.setData("text/plain",String(idx))}catch(_){}
+      });
+      h.addEventListener("dragend",function(){from=null;it.classList.remove("over")});
+      it.addEventListener("dragover",function(e){
+        if(from==null||from===idx)return;
+        e.preventDefault();e.stopPropagation();it.classList.add("over");
+      });
+      it.addEventListener("dragleave",function(){it.classList.remove("over")});
+      it.addEventListener("drop",function(e){
+        if(from==null||from===idx)return;
+        e.preventDefault();e.stopPropagation();
+        arr.splice(idx,0,arr.splice(from,1)[0]);from=null;touch();draw();
+      });
       if(cfg.thumb){
         var src=cfg.thumb(o);
         if(src&&IMG.test(src)){var im=el("img","tn");im.src=src;im.alt="";im.loading="lazy";h.appendChild(im)}
@@ -537,7 +667,9 @@ VIEWS.cards=function(m){
       ck.appendChild(c2);ck.appendChild(el("span",null,"Open in a new tab"));
       b.appendChild(ck);
 
-      b.appendChild(imageField(o,"image","Image"));
+      var ff=fitField(o);
+      b.appendChild(imageField(o,"image","Image","assets/work",ff.setSrc));
+      b.appendChild(ff);
       b.appendChild(imageField(o,"icon","Icon","assets/icons"));
       b.appendChild(i18n(o,"alt","Image description (alt)"));
 
@@ -651,12 +783,48 @@ $("btnPv").addEventListener("click",function(){
   var on=$("shell").classList.toggle("pv");
   if(on)reloadPreview();else $("pvFrame").removeAttribute("src");
 });
+$("btnUndo").addEventListener("click",function(){step(-1)});
+$("btnRedo").addEventListener("click",function(){step(1)});
+$("btnEdit").addEventListener("click",function(){
+  editOn=!editOn;
+  $("btnEdit").setAttribute("aria-pressed",editOn?"true":"false");
+  if(editOn&&!$("shell").classList.contains("pv")){$("shell").classList.add("pv");reloadPreview()}
+  try{$("pvFrame").contentWindow.postMessage({editMode:editOn},location.origin)}catch(e){}
+});
+$("pvFrame").addEventListener("load",function(){
+  try{$("pvFrame").contentWindow.postMessage({site:D,editMode:editOn},location.origin)}catch(e){}
+});
+
+var EDITMAP={site:["site"],hero:["hero"],htag:["hero","htag"],work:["work"],cat:["work","cat"],
+  card:["cards","card"],about:["about"],skill:["about","skill"],job:["about","job"],
+  contact:["contact"],clink:["contact","clink"]};
+
+window.addEventListener("message",function(e){
+  if(e.origin!==location.origin)return;
+  var path=e.data&&e.data.editPath;
+  if(!path)return;
+  var bits=String(path).split(":"), m=EDITMAP[bits[0]];
+  if(!m)return;
+  cur=m[0];
+  var k=(m[1]&&bits[1]!=null)?m[1]+":"+bits[1]:null;
+  if(k)open[k]=true;
+  buildNav();render();
+  var n=k?$("main").querySelector('[data-k="'+k+'"]'):null;
+  (n||$("main")).scrollIntoView({block:"start",behavior:"smooth"});
+  if(n){var inp=n.querySelector(".ib input,.ib textarea,.ib select");if(inp)inp.focus({preventScroll:true})}
+});
+
 document.addEventListener("keydown",function(e){
-  if((e.ctrlKey||e.metaKey)&&e.key==="s"){e.preventDefault();if(dir)save();else download()}
+  var k=(e.key||"").toLowerCase();
+  if(!(e.ctrlKey||e.metaKey))return;
+  if(k==="s"){e.preventDefault();if(dir)save();else download();return}
+  if(k==="z"){e.preventDefault();step(e.shiftKey?1:-1);return}
+  if(k==="y"){e.preventDefault();step(1)}
 });
 window.addEventListener("beforeunload",function(e){if(dirty){e.preventDefault();e.returnValue=""}});
 
 D=window.SITE?clone(window.SITE):null;
+if(D)pushHist();
 buildNav();render();setStatus();
 })();
 </script>

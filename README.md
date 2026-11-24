@@ -17,6 +17,13 @@ field copies it into `assets/work/`. Needs Chrome or Edge for the folder access 
 anywhere else, edit and use **Download data.js** to replace the file by hand.
 Changes are live once `data.js` is committed and pushed.
 
+**Preview** opens the site beside the form and it repaints as you type — no reload. Turn
+on **Click to edit** and clicking anything in that preview jumps straight to its fields.
+Ctrl+Z / Ctrl+Shift+Z undo and redo; cards, categories, roles and pills reorder by
+dragging their header. A project with a picture gets a **Framing** box — drag the image
+to move it, wheel or the slider to zoom. It writes `fit: {x, y, z}` on the card (pan as a
+percentage of the card, then a scale) and leaves the key out when the framing is default.
+
 `snake-vs-human-skills.html` shows 13 abilities at three upgrade tiers each — 39 square
 loops in `assets/skills/`, one `.mp4` and one `.webp` poster per clip. Clips play only
 while on screen (IntersectionObserver) and carry no audio. They are re-encoded from the
