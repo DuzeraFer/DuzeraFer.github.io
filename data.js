@@ -33,7 +33,7 @@ window.SITE = {
       "pt": "Contato"
     },
     "resume": {
-      "en": "Résumé ↓",
+      "en": "Resume ↓",
       "pt": "Currículo ↓"
     }
   },
@@ -75,6 +75,10 @@ window.SITE = {
     "p": {
       "en": "Three games on Poki, nine on Google Play · 11M+ players · 19 Unity Asset Store packages",
       "pt": "Três jogos na Poki, nove na Google Play · 11M+ jogadores · 19 pacotes na Unity Asset Store"
+    },
+    "more": {
+      "en": "Show more ↓",
+      "pt": "Ver mais ↓"
     },
     "categories": [
       {
@@ -133,8 +137,8 @@ window.SITE = {
           "pt": "Jogo"
         },
         "tag": {
-          "en": "Poki",
-          "pt": "Poki"
+          "en": "Poki · Google Play",
+          "pt": "Poki · Google Play"
         },
         "title": {
           "en": "Snake vs Human",
@@ -171,30 +175,6 @@ window.SITE = {
       },
       {
         "cat": "games",
-        "href": "https://poki.com/en/g/butterfly-catch",
-        "newTab": true,
-        "image": "assets/work/butterfly-catch.jpg",
-        "icon": "assets/icons/butterfly-catch.png",
-        "alt": "Butterfly Catch key art",
-        "badge": {
-          "en": "Game",
-          "pt": "Jogo"
-        },
-        "tag": {
-          "en": "Poki",
-          "pt": "Poki"
-        },
-        "title": {
-          "en": "Butterfly Catch",
-          "pt": "Butterfly Catch"
-        },
-        "desc": {
-          "en": "Environment art, props, VFX, UI and skins. A cozy idle catcher, out November 2026.",
-          "pt": "Arte de cenário, props, VFX, UI e skins. Um idle aconchegante, lançado em novembro de 2026."
-        }
-      },
-      {
-        "cat": "games",
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pizzapaws",
         "newTab": true,
         "image": "assets/work/play-pizzapaws.jpg",
@@ -218,75 +198,96 @@ window.SITE = {
         }
       },
       {
-        "cat": "games",
-        "href": "https://play.google.com/store/apps/details?id=com.KreativitasStudio.JamDriveThru",
+        "cat": "shaders",
+        "href": "https://www.artstation.com/artwork/V20Lr4",
         "newTab": true,
-        "image": "assets/work/play-jamdrivethru.jpg",
-        "icon": "assets/icons/jam-drive-thru.png",
-        "alt": "Jam Drive Thru — Google Play screenshot",
+        "image": "assets/work/art-postprocess-comparison.jpg",
+        "alt": "URP renderer features — volume effects comparison",
         "badge": {
-          "en": "Game",
-          "pt": "Jogo"
+          "en": "Shader",
+          "pt": "Shader"
         },
         "tag": {
-          "en": "Google Play",
-          "pt": "Google Play"
+          "en": "HLSL",
+          "pt": "HLSL"
         },
         "title": {
-          "en": "Jam Drive Thru",
-          "pt": "Jam Drive Thru"
+          "en": "URP Renderer Features",
+          "pt": "Renderer Features no URP"
         },
         "desc": {
-          "en": "Food and car models, outline and ground shaders, cloche animations and the coin and food-box VFX.",
-          "pt": "Modelos de comidas e carros, shaders de contorno e chão, animações da cloche e VFX de moedas e caixas."
+          "en": "SSAO, bloom, outline and gradient fog as fullscreen passes, tuned per Volume Profile.",
+          "pt": "SSAO, bloom, outline e névoa gradiente como passes fullscreen, ajustados por Volume Profile."
+        }
+      },
+      {
+        "cat": "store",
+        "href": "https://assetstore.unity.com/publishers/142088",
+        "newTab": true,
+        "image": "assets/work/store-simplevat.jpg",
+        "alt": "2,500 characters, zero Animators. Skinned animation baked to vertex textures and played on the GPU.",
+        "badge": {
+          "en": "Tool",
+          "pt": "Ferramenta"
+        },
+        "tag": {
+          "en": "Published",
+          "pt": "Publicado"
+        },
+        "title": {
+          "en": "Simple VAT",
+          "pt": "Simple VAT"
+        },
+        "desc": {
+          "en": "2,500 characters, zero Animators. Skinned animation baked to vertex textures and played on the GPU.",
+          "pt": "2.500 personagens, zero Animators. Animação skinned em texturas de vértice, reproduzida na GPU."
+        }
+      },
+      {
+        "cat": "3d",
+        "href": "https://www.artstation.com/artwork/gRKDPK",
+        "newTab": true,
+        "image": "assets/work/art-rey-skywalker.jpg",
+        "alt": "Rey Skywalker — stylized character render",
+        "badge": {
+          "en": "3D",
+          "pt": "3D"
+        },
+        "tag": {
+          "en": "ZBrush",
+          "pt": "ZBrush"
+        },
+        "title": {
+          "en": "Rey Skywalker",
+          "pt": "Rey Skywalker"
+        },
+        "desc": {
+          "en": "A May the 4th personal piece, built from a Qarlos Quintero artwork.",
+          "pt": "Um projeto pessoal de May the 4th, feito a partir de uma arte de Qarlos Quintero."
         }
       },
       {
         "cat": "games",
-        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.faceaway",
+        "href": "https://poki.com/en/g/butterfly-catch",
         "newTab": true,
-        "image": "assets/work/play-faceaway.jpg",
-        "icon": "assets/icons/face-away.png",
-        "alt": "Face Away — Google Play screenshot",
+        "image": "assets/work/butterfly-catch.jpg",
+        "icon": "assets/icons/butterfly-catch.png",
+        "alt": "Butterfly Catch key art",
         "badge": {
           "en": "Game",
           "pt": "Jogo"
         },
         "tag": {
-          "en": "Google Play",
-          "pt": "Google Play"
+          "en": "Poki",
+          "pt": "Poki"
         },
         "title": {
-          "en": "Face Away",
-          "pt": "Face Away"
+          "en": "Butterfly Catch",
+          "pt": "Butterfly Catch"
         },
         "desc": {
-          "en": "Tile and symbol materials, contrast-safe shader maths, the booster tutorial and button states.",
-          "pt": "Materiais de peças e símbolos, matemática de shader segura para contraste, tutorial de booster e estados de botão."
-        }
-      },
-      {
-        "cat": "games",
-        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pencilpack",
-        "newTab": true,
-        "image": "assets/work/play-pencilpack.jpg",
-        "icon": "assets/icons/pencil-pack.png",
-        "alt": "Pencil Pack — Google Play screenshot",
-        "badge": {
-          "en": "Game",
-          "pt": "Jogo"
-        },
-        "tag": {
-          "en": "Google Play",
-          "pt": "Google Play"
-        },
-        "title": {
-          "en": "Pencil Pack",
-          "pt": "Pencil Pack"
-        },
-        "desc": {
-          "en": "Art implementation, pencil and tray animations, booster VFX, tutorials and the combo feedback.",
-          "pt": "Implementação de arte, animações de lápis e bandejas, VFX de boosters, tutoriais e o feedback de combo."
+          "en": "Environment art, props, VFX, UI and skins. A cozy idle catcher, out November 2026.",
+          "pt": "Arte de cenário, props, VFX, UI e skins. Um idle aconchegante, lançado em novembro de 2026."
         }
       },
       {
@@ -315,6 +316,54 @@ window.SITE = {
       },
       {
         "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pencilpack",
+        "newTab": true,
+        "image": "assets/work/play-pencilpack.jpg",
+        "icon": "assets/icons/pencil-pack.png",
+        "alt": "Pencil Pack — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Pencil Pack",
+          "pt": "Pencil Pack"
+        },
+        "desc": {
+          "en": "Art implementation, pencil and tray animations, booster VFX, tutorials and the combo feedback.",
+          "pt": "Implementação de arte, animações de lápis e bandejas, VFX de boosters, tutoriais e o feedback de combo."
+        }
+      },
+      {
+        "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.faceaway",
+        "newTab": true,
+        "image": "assets/work/play-faceaway.jpg",
+        "icon": "assets/icons/face-away.png",
+        "alt": "Face Away — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Face Away",
+          "pt": "Face Away"
+        },
+        "desc": {
+          "en": "Tile and symbol materials, contrast-safe shader maths, the booster tutorial and button states.",
+          "pt": "Materiais de peças e símbolos, matemática de shader segura para contraste, tutorial de booster e estados de botão."
+        }
+      },
+      {
+        "cat": "games",
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.sortmycoins",
         "newTab": true,
         "image": "assets/work/play-sortmycoins.jpg",
@@ -335,30 +384,6 @@ window.SITE = {
         "desc": {
           "en": "Art implementation, a mesh spline generator and the move to pooled particles.",
           "pt": "Implementação de arte, um gerador de malha por spline e a migração para partículas em pool."
-        }
-      },
-      {
-        "cat": "games",
-        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.leveluprings",
-        "newTab": true,
-        "image": "assets/work/play-leveluprings.jpg",
-        "icon": "assets/icons/level-up-rings.png",
-        "alt": "Level Up Rings — Google Play screenshot",
-        "badge": {
-          "en": "Game",
-          "pt": "Jogo"
-        },
-        "tag": {
-          "en": "Google Play",
-          "pt": "Google Play"
-        },
-        "title": {
-          "en": "Level Up Rings",
-          "pt": "Level Up Rings"
-        },
-        "desc": {
-          "en": "Ring model and shader, booster VFX, bouncer animations, tutorials and the colour pass.",
-          "pt": "Modelo e shader dos anéis, VFX de boosters, animações dos bumpers, tutoriais e o ajuste de cores."
         }
       },
       {
@@ -387,6 +412,30 @@ window.SITE = {
       },
       {
         "cat": "games",
+        "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.leveluprings",
+        "newTab": true,
+        "image": "assets/work/play-leveluprings.jpg",
+        "icon": "assets/icons/level-up-rings.png",
+        "alt": "Level Up Rings — Google Play screenshot",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Google Play",
+          "pt": "Google Play"
+        },
+        "title": {
+          "en": "Level Up Rings",
+          "pt": "Level Up Rings"
+        },
+        "desc": {
+          "en": "Ring model and shader, booster VFX, bouncer animations, tutorials and the colour pass.",
+          "pt": "Modelo e shader dos anéis, VFX de boosters, animações dos bumpers, tutoriais e o ajuste de cores."
+        }
+      },
+      {
+        "cat": "games",
         "href": "https://play.google.com/store/apps/details?id=com.kreativitassstudio.emojisort",
         "newTab": true,
         "image": "assets/work/play-emojisort.jpg",
@@ -407,29 +456,6 @@ window.SITE = {
         "desc": {
           "en": "Emoji case visuals, heart-break VFX, level transitions and the diagram art.",
           "pt": "Visual dos estojos de emoji, VFX de coração partido, transições de nível e a arte dos diagramas."
-        }
-      },
-      {
-        "cat": "shaders",
-        "href": "https://www.artstation.com/artwork/V20Lr4",
-        "newTab": true,
-        "image": "assets/work/art-postprocess-comparison.jpg",
-        "alt": "URP renderer features — volume effects comparison",
-        "badge": {
-          "en": "Shader",
-          "pt": "Shader"
-        },
-        "tag": {
-          "en": "HLSL",
-          "pt": "HLSL"
-        },
-        "title": {
-          "en": "URP Renderer Features",
-          "pt": "Renderer Features no URP"
-        },
-        "desc": {
-          "en": "SSAO, bloom, outline and gradient fog as fullscreen passes, tuned per Volume Profile.",
-          "pt": "SSAO, bloom, outline e névoa gradiente como passes fullscreen, ajustados por Volume Profile."
         }
       },
       {
@@ -978,29 +1004,6 @@ window.SITE = {
         "desc": {
           "en": "Shelf tools in MEL and Python: an advanced renamer, a batch exporter that writes one file per selected object, and a symmetry cutter.",
           "pt": "Ferramentas de shelf em MEL e Python: um renomeador avançado, um exportador em lote que grava um arquivo por objeto selecionado e um cortador de simetria."
-        }
-      },
-      {
-        "cat": "3d",
-        "href": "https://www.artstation.com/artwork/gRKDPK",
-        "newTab": true,
-        "image": "assets/work/art-rey-skywalker.jpg",
-        "alt": "Rey Skywalker — stylized character render",
-        "badge": {
-          "en": "3D",
-          "pt": "3D"
-        },
-        "tag": {
-          "en": "ZBrush",
-          "pt": "ZBrush"
-        },
-        "title": {
-          "en": "Rey Skywalker",
-          "pt": "Rey Skywalker"
-        },
-        "desc": {
-          "en": "A May the 4th personal piece, built from a Qarlos Quintero artwork.",
-          "pt": "Um projeto pessoal de May the 4th, feito a partir de uma arte de Qarlos Quintero."
         }
       },
       {
@@ -1582,29 +1585,6 @@ window.SITE = {
         "cat": "store",
         "href": "https://assetstore.unity.com/publishers/142088",
         "newTab": true,
-        "image": "assets/work/store-simplevat.jpg",
-        "alt": "2,500 characters, zero Animators. Skinned animation baked to vertex textures and played on the GPU.",
-        "badge": {
-          "en": "Tool",
-          "pt": "Ferramenta"
-        },
-        "tag": {
-          "en": "Published",
-          "pt": "Publicado"
-        },
-        "title": {
-          "en": "Simple VAT",
-          "pt": "Simple VAT"
-        },
-        "desc": {
-          "en": "2,500 characters, zero Animators. Skinned animation baked to vertex textures and played on the GPU.",
-          "pt": "2.500 personagens, zero Animators. Animação skinned em texturas de vértice, reproduzida na GPU."
-        }
-      },
-      {
-        "cat": "store",
-        "href": "https://assetstore.unity.com/publishers/142088",
-        "newTab": true,
         "image": "assets/work/store-scenenotes.jpg",
         "alt": "A PureRef-style reference board inside Unity: notes, tasks, images, voice memos and Scene view pins.",
         "badge": {
@@ -2145,7 +2125,7 @@ window.SITE = {
     },
     "email": "eduardo2002.fernandes@gmail.com",
     "resumeLabel": {
-      "en": "Résumé (PDF) ↓",
+      "en": "Resume (PDF) ↓",
       "pt": "Currículo (PDF) ↓"
     },
     "links": [

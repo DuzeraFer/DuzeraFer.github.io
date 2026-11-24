@@ -80,6 +80,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card .meta .t{border:1px solid #3A3A32;color:var(--dim)}
 .card>.shot{position:relative;aspect-ratio:16/9;overflow:hidden;background:#141412;border-bottom:1px solid var(--line)}
 .card>.shot img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;padding:18px}
+.card>.shot img:not(.bg){top:18px;bottom:auto;left:50%;right:auto;height:calc(100% - 36px);width:auto;aspect-ratio:1;transform:translateX(-50%);padding:0;border-radius:22%}
 .card>.shot .bg{padding:0;object-fit:cover;filter:blur(26px) saturate(1.2) brightness(.8);transform:scale(1.35)}
 .card h3{font-weight:700;font-size:22px;letter-spacing:-.02em}
 .card p{font-size:14px;line-height:1.57;color:var(--dim)}
@@ -176,6 +177,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
     </div>
     <div class="grid" id="grid"></div>
+    <p class="all"><button class="tl" id="showMore" type="button" hidden></button></p>
     <p class="all"><a class="tl" id="allLink" href="" target="_blank" rel="noopener"></a></p>
   </div>
 </section>
@@ -210,7 +212,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
 <script>
 (function(){
-  var S=window.SITE,lang="en",filter="all";
+  var S=window.SITE,lang="en",filter="all",expanded=false,LIMIT=6;
   if(!S){document.body.innerHTML='<p style="padding:40px">data.js failed to load.</p>';return}
 
   function store(k,v){try{localStorage.setItem(k,v)}catch(e){}}
@@ -234,9 +236,13 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
   }
 
   function applyFilter(){
+    var n=0,cap=(filter==="all"&&!expanded)?LIMIT:Infinity;
     [].forEach.call(document.querySelectorAll("#grid .card"),function(c){
-      c.hidden=!(filter==="all"||c.getAttribute("data-c")===filter);
+      var m=filter==="all"||c.getAttribute("data-c")===filter;
+      c.hidden=!(m&&n<cap);
+      if(m)n++;
     });
+    el("showMore").hidden=!(filter==="all"&&!expanded&&n>LIMIT);
     [].forEach.call(document.querySelectorAll("#filters button"),function(b){
       b.setAttribute("aria-pressed",b.getAttribute("data-f")===filter?"true":"false");
     });
@@ -264,6 +270,7 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
       return '<button type="button" data-f="'+esc(c.id)+'" aria-pressed="false">'+esc(t(c.label))+'</button>';
     }).join("");
     el("grid").innerHTML=(S.work.cards||[]).map(card).join("");
+    el("showMore").textContent=t(S.work.more);
     el("allLink").href=S.work.allLink.href;
     el("allLink").innerHTML=t(S.work.allLink.label);
 
@@ -308,8 +315,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 
   el("filters").addEventListener("click",function(e){
     var b=e.target.closest("button[data-f]");if(!b)return;
-    filter=b.getAttribute("data-f");applyFilter();
+    filter=b.getAttribute("data-f");expanded=false;applyFilter();
   });
+  el("showMore").addEventListener("click",function(){expanded=true;applyFilter()});
   el("langSwitch").addEventListener("click",function(){
     lang=lang==="pt"?"en":"pt";store("ef-lang",lang);render();
   });
