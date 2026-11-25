@@ -37,6 +37,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .btn{background:var(--band);color:#fff;padding:13px 22px;border-radius:40px;font-weight:700;font-size:12px;letter-spacing:.06em}
 .btn:hover{background:var(--band-hover,#5B29AD)}
 .tl{font-size:14px;border-bottom:1px solid var(--violet);padding-bottom:2px}
+.more{display:inline-flex;align-items:center;gap:11px;background:var(--bg);color:#fff;padding:17px 34px;border-radius:40px;font-weight:700;font-size:12px;letter-spacing:.06em;text-transform:uppercase;transition:background .18s ease}
+.more::after{content:"↓";color:var(--violet);font-size:13px}
+.more:hover{background:#17171A}
 
 .top{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.9);backdrop-filter:blur(10px)}
 .bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
@@ -68,10 +71,12 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;padding-top:36px}
 .card{display:flex;flex-direction:column;background:var(--bg);border-radius:18px;overflow:hidden}
 .card[hidden]{display:none}
+.card.peek{height:160px;overflow:hidden;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,#000 0,#000 16%,transparent 94%);mask-image:linear-gradient(180deg,#000 0,#000 16%,transparent 94%)}
 .card:hover{transform:translateY(-3px)}
 .card{transition:transform .22s ease}
 .card>.photo{position:relative;aspect-ratio:16/9;overflow:hidden;background:#141412}
 .card>.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.card[href^="snake-vs-human-skills.html"]>.photo::after{content:"";position:absolute;inset:0;background:url(assets/skills/overlay.png) center bottom/100% auto no-repeat;pointer-events:none}
 .card>.noshot{aspect-ratio:16/9;display:flex;flex-direction:column;justify-content:center;gap:7px;padding:0 26px;background:#141412;border-bottom:1px solid var(--line);font-weight:600;font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
 .card>.noshot b{font-weight:800;font-size:27px;letter-spacing:-.025em;text-transform:none;color:var(--violet)}
 .card .body{display:flex;flex-direction:column;gap:10px;padding:22px 24px 26px}
@@ -86,7 +91,9 @@ button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
 .card h3{font-weight:700;font-size:22px;letter-spacing:-.02em}
 .card p{font-size:14px;line-height:1.57;color:var(--dim)}
 .band .all{display:flex;justify-content:center;padding-top:34px}
-.band .all a{border-bottom-color:#fff}
+.band .more-row{padding-top:20px}
+.band .all a.tl{font-size:13px;color:var(--band-sub);border-bottom-color:transparent}
+.band .all a.tl:hover{color:#fff;border-bottom-color:#fff}
 
 .about{padding:88px 0}
 .about .lbl{font-weight:700;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--violet)}
@@ -181,7 +188,7 @@ html.edit [data-edit]:hover{outline:2px dashed var(--violet);outline-offset:-2px
       <div class="filters" id="filters" role="group" aria-label="Filter projects"></div>
     </div>
     <div class="grid" id="grid"></div>
-    <p class="all"><button class="tl" id="showMore" type="button" hidden></button></p>
+    <p class="all more-row"><button class="more" id="showMore" type="button" hidden></button></p>
     <p class="all"><a class="tl" id="allLink" href="" target="_blank" rel="noopener"></a></p>
   </div>
 </section>
@@ -248,11 +255,14 @@ html.edit [data-edit]:hover{outline:2px dashed var(--violet);outline-offset:-2px
   }
 
   function applyFilter(){
-    var n=0,cap=(filter==="all"&&!expanded)?LIMIT:Infinity;
+    var n=0,cap=(filter==="all"&&!expanded)?LIMIT:Infinity,pk=window.innerWidth<=900?1:3;
     [].forEach.call(document.querySelectorAll("#grid .card"),function(c){
-      var m=filter==="all"||c.getAttribute("data-c")===filter;
-      c.hidden=!(m&&n<cap);
-      if(m)n++;
+      var m=filter==="all"||c.getAttribute("data-c")===filter,i=m?n++:-1;
+      var peek=m&&i>=cap&&i<cap+pk;
+      c.hidden=!(m&&(i<cap||peek));
+      c.classList.toggle("peek",peek);
+      if(peek){c.setAttribute("aria-hidden","true");c.setAttribute("tabindex","-1")}
+      else{c.removeAttribute("aria-hidden");c.removeAttribute("tabindex")}
     });
     el("showMore").hidden=!(filter==="all"&&!expanded&&n>LIMIT);
     [].forEach.call(document.querySelectorAll("#filters button"),function(b){
@@ -330,6 +340,7 @@ html.edit [data-edit]:hover{outline:2px dashed var(--violet);outline-offset:-2px
     filter=b.getAttribute("data-f");expanded=false;applyFilter();
   });
   el("showMore").addEventListener("click",function(){expanded=true;applyFilter()});
+  window.addEventListener("resize",applyFilter);
   el("langSwitch").addEventListener("click",function(){
     lang=lang==="pt"?"en":"pt";store("ef-lang",lang);render();
   });

@@ -77,8 +77,8 @@ window.SITE = {
       "pt": "Três jogos na Poki, nove na Google Play · 11M+ jogadores · 19 pacotes na Unity Asset Store"
     },
     "more": {
-      "en": "Show more ↓",
-      "pt": "Ver mais ↓"
+      "en": "Show more",
+      "pt": "Ver mais"
     },
     "categories": [
       {
