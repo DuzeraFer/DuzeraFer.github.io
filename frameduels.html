@@ -1,0 +1,313 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FrameDuels — a party film-guessing game · Eduardo Fernandes</title>
+<meta name="description" content="FrameDuels: a film-guessing party game for phones and a big screen. Node 24, WebSocket rooms, six modes, no framework and no build step.">
+<meta property="og:title" content="FrameDuels — a party film-guessing game">
+<meta property="og:description" content="Phones as controllers, a big screen everyone watches. Node 24, WebSocket rooms, six modes.">
+<meta property="og:image" content="https://eduardofernandes3d.github.io/assets/work/frameduels-tv.jpg">
+<meta name="theme-color" content="#0B0B0B">
+<link rel="icon" href="assets/avatar.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+<script src="data.js"></script>
+<script>
+(function(){var t=(window.SITE||{}).theme;if(!t)return;var m={bg:"--bg",band:"--band",ink:"--ink",dim:"--dim",body:"--body",violet:"--violet",bandSub:"--band-sub",gold:"--gold",line:"--line"};
+for(var k in m)if(t[k])document.documentElement.style.setProperty(m[k],t[k]);
+if(t.bandHover)document.documentElement.style.setProperty("--band-hover",t.bandHover);})();
+</script>
+<style>
+:root{
+  --bg:#0B0B0B; --band:#4C1D95; --ink:#FFFFFF; --dim:#9A9A92;
+  --body:#D6D6CE; --violet:#A78BFA; --band-sub:#C9B8F0;
+  --line:#2A2A26; --wrap:1328px; --gut:56px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);font:400 17px/1.6 Poppins,Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+:focus-visible{outline:2px solid var(--violet);outline-offset:3px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--gut)}
+.pill{display:inline-flex;align-items:center;justify-content:center;border-radius:40px;font-weight:700;font-size:12px;letter-spacing:.04em;padding:10px 18px}
+.btn{background:var(--band);color:#fff;padding:13px 22px;border-radius:40px;font-weight:700;font-size:12px;letter-spacing:.06em}
+.btn:hover{background:var(--band-hover,#5B29AD)}
+
+.top{position:sticky;top:0;z-index:30;background:rgba(11,11,11,.9);backdrop-filter:blur(10px)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.mark{display:flex;align-items:center;gap:12px;min-width:0}
+.mark img{width:44px;height:56px;object-fit:contain}
+.mark span{font-weight:800;font-size:16px;letter-spacing:.22em;text-transform:uppercase;white-space:nowrap}
+.nav{display:flex;align-items:center;gap:26px}
+.nav a{font-weight:500;font-size:13px;color:var(--dim)}
+.nav a:hover{color:var(--ink)}
+.lang{display:flex;gap:6px;font-size:11px;font-weight:600;letter-spacing:.08em;color:var(--dim)}
+.lang b{font-weight:600;color:var(--ink)}
+
+.head{padding:84px 0 46px;display:flex;flex-direction:column;align-items:flex-start;gap:18px}
+.tags{display:flex;flex-wrap:wrap;gap:10px}
+.head h1{font-weight:800;font-size:clamp(2.25rem,5.4vw,4.5rem);line-height:.98;letter-spacing:-.035em}
+.head h1 em{font-style:normal;color:var(--violet)}
+.head p{max-width:60ch;color:var(--body);font-size:clamp(1rem,1.3vw,1.0625rem)}
+
+.legend{display:flex;flex-wrap:wrap;gap:10px;padding-bottom:26px}
+.legend span{border:1px solid var(--line);border-radius:40px;padding:7px 14px;font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.shot{width:100%;border-radius:14px;border:1px solid var(--line);background:#141414}
+figure{display:flex;flex-direction:column;gap:9px}
+figcaption{font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.rows{padding-bottom:40px}
+.row{padding:44px 0;border-top:1px solid var(--line);scroll-margin-top:92px}
+.row h2{display:flex;align-items:baseline;gap:14px;font-weight:800;font-size:clamp(1.4rem,2.4vw,2rem);letter-spacing:-.025em;padding-bottom:12px}
+.row h2 span{font-weight:700;font-size:11px;letter-spacing:.16em;color:var(--violet)}
+.row>p{max-width:62ch;color:var(--body);padding-bottom:28px}
+.pair{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.phones{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:900px}
+.phones .shot{border-radius:20px}
+
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:18px;padding-top:6px}
+.facts div{border:1px solid var(--line);border-radius:14px;padding:20px}
+.facts b{display:block;font-weight:800;font-size:clamp(1.5rem,2.6vw,2.125rem);letter-spacing:-.03em}
+.facts small{font-weight:600;font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--dim)}
+
+.modes{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.modes div{border:1px solid var(--line);border-radius:14px;padding:22px}
+.modes h3{font-weight:700;font-size:16px;letter-spacing:-.01em;padding-bottom:6px}
+.modes p{color:var(--dim);font-size:14px;line-height:1.5}
+
+.notes{display:grid;grid-template-columns:repeat(2,1fr);gap:18px 48px;max-width:1100px}
+.notes div{border-top:1px solid var(--line);padding-top:18px}
+.notes h3{font-weight:700;font-size:15px;padding-bottom:6px}
+.notes p{color:var(--dim);font-size:15px;line-height:1.55}
+
+.end{border-top:1px solid var(--line);padding:54px 0 70px;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:22px}
+.end .links{display:flex;flex-wrap:wrap;gap:24px;font-size:14px;color:var(--dim)}
+.end .links a:hover{color:var(--ink)}
+.foot{border-top:1px solid var(--line);padding:26px 0 36px;display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:12px;color:var(--dim)}
+
+@media (max-width:600px){
+  .mark span{display:none}
+}
+@media (max-width:900px){
+  :root{--gut:22px}
+  .nav a{display:none}
+  .mark img{width:36px;height:46px}
+  .mark span{font-size:11px;letter-spacing:.08em}
+  .head{padding:52px 0 32px}
+  .row{padding:32px 0}
+  .pair,.modes,.notes{grid-template-columns:1fr}
+  .facts{grid-template-columns:repeat(2,1fr)}
+  .phones{gap:8px}
+  .phones .shot{border-radius:10px}
+  .end{flex-direction:column;align-items:flex-start}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap bar">
+    <a class="mark" href="index.html"><img src="assets/avatar-cut.png" alt=""><span>Eduardo Fernandes</span></a>
+    <nav class="nav">
+      <a href="index.html#work" data-i18n="nav.work">Work</a>
+      <a href="index.html#about" data-i18n="nav.about">About</a>
+      <a href="index.html#contact" data-i18n="nav.contact">Contact</a>
+    </nav>
+    <div class="lang">
+      <button type="button" data-l="en"><b data-v="en">EN</b></button><span>·</span><button type="button" data-l="pt"><span data-v="pt">PT</span></button>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="wrap head">
+    <div class="tags">
+      <span class="pill" style="background:var(--band)" data-i18n="t.game">Web game</span>
+      <span class="pill" style="border:1px solid var(--line);color:var(--dim)">Node 24 · WebSocket</span>
+      <span class="pill" style="border:1px solid var(--line);color:var(--dim)" data-i18n="t.solo">Solo project</span>
+    </div>
+    <h1 data-i18n="h1">One film, five frames,<br><em>everyone in the room.</em></h1>
+    <p data-i18n="intro">FrameDuels is a party game about guessing a film from a single still. One player picks the film and decides which frame the room gets to see; the other has five guesses, and each wrong one buys exactly one more frame. Phones are the controllers, a laptop or TV is the shared screen, and the whole thing runs on a Node server with two dependencies and no build step.</p>
+    <a class="btn" href="https://frameduels.onrender.com" target="_blank" rel="noopener" data-i18n="cta">Play it</a>
+  </section>
+
+  <section class="wrap rows">
+    <div class="legend">
+      <span data-i18n="lg.1">Node 24 · ws + qrcode</span>
+      <span data-i18n="lg.2">Six modes</span>
+      <span data-i18n="lg.3">Rooms in memory, no database</span>
+      <span data-i18n="lg.4">Frames from TMDB</span>
+    </div>
+
+    <article class="row" id="big-screen">
+      <h2><span>01</span><span data-i18n="s1.h" style="font:inherit;color:inherit;letter-spacing:inherit">The screen everyone watches</span></h2>
+      <p data-i18n="s1.p">A browser on a TV or laptop opens <code>/tv</code>, types the four-letter room code, and becomes a spectator. It never knows more than the guesser does — the server builds a separate view per role, so the film stays secret even though the frame is on a screen both players face. Earlier frames line up underneath, and the scores update live.</p>
+      <div class="pair">
+        <figure>
+          <img class="shot" src="assets/work/frameduels-tv.jpg" alt="Big screen during a round: a still from GoodFellas, with scores and the five point tiles on the right" loading="lazy">
+          <figcaption data-i18n="s1.c1">Mid-round · the frame the setter chose</figcaption>
+        </figure>
+        <figure>
+          <img class="shot" src="assets/work/frameduels-tv-lobby.jpg" alt="Big screen lobby: a QR code, the room code DZSM, the player list and the room settings" loading="lazy">
+          <figcaption data-i18n="s1.c2">Lobby · scan the code or type four letters</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="row" id="phones">
+      <h2><span>02</span><span data-i18n="s2.h" style="font:inherit;color:inherit;letter-spacing:inherit">Phones do the playing</span></h2>
+      <p data-i18n="s2.p">Joining is a QR code or four letters — no app, no account. The setter browses every usable still of their film and picks the one that gives the least away; a person reading a frame beats any classifier, so there is no blocklist. The guesser sees only what has been shown, with one new frame bought per wrong guess, and the points tile ticking down from five.</p>
+      <div class="phones">
+        <figure>
+          <img class="shot" src="assets/work/frameduels-phone-lobby.jpg" alt="Phone lobby with the room code, QR code, share button, both players and the game settings" loading="lazy">
+          <figcaption data-i18n="s2.c1">Lobby · code, QR and settings</figcaption>
+        </figure>
+        <figure>
+          <img class="shot" src="assets/work/frameduels-phone-frames.jpg" alt="The setter's phone showing a grid of candidate frames for GoodFellas" loading="lazy">
+          <figcaption data-i18n="s2.c2">Setter · pick the frame to show</figcaption>
+        </figure>
+        <figure>
+          <img class="shot" src="assets/work/frameduels-phone-guess.jpg" alt="The guesser's phone showing the frame, the five point tiles and the search box" loading="lazy">
+          <figcaption data-i18n="s2.c3">Guesser · five guesses, five frames</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="row" id="desktop">
+      <h2><span>03</span><span data-i18n="s3.h" style="font:inherit;color:inherit;letter-spacing:inherit">The same game on a laptop</span></h2>
+      <p data-i18n="s3.p">Every screen is the phone layout in a centred column, except the three where width actually helps — guessing, choosing a frame and picking a film go two-column at 900px and wider. Search is typed against TMDB and resolved to a film and a year, so "Aliens" and "Aliens vs Predator" never get confused, and a search that finds nothing costs no guess.</p>
+      <div class="pair">
+        <figure>
+          <img class="shot" src="assets/work/frameduels-guess.jpg" alt="Desktop guessing screen: the frame on the left, guesses and search on the right" loading="lazy">
+          <figcaption data-i18n="s3.c1">Guessing · two columns at 900px and up</figcaption>
+        </figure>
+        <figure>
+          <img class="shot" src="assets/work/frameduels-search.jpg" alt="Film search dropdown listing Aliens, Cowboys &amp; Aliens, Monsters vs Aliens and more with their years" loading="lazy">
+          <figcaption data-i18n="s3.c2">Search · title and year, no fuzzy matches</figcaption>
+        </figure>
+        <figure>
+          <img class="shot" src="assets/work/frameduels-reveal.jpg" alt="Reveal screen: the Aliens (1986) poster, plus five points, got it on guess one" loading="lazy">
+          <figcaption data-i18n="s3.c3">Reveal · five points on the first guess</figcaption>
+        </figure>
+        <figure>
+          <img class="shot" src="assets/work/frameduels-home.jpg" alt="Home screen with the daily game, single player, and the four room modes" loading="lazy">
+          <figcaption data-i18n="s3.c4">Home · the daily first, modes underneath</figcaption>
+        </figure>
+      </div>
+    </article>
+
+    <article class="row" id="modes">
+      <h2><span>04</span><span data-i18n="s4.h" style="font:inherit;color:inherit;letter-spacing:inherit">Six modes, one rule engine</span></h2>
+      <p data-i18n="s4.p">Adding modes meant generalising, not branching. 1 vs 1 became "two sides of one player", Team vs Team "two sides of up to six", and the scoring, timers and turn order never learned which one they were in. The server holds the rules; every client only draws a view it was handed.</p>
+      <div class="modes">
+        <div><h3 data-i18n="m1.h">Daily</h3><p data-i18n="m1.p">The same five films for everyone, every day, with a score you can share.</p></div>
+        <div><h3 data-i18n="m2.h">Single player</h3><p data-i18n="m2.p">Endless films on your own, against the bot that also covers timeouts.</p></div>
+        <div><h3 data-i18n="m3.h">1 vs 1</h3><p data-i18n="m3.p">Two phones, three rounds each, roles swapping after every film.</p></div>
+        <div><h3 data-i18n="m4.h">Team vs Team</h3><p data-i18n="m4.p">Up to six a side. A rotating captain plays; teammates search and send suggestions.</p></div>
+        <div><h3 data-i18n="m5.h">Free for all</h3><p data-i18n="m5.p">Everyone guesses at once, and the room fills up as friends arrive.</p></div>
+        <div><h3 data-i18n="m6.h">Race</h3><p data-i18n="m6.p">Health instead of points — wrong guesses cost, and the first side to run out loses.</p></div>
+      </div>
+    </article>
+
+    <article class="row" id="build">
+      <h2><span>05</span><span data-i18n="s5.h" style="font:inherit;color:inherit;letter-spacing:inherit">What it's built on</span></h2>
+      <div class="facts">
+        <div><b>2</b><small data-i18n="f1">npm dependencies</small></div>
+        <div><b>0</b><small data-i18n="f2">build steps</small></div>
+        <div><b>6</b><small data-i18n="f3">modes</small></div>
+        <div><b>12</b><small data-i18n="f4">phones in a room</small></div>
+      </div>
+      <div class="notes" style="padding-top:34px">
+        <div><h3 data-i18n="n1.h">The rules live on the server</h3><p data-i18n="n1.p">A pure module holds the state, the legal actions and a per-role view. Nothing a client sends is trusted, which is also what makes a Unity port a client swap rather than a rewrite.</p></div>
+        <div><h3 data-i18n="n2.h">Rooms are memory, not a database</h3><p data-i18n="n2.p">A room is an object that lives as long as the game. Sockets reconnect into their seat, so a phone that locks or drops Wi-Fi picks up where it left off.</p></div>
+        <div><h3 data-i18n="n3.h">Frames come from TMDB</h3><p data-i18n="n3.p">Choosing an exact minute would need the films themselves, so frames are backdrops with no language tag and at least 1280px wide. Measured across tiers, that leaves roughly 24,000 films with ten or more usable stills.</p></div>
+        <div><h3 data-i18n="n4.h">The person is the filter</h3><p data-i18n="n4.p">Some backdrops are promotional key art and give the film away instantly. Rather than detect them, the setter simply doesn't pick them — one decision that removed a whole subsystem.</p></div>
+        <div><h3 data-i18n="n5.h">Every screen is animated</h3><p data-i18n="n5.p">Sheets, dialogs, chat, the dealt poster card, the flip and the reveal each have their own motion, written as one small shared module and paused when the tab is hidden.</p></div>
+        <div><h3 data-i18n="n6.h">Two languages, one room</h3><p data-i18n="n6.p">English and Portuguese cover the interface and the film titles. A room has one language and any device in it can change it mid-game.</p></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="wrap end">
+    <div>
+      <h2 style="font-weight:800;font-size:clamp(1.5rem,3vw,2.25rem);letter-spacing:-.03em" data-i18n="end.h">Grab a phone and a TV, and it just works.</h2>
+      <p style="color:var(--dim);font-size:13px;padding-top:10px" data-i18n="end.tmdb">This product uses the TMDB API but is not endorsed or certified by TMDB.</p>
+    </div>
+    <div class="links">
+      <a href="index.html#work" data-i18n="end.work">← All work</a>
+      <a href="https://frameduels.onrender.com" target="_blank" rel="noopener">FrameDuels ↗</a>
+      <a href="https://www.artstation.com/duzeraaa" target="_blank" rel="noopener">ArtStation ↗</a>
+    </div>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <span>© <span id="y"></span> Eduardo Fernandes</span>
+  <span data-i18n="f.role">Technical Artist · Sorocaba, Brazil</span>
+</footer>
+
+<script>
+document.getElementById("y").textContent=new Date().getFullYear();
+
+var EN={};
+[].forEach.call(document.querySelectorAll("[data-i18n]"),function(n){EN[n.getAttribute("data-i18n")]=n.innerHTML});
+var PT={
+ "nav.work":"Trabalhos","nav.about":"Sobre","nav.contact":"Contato",
+ "t.game":"Jogo web","t.solo":"Projeto solo",
+ "h1":"Um filme, cinco quadros,<br><em>a sala inteira.</em>",
+ "intro":"FrameDuels é um jogo de festa sobre adivinhar um filme por um único quadro. Um jogador escolhe o filme e decide qual quadro a sala vê; o outro tem cinco palpites, e cada erro compra exatamente mais um quadro. Os celulares são o controle, um notebook ou TV é a tela compartilhada, e tudo roda num servidor Node com duas dependências e nenhum build.",
+ "cta":"Jogar",
+ "lg.1":"Node 24 · ws + qrcode","lg.2":"Seis modos","lg.3":"Salas na memória, sem banco","lg.4":"Quadros do TMDB",
+ "s1.h":"A tela que todos olham",
+ "s1.p":"Um navegador na TV ou no notebook abre <code>/tv</code>, digita o código de quatro letras e vira espectador. Ele nunca sabe mais que quem está adivinhando — o servidor monta uma visão separada por papel, então o filme continua em segredo mesmo com o quadro numa tela que os dois encaram. Os quadros anteriores ficam embaixo, e o placar atualiza ao vivo.",
+ "s1.c1":"Durante a rodada · o quadro escolhido","s1.c2":"Lobby · escaneie o código ou digite quatro letras",
+ "s2.h":"Quem joga são os celulares",
+ "s2.p":"Entrar é um QR code ou quatro letras — sem app, sem conta. Quem propõe folheia todos os quadros aproveitáveis do filme e escolhe o que entrega menos; uma pessoa lendo um quadro ganha de qualquer classificador, então não existe lista de bloqueio. Quem adivinha vê só o que já foi mostrado, com um quadro novo comprado a cada erro, e a ficha de pontos caindo de cinco.",
+ "s2.c1":"Lobby · código, QR e ajustes","s2.c2":"Quem propõe · escolhe o quadro","s2.c3":"Quem adivinha · cinco palpites, cinco quadros",
+ "s3.h":"O mesmo jogo no notebook",
+ "s3.p":"Toda tela é o layout do celular numa coluna centrada, menos as três em que a largura ajuda de fato — adivinhar, escolher o quadro e escolher o filme ficam em duas colunas a partir de 900px. A busca vai ao TMDB e resolve para filme e ano, então \"Aliens\" e \"Aliens vs Predador\" nunca se confundem, e uma busca sem resultado não custa palpite.",
+ "s3.c1":"Adivinhando · duas colunas a partir de 900px","s3.c2":"Busca · título e ano, sem aproximação","s3.c3":"Revelação · cinco pontos no primeiro palpite","s3.c4":"Início · o diário primeiro, modos embaixo",
+ "s4.h":"Seis modos, um motor de regras",
+ "s4.p":"Somar modos foi generalizar, não ramificar. 1 contra 1 virou \"dois lados de um jogador\", Times virou \"dois lados de até seis\", e a pontuação, os cronômetros e a ordem dos turnos nunca souberam em qual deles estavam. O servidor guarda as regras; cada cliente só desenha a visão que recebeu.",
+ "m1.h":"Diário","m1.p":"Os mesmos cinco filmes para todo mundo, todo dia, com um placar para compartilhar.",
+ "m2.h":"Um jogador","m2.p":"Filmes sem fim, sozinho, contra o bot que também cobre os tempos esgotados.",
+ "m3.h":"1 contra 1","m3.p":"Dois celulares, três rodadas cada, papéis trocando a cada filme.",
+ "m4.h":"Times","m4.p":"Até seis por lado. Um capitão rotativo joga; o time busca e manda sugestões.",
+ "m5.h":"Todos contra todos","m5.p":"Todo mundo adivinha junto, e a sala enche conforme os amigos chegam.",
+ "m6.h":"Corrida","m6.p":"Vida no lugar de pontos — errar custa, e o primeiro lado a zerar perde.",
+ "s5.h":"Do que é feito",
+ "f1":"dependências npm","f2":"etapas de build","f3":"modos","f4":"celulares numa sala",
+ "n1.h":"As regras moram no servidor","n1.p":"Um módulo puro guarda o estado, as ações válidas e uma visão por papel. Nada que o cliente manda é confiável, e é isso que faz de uma versão em Unity uma troca de cliente, não um reescrever.",
+ "n2.h":"Salas são memória, não banco","n2.p":"Uma sala é um objeto que vive enquanto o jogo dura. Os sockets reconectam no mesmo assento, então um celular que bloqueia ou perde o Wi-Fi volta de onde parou.",
+ "n3.h":"Os quadros vêm do TMDB","n3.p":"Escolher um minuto exato exigiria os filmes em si, então os quadros são backdrops sem marca de idioma e com pelo menos 1280px. Medindo por faixas, sobram cerca de 24 mil filmes com dez ou mais quadros aproveitáveis.",
+ "n4.h":"O filtro é a pessoa","n4.p":"Alguns backdrops são arte promocional e entregam o filme na hora. Em vez de detectá-los, quem propõe simplesmente não os escolhe — uma decisão que apagou um subsistema inteiro.",
+ "n5.h":"Toda tela é animada","n5.p":"Painéis, diálogos, chat, a carta de pôster distribuída, a virada e a revelação têm movimento próprio, escrito como um módulo pequeno e compartilhado, e pausado quando a aba some.",
+ "n6.h":"Dois idiomas, uma sala","n6.p":"Inglês e português cobrem a interface e os títulos. Cada sala tem um idioma e qualquer aparelho nela pode trocá-lo no meio do jogo.",
+ "end.h":"Pegue um celular e uma TV, e já funciona.",
+ "end.tmdb":"This product uses the TMDB API but is not endorsed or certified by TMDB.",
+ "end.work":"← Todos os trabalhos",
+ "f.role":"Technical Artist · Sorocaba, Brasil"
+};
+function setLang(l){
+  var d=l==="pt"?PT:EN;
+  [].forEach.call(document.querySelectorAll("[data-i18n]"),function(n){
+    var k=n.getAttribute("data-i18n"); if(d[k]!==undefined)n.innerHTML=d[k];
+  });
+  document.documentElement.lang=l==="pt"?"pt-BR":"en";
+  [].forEach.call(document.querySelectorAll(".lang [data-v]"),function(n){
+    var on=n.getAttribute("data-v")===l, t=document.createElement(on?"b":"span");
+    t.setAttribute("data-v",n.getAttribute("data-v")); t.textContent=n.textContent;
+    n.parentNode.replaceChild(t,n);
+  });
+}
+[].forEach.call(document.querySelectorAll(".lang button"),function(b){
+  b.addEventListener("click",function(){setLang(b.getAttribute("data-l"))});
+});
+</script>
+</body>
+</html>

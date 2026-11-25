@@ -2,12 +2,12 @@
 
 Personal portfolio of Eduardo Fernandes — Technical Artist / 3D Artist.
 
-Static site: `index.html`, one case-study page, plus `assets/`. No build step.
+Static site: `index.html`, two case-study pages, plus `assets/`. No build step.
 
 Dark, single-theme layout: hero, a filterable work grid, about, contact. All of the
 home page — colours, banner, texts, categories, projects, experience, links — lives in
 `data.js` (`window.SITE`) and is rendered client-side. Every text field holds `en` and
-`pt`; the case-study page reads only the colours from there and keeps its own copy.
+`pt`; the case-study pages read only the colours from there and keep their own copy.
 
 ## Editing the site
 
@@ -37,6 +37,10 @@ while on screen (IntersectionObserver) and carry no audio. They are re-encoded f
 ffmpeg -i IN.mp4 -an -vf "scale=540:540:flags=lanczos,fps=30" \
   -c:v libx264 -preset fast -crf 30 -pix_fmt yuv420p -movflags +faststart OUT.mp4
 ```
+
+`frameduels.html` is a screenshot case study of FrameDuels, the film-guessing party game
+(https://frameduels.onrender.com). Shots in `assets/work/frameduels-*.jpg` were captured from
+the live game at 1440x900 (desktop) and 375x812 (phone).
 
 Design source: `REDESIGN.md` (spec) and the Paper file *Portfolio — Redesign*.
 

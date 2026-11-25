@@ -179,6 +179,32 @@ window.SITE = {
       },
       {
         "cat": "games",
+        "href": "frameduels.html",
+        "image": "assets/work/frameduels-tv.jpg",
+        "alt": "FrameDuels big screen — a film frame mid-round with the scores and guess tiles beside it",
+        "badge": {
+          "en": "Game",
+          "pt": "Jogo"
+        },
+        "tag": {
+          "en": "Web",
+          "pt": "Web"
+        },
+        "tag2": {
+          "en": "Case study",
+          "pt": "Estudo de caso"
+        },
+        "title": {
+          "en": "FrameDuels",
+          "pt": "FrameDuels"
+        },
+        "desc": {
+          "en": "A party film-guessing game. Node server, six modes, phones as controllers and a big screen everyone watches.",
+          "pt": "Jogo de adivinhar filmes em grupo. Servidor Node, seis modos, celulares como controle e uma tela grande para todos."
+        }
+      },
+      {
+        "cat": "games",
         "href": "https://play.google.com/store/apps/details?id=com.kreativitasstudio.pizzapaws",
         "newTab": true,
         "image": "assets/work/play-pizzapaws.jpg",
