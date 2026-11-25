@@ -11,18 +11,22 @@ home page — colours, banner, texts, categories, projects, experience, links �
 
 ## Editing the site
 
-Open `editor.html` through the local server, press **Connect folder** and pick this
-folder: Save then writes `data.js` straight to disk and dropping an image on a picture
-field copies it into `assets/work/`. Needs Chrome or Edge for the folder access —
-anywhere else, edit and use **Download data.js** to replace the file by hand.
-Changes are live once `data.js` is committed and pushed.
+Run `edit.cmd` (or `python serve.py`). It starts a small local server and opens the
+editor: the site fills the window and a panel of fields sits over it. Click anything on
+the site to jump to its fields, **Save** writes `data.js` to disk, **Publish** commits and
+pushes. No folder picker, no downloads — any browser works.
 
-**Preview** opens the site beside the form and it repaints as you type — no reload. Turn
-on **Click to edit** and clicking anything in that preview jumps straight to its fields.
-Ctrl+Z / Ctrl+Shift+Z undo and redo; cards, categories, roles and pills reorder by
-dragging their header. A project with a picture gets a **Framing** box — drag the image
-to move it, wheel or the slider to zoom. It writes `fit: {x, y, z}` on the card (pan as a
-percentage of the card, then a scale) and leaves the key out when the framing is default.
+**Fields** hides and shows the panel. Ctrl+S saves, Ctrl+Z / Ctrl+Shift+Z undo and redo;
+cards, categories, roles and pills reorder by dragging their header. Dropping an image on
+a picture field copies it into `assets/work/`. A project with a picture gets a **Framing**
+box — drag the image to move it, wheel or the slider to zoom. It writes `fit: {x, y, z}` on
+the card and leaves the key out when the framing is default. `x` and `y` are a CSS
+`object-position` in percent (50/50 is centred, 0–100 walks the banner across whatever the
+16:9 card cannot show), `z` is a `scale`. An image that is already 16:9 has nothing to walk
+across, so it only responds to zoom.
+
+Opening `editor.html` any other way (file://, plain `http.server`) still renders, but Save
+and Publish have nothing to write to.
 
 `snake-vs-human-skills.html` shows 13 abilities at three upgrade tiers each — 39 square
 loops in `assets/skills/`, one `.mp4` and one `.webp` poster per clip. Clips play only
@@ -41,7 +45,7 @@ Live at https://eduardofernandes3d.github.io
 ## Local preview
 
 ```
-python -m http.server 8765
+python serve.py
 ```
 
 Site: http://localhost:8765/ · editor: http://localhost:8765/editor.html

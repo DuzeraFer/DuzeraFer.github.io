@@ -252,7 +252,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/gRKDPK",
         "newTab": true,
         "image": "assets/work/art-rey-skywalker.jpg",
-        "alt": "Rey Skywalker — stylized character render",
+        "alt": {
+          "en": "Rey Skywalker — stylized character render",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -268,6 +271,22 @@ window.SITE = {
         "desc": {
           "en": "A May the 4th personal piece, built from a Qarlos Quintero artwork.",
           "pt": "Um projeto pessoal de May the 4th, feito a partir de uma arte de Qarlos Quintero."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 0,
+          "z": 1
         }
       },
       {
@@ -1015,7 +1034,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/8BRwym",
         "newTab": true,
         "image": "assets/work/art-cyberpunk-creature.jpg",
-        "alt": "Cyberpunk creature — ZBrush sculpt rendered in Marmoset Toolbag",
+        "alt": {
+          "en": "Cyberpunk creature — ZBrush sculpt rendered in Marmoset Toolbag",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1031,6 +1053,22 @@ window.SITE = {
         "desc": {
           "en": "A bulky cyberpunk creature: sculpt in ZBrush, retopology in Maya, lookdev in Substance Painter and Marmoset.",
           "pt": "Uma criatura cyberpunk corpulenta: escultura no ZBrush, retopologia no Maya, lookdev no Substance Painter e Marmoset."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 67.2,
+          "z": 1
         }
       },
       {
@@ -1038,7 +1076,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/Ke6ezX",
         "newTab": true,
         "image": "assets/work/art-succulent-sorcerer.jpg",
-        "alt": "Succulent Sorcerer — stylized character render",
+        "alt": {
+          "en": "Succulent Sorcerer — stylized character render",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1054,6 +1095,22 @@ window.SITE = {
         "desc": {
           "en": "Weekly challenge piece from a Robert Brown concept, and the first thing I ever rendered in Marmoset Toolbag.",
           "pt": "Peça de desafio semanal a partir de um concept de Robert Brown, e meu primeiro render no Marmoset Toolbag."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 34.2,
+          "z": 1
         }
       },
       {
@@ -1061,7 +1118,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/Ezgdm0",
         "newTab": true,
         "image": "assets/work/art-survival-gun.jpg",
-        "alt": "Game-ready survival game weapon",
+        "alt": {
+          "en": "Game-ready survival game weapon",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1077,6 +1137,22 @@ window.SITE = {
         "desc": {
           "en": "Freelance weapon for a survival game in development: concept, model, textures and engine, constrained to animate.",
           "pt": "Arma freelance para um jogo de survival em desenvolvimento: concept, modelo, texturas e engine, com constraints para animar."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 42.6,
+          "z": 1
         }
       },
       {
@@ -1084,7 +1160,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/eRJA0G",
         "newTab": true,
         "image": "assets/work/art-ink-protector.jpg",
-        "alt": "Ink Protector — stylized character render",
+        "alt": {
+          "en": "Ink Protector — stylized character render",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1100,6 +1179,22 @@ window.SITE = {
         "desc": {
           "en": "Character built on a Duy An concept with Hwei and Jhin in mind, rendered through an NPR shader.",
           "pt": "Personagem feito sobre um concept de Duy An, com Hwei e Jhin em mente, renderizado com um shader NPR."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 13.4,
+          "z": 1
         }
       },
       {
@@ -1107,7 +1202,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/5Wvxq1",
         "newTab": true,
         "image": "assets/work/art-doodo.jpg",
-        "alt": "Doodo — stylized bird character sculpted in ZBrush",
+        "alt": {
+          "en": "Doodo — stylized bird character sculpted in ZBrush",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1123,6 +1221,22 @@ window.SITE = {
         "desc": {
           "en": "A ZBrush-only sketch from a Jin Yi concept — asymmetric sculpting, some hard surface, rendered in ZBrush too.",
           "pt": "Um sketch feito só no ZBrush a partir de um concept de Jin Yi — escultura assimétrica, algum hard surface e render no próprio ZBrush."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 0,
+          "z": 1
         }
       },
       {
@@ -1130,7 +1244,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/OvBKVe",
         "newTab": true,
         "image": "assets/work/art-survival-props.jpg",
-        "alt": "Game-ready survival game props",
+        "alt": {
+          "en": "Game-ready survival game props",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1146,6 +1263,22 @@ window.SITE = {
         "desc": {
           "en": "Prop set for the same survival game, concepted, modelled, textured and implemented solo.",
           "pt": "Conjunto de props para o mesmo jogo de survival: concept, modelagem, textura e implementação feitos sozinho."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 0,
+          "z": 1
         }
       },
       {
@@ -1199,7 +1332,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/dK59qw",
         "newTab": true,
         "image": "assets/work/art-bard-lizard.jpg",
-        "alt": "Bard Companion — lizard character render",
+        "alt": {
+          "en": "Bard Companion — lizard character render",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1215,6 +1351,22 @@ window.SITE = {
         "desc": {
           "en": "A lizard bard, months in the making — and my first character taken start to finish in Maya instead of Blender.",
           "pt": "Um bardo lagarto, meses de trabalho — e meu primeiro personagem feito do início ao fim no Maya em vez do Blender."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 40.5,
+          "z": 1
         }
       },
       {
@@ -1222,7 +1374,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/WBQJ8v",
         "newTab": true,
         "image": "assets/work/art-masked-horror.jpg",
-        "alt": "Masked Horror — game-ready creature for Hired 2 Die",
+        "alt": {
+          "en": "Masked Horror — game-ready creature for Hired 2 Die",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1238,6 +1393,22 @@ window.SITE = {
         "desc": {
           "en": "Game-ready creature at 16,042 tris for Hired 2 Die: Moonlight Motel.",
           "pt": "Criatura pronta para jogo com 16.042 tris para Hired 2 Die: Moonlight Motel."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 0,
+          "z": 1
         }
       },
       {
@@ -1245,7 +1416,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/QXEAQE",
         "newTab": true,
         "image": "assets/work/art-cordyceps-ant.jpg",
-        "alt": "Camponotus obscuripes ant overtaken by cordyceps fungus",
+        "alt": {
+          "en": "Camponotus obscuripes ant overtaken by cordyceps fungus",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1261,6 +1435,22 @@ window.SITE = {
         "desc": {
           "en": "Two months from sculpt to render: an ant taken over by cordyceps, the real fungus behind The Last of Us.",
           "pt": "Dois meses da escultura ao render: uma formiga tomada pelo cordyceps, o fungo real por trás de The Last of Us."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 70.7,
+          "z": 1
         }
       },
       {
@@ -1268,7 +1458,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/6NbZKr",
         "newTab": true,
         "image": "assets/work/art-at-st.jpg",
-        "alt": "Star Wars AT-ST walker model",
+        "alt": {
+          "en": "Star Wars AT-ST walker model",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1284,6 +1477,22 @@ window.SITE = {
         "desc": {
           "en": "One of my first Blender models, rebuilt years later: UVs, a high-poly bake, new textures and a rig.",
           "pt": "Um dos meus primeiros modelos no Blender, refeito anos depois: UVs, bake do high-poly, texturas novas e rig."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 0,
+          "z": 1
         }
       },
       {
@@ -1291,7 +1500,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/04YdLy",
         "newTab": true,
         "image": "assets/work/art-loader.jpg",
-        "alt": "Loader — stylized low-poly character render",
+        "alt": {
+          "en": "Loader — stylized low-poly character render",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1307,29 +1519,22 @@ window.SITE = {
         "desc": {
           "en": "A stylized low-poly character from a found concept, start to finish in about ten hours.",
           "pt": "Um personagem stylized low-poly a partir de um concept encontrado, do início ao fim em cerca de dez horas."
-        }
-      },
-      {
-        "cat": "3d",
-        "href": "https://www.artstation.com/artwork/VJ8m0R",
-        "newTab": true,
-        "image": "assets/work/art-radio-animation.jpg",
-        "alt": "Radio animation still — lit interior scene",
-        "badge": {
-          "en": "3D",
-          "pt": "3D"
         },
-        "tag": {
-          "en": "Cycles",
-          "pt": "Cycles"
+        "tag2": {
+          "en": "",
+          "pt": ""
         },
-        "title": {
-          "en": "Radio Animation",
-          "pt": "Animação do Rádio"
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
         },
-        "desc": {
-          "en": "The radio again, this time as an animation study: camera moves, lighting and a Premiere composite.",
-          "pt": "O mesmo rádio, agora como estudo de animação: movimento de câmera, iluminação e composição no Premiere."
+        "fit": {
+          "x": 50,
+          "y": 34.4,
+          "z": 1
         }
       },
       {
@@ -1337,7 +1542,10 @@ window.SITE = {
         "href": "https://www.artstation.com/artwork/obJaVw",
         "newTab": true,
         "image": "assets/work/art-radio-prop.jpg",
-        "alt": "Radio prop — realistic render",
+        "alt": {
+          "en": "Radio prop — realistic render",
+          "pt": ""
+        },
         "badge": {
           "en": "3D",
           "pt": "3D"
@@ -1353,6 +1561,22 @@ window.SITE = {
         "desc": {
           "en": "A realistic take for the 27th weekly challenge, from a Boris Rogozin concept, rendered in Cycles.",
           "pt": "Uma abordagem realista para o 27º desafio semanal, de um concept de Boris Rogozin, renderizado no Cycles."
+        },
+        "tag2": {
+          "en": "",
+          "pt": ""
+        },
+        "noshot": {
+          "big": "",
+          "sub": {
+            "en": "",
+            "pt": ""
+          }
+        },
+        "fit": {
+          "x": 50,
+          "y": 69.4,
+          "z": 1
         }
       },
       {
@@ -1537,52 +1761,6 @@ window.SITE = {
         "desc": {
           "en": "A hot sauce bottle with attitude, made for a challenge from a Mike Mitchell concept.",
           "pt": "Uma garrafa de pimenta com atitude, feita para um desafio a partir de um concept de Mike Mitchell."
-        }
-      },
-      {
-        "cat": "3d",
-        "href": "https://www.artstation.com/artwork/aGnyqz",
-        "newTab": true,
-        "image": "assets/work/art-digivice.jpg",
-        "alt": "Adventure Digivice prop render",
-        "badge": {
-          "en": "3D",
-          "pt": "3D"
-        },
-        "tag": {
-          "en": "Blender",
-          "pt": "Blender"
-        },
-        "title": {
-          "en": "Digivice",
-          "pt": "Digivice"
-        },
-        "desc": {
-          "en": "The Adventure Digivice, modelled as a prop.",
-          "pt": "O Digivice de Adventure, modelado como prop."
-        }
-      },
-      {
-        "cat": "3d",
-        "href": "https://www.artstation.com/artwork/xYVz31",
-        "newTab": true,
-        "image": "assets/work/art-agony.jpg",
-        "alt": "Agony — creature bust sculpt",
-        "badge": {
-          "en": "3D",
-          "pt": "3D"
-        },
-        "tag": {
-          "en": "ZBrush",
-          "pt": "ZBrush"
-        },
-        "title": {
-          "en": "Agony",
-          "pt": "Agonia"
-        },
-        "desc": {
-          "en": "A sculpt about acute suffering — the word comes from the Latin for “sacred victim”.",
-          "pt": "Uma escultura sobre o sofrimento agudo — a palavra vem do latim para “vítima sagrada”."
         }
       },
       {
